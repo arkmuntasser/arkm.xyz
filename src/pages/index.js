@@ -4,7 +4,6 @@ import { Link, graphql } from 'gatsby'
 import Bio from '../components/Bio'
 import { Layout } from '../components/layouts/index'
 import SEO from '../components/seo'
-// import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
@@ -22,8 +21,12 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
+            <div className="post-snippet" key={node.fields.slug}>
+              <small
+                className="date"
+              >{node.frontmatter.date}</small>
               <h3
+                className="title"
                 style={{
                   marginBottom: `0.25rem`
                 }}
@@ -32,8 +35,7 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              <p className="content" dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
           )
         })}

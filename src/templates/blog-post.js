@@ -5,7 +5,6 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import Bio from '../components/Bio'
 import { Layout } from '../components/layouts/index'
 import SEO from '../components/seo'
-// import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -16,17 +15,19 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            display: `block`,
-            marginBottom: `1rem`,
-            marginTop: `-1rem`,
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-        <MDXRenderer>{post.code.body}</MDXRenderer>
+        <div className="post">
+          <p className="date">
+            {post.frontmatter.date}
+          </p>
+          <h1 className="title">
+            <span>
+              {post.frontmatter.title}
+            </span>
+          </h1>
+          <div className="content">
+            <MDXRenderer>{post.code.body}</MDXRenderer>
+          </div>
+        </div>
         <hr
           style={{
             marginBottom: `1rem`,

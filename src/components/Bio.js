@@ -2,8 +2,6 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 
-// import { rhythm } from '../utils/typography'
-
 function Bio() {
   return (
     <StaticQuery
@@ -14,26 +12,24 @@ function Bio() {
           <div
             style={{
               display: `flex`,
-              // marginBottom: rhythm(2.5),
+              alignItems: `center`,
+              marginBottom: `64px`,
             }}
           >
             <Image
               fixed={data.avatar.childImageSharp.fixed}
               alt={author}
               style={{
-                // marginRight: rhythm(1 / 2),
+                marginRight: `12px`,
                 marginBottom: 0,
                 minWidth: 50,
                 borderRadius: `100%`,
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in
-              Minneapolis building silly things.
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
-              </a>
+              Welcome to official <strong>{author}</strong> blog!
+              <br />
+              Accept no substitutions.
             </p>
           </div>
         )

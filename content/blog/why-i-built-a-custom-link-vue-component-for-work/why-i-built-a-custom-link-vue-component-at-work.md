@@ -63,7 +63,7 @@ export default {
 With this, all the dev would need to do is pass along the link object via a prop to the component and everything would get handled automagically. This means the dev experience went from this:
 
 ```html
-<a href="{{link.url}}>click me</a>
+<a href="{{link.url}}">click me</a>
 ```
 
 To this:
