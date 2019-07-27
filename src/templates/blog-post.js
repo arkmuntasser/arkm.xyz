@@ -3,9 +3,9 @@ import { Link, graphql } from 'gatsby'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import Bio from '../components/Bio'
-import Layout from '../components/Layout'
+import { Layout } from '../components/layouts/index'
 import SEO from '../components/seo'
-import { rhythm, scale } from '../utils/typography'
+// import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -19,10 +19,9 @@ class BlogPostTemplate extends React.Component {
         <h1>{post.frontmatter.title}</h1>
         <p
           style={{
-            ...scale(-1 / 5),
             display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
+            marginBottom: `1rem`,
+            marginTop: `-1rem`,
           }}
         >
           {post.frontmatter.date}
@@ -30,7 +29,7 @@ class BlogPostTemplate extends React.Component {
         <MDXRenderer>{post.code.body}</MDXRenderer>
         <hr
           style={{
-            marginBottom: rhythm(1),
+            marginBottom: `1rem`,
           }}
         />
         <Bio />

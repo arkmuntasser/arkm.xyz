@@ -1,0 +1,24 @@
+@import url('https://rsms.me/inter/inter.css');
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif;
+  }
+}
+
+a {
+  color: #ec407a;
+  text-decoration: none;
+  -webkit-text-decoration-skip: objects;
+}
