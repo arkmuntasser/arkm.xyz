@@ -5,7 +5,7 @@ date: 2019-01-04
 tags: vue, links, anchors, components
 ---
 
-I’ve been working on a component library at work for about 6 months now. I want to detail some of the work and though that went into building these components.
+I’ve been working on a component library at work for about 6 months now. I want to detail some of the work and thought that went into building these components.
 
 When I first started drafting the needs for a component library I looked to what was clunky for our devs to handle to see if any opportunities to simplify presented themselves. I decided to start at one of the smallest building blocks for one of our sites: a link.
 
@@ -74,4 +74,7 @@ To this:
 
 It’s roughly the same amount of effort but ensures that we aren’t missing out on easy accessibility or best practices wins.
 
-And so the first component of our component library was made. Next time, I’ll go over how I tackled text.
+And so the first component of our component library was made.
+
+**Edit:**
+Since working on this library and writing this post, we have decided to not continue adopting Vue at work. We love Vue, but other departments were using React and we ultimately decided that our department should not be the only one using Vue so we're moving to adopt React as well.
