@@ -3,6 +3,8 @@ title: How to Improve Dropdown Navigation with Animation
 path: /how-to-improve-dropdown-navigation-with-animation
 date: 2017-12-27
 tags: animation, css, navigation, html
+redirect_from:
+  - /articles/post/build-a-better-nav-with-animation/314/
 ---
 
 One of the most annoying things on the web is when a dropdown opens on hover and you move the most diagonally into the dropdown, but in doing so the dropdown disappears because I stopped hovering over the zone that triggers the dropdown to appear. There's a couple ways to go about this including this [awesome SVG-based solution from Hakim El Hattab](https://team.slides.com/hakimel/cssday-2019#/).

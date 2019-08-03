@@ -3,6 +3,8 @@ title: What Even are "Real" Developers
 path: /what-even-are-real-developers
 date: 2018-04-01
 tags: culture
+redirect_from:
+  - /articles/post/on-real-developers/332/
 ---
 
 Real developers.

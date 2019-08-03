@@ -11,6 +11,10 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
+      `https://arkm.xyz${post.frontmatter.path}`
+    )}`;
+    const editUrl = `https://github.com/arkmuntasser/arkm-gatsby/edit/master/content/blog${post.frontmatter.path}.md`;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -27,6 +31,15 @@ class BlogPostTemplate extends React.Component {
           <div className="content">
             <MDXRenderer>{post.code.body}</MDXRenderer>
           </div>
+          <footer>
+            <a href={discussUrl} target="_blank" rel="noopener noreferrer">
+              Discuss on Twitter
+            </a>
+
+            <a href={editUrl} target="_blank" rel="noopener noreferrer">
+              Edit this page
+            </a>
+          </footer>
         </div>
         <hr
           style={{
@@ -79,6 +92,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       frontmatter {
         title
+        path
         date(formatString: "MMMM DD, YYYY")
       }
       code {

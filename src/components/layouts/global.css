@@ -97,3 +97,8 @@ h6 > a:hover {
 .post .prism-code {
   padding: 24px;
 }
+
+.post img {
+  display: block;
+  max-width: 100%;
+}

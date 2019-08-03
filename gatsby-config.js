@@ -133,5 +133,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    'gatsby-redirect-from',
+    'gatsby-plugin-meta-redirect',
   ],
 }

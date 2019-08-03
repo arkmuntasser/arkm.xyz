@@ -3,6 +3,8 @@ title: Why I built a Custom Link Vue Component at Work
 path: /why-i-built-a-custom-link-vue-component-at-work
 date: 2019-01-04
 tags: vue, links, anchors, components
+redirect_from:
+  - /articles/post/building-a-custom-link-component-for-fun-and-profit/460/
 ---
 
 I’ve been working on a component library at work for about 6 months now. I want to detail some of the work and thought that went into building these components.
