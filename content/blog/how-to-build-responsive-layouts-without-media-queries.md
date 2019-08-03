@@ -142,11 +142,11 @@ On the other hand, `auto-fit` instead errs on the side of using the maximum valu
 
 If you are building a layout or creating a design of any complexity, CSS Grid is probably the tool you'll want to reach for. It's incredibly expressive so you can get exactly the effect you desire.
 
+## Conclusion
+
 That's 3 ways to do responsive layouts without using a media query. There are other way certainly and I presented these 3 options as distinct from each other, but in reality you can mix and match these into each other as you need. It's very common to have a grid-item also be a flex-container.
 
 Media queries are merely another tool in our tool belt for building responsive layouts. Use the right tool for the job, but most importantly, build incredibl layouts.
-
----
 
 Check out the people I learned from for more information:
 

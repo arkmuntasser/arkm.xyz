@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import './global.css'
 
-// import { rhythm, scale } from '../../utils/typography'
-
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
@@ -56,16 +54,25 @@ class Layout extends React.Component {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: `630px`,
-          padding: `42px 21px`,
+          maxWidth: `800px`,
+          padding: `3rem 2rem`,
         }}
       >
         {header}
         {children}
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <footer className="global-footer">
+          <a className="footer-link" href="https://twitter.com/arkmuntasser" target="_blank" rel="noopener noreferrer">
+            Twitter
+          </a>
+          <a className="footer-link" href="https://github.com/arkmuntasser" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <Link className="footer-link" to="/rss.xml">
+            RSS
+          </Link>
+          <Link className="footer-link" to="/changelog">
+            Changelog
+          </Link>
         </footer>
       </div>
     )

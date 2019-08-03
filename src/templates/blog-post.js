@@ -12,32 +12,47 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
     const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
-      `https://arkm.xyz${post.frontmatter.path}`
+      `https://arkm.xyz${post.fields.slug}`
     )}`;
-    const editUrl = `https://github.com/arkmuntasser/arkm-gatsby/edit/master/content/blog${post.frontmatter.path}.md`;
+    const editUrl = `https://github.com/arkmuntasser/arkm-gatsby/edit/master/content/blog${post.fields.slug}.md`;
+    const shareUrl = `http://twitter.com/share?text=${encodeURIComponent(post.frontmatter.title)}&url=${encodeURIComponent(
+      `https://arkm.xyz${post.fields.slug}`
+    )}&via=arkmuntasser`;
+    const tags = post.frontmatter.tags.split(', ').sort();
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <div className="post">
-          <p className="date">
-            {post.frontmatter.date}
-          </p>
+          <time className="date" datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
           <h1 className="title">
             <span>
               {post.frontmatter.title}
             </span>
           </h1>
+          <ul className="post-tags">
+            {tags.map((tag) => <li className="post-tag">{tag}</li>)}
+          </ul>
+          <div className="extras">
+            <span>{post.timeToRead} minute read</span>
+            &nbsp;//&nbsp;
+            <a href={shareUrl} target="_blank" rel="noopener noreferrer">
+              Share
+            </a>
+            &nbsp;//&nbsp;
+            <a href={editUrl} target="_blank" rel="noopener noreferrer">
+              Edit this page
+            </a>
+          </div>
           <div className="content">
             <MDXRenderer>{post.code.body}</MDXRenderer>
           </div>
           <footer>
-            <a href={discussUrl} target="_blank" rel="noopener noreferrer">
-              Discuss on Twitter
+            <a className="twitter-link" href={shareUrl} target="_blank" rel="noopener noreferrer">
+              Share
             </a>
-
-            <a href={editUrl} target="_blank" rel="noopener noreferrer">
-              Edit this page
+            <a className="twitter-link" href={discussUrl} target="_blank" rel="noopener noreferrer">
+              Discuss
             </a>
           </footer>
         </div>
@@ -89,14 +104,19 @@ export const pageQuery = graphql`
     }
     mdx(fields: { slug: { eq: $slug } }) {
       id
+      timeToRead
       excerpt(pruneLength: 160)
       frontmatter {
         title
-        path
+        tags
         date(formatString: "MMMM DD, YYYY")
+        datetime: date(formatString: "YYYY-MM-DD")
       }
       code {
         body
+      }
+      fields {
+        slug
       }
     }
   }

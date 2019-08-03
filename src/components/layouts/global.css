@@ -49,6 +49,14 @@ h6 > a:hover {
   text-decoration: #e91e63 underline;
 }
 
+.global-footer {
+  display: flex;
+}
+
+.global-footer .footer-link {
+  margin-right: 1rem;
+}
+
 .post-snippet {
   margin-bottom: 32px;
 }
@@ -101,4 +109,29 @@ h6 > a:hover {
 .post img {
   display: block;
   max-width: 100%;
+}
+
+.post .post-tags {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.post .post-tag {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  background-color: whitesmoke;
+}
+
+.post .extras {
+  font-size: 0.8rem;
+}
+
+.post .twitter-link {
+  display: inline-block;
+  margin-right: 1rem;
 }

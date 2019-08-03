@@ -13,7 +13,9 @@ function Bio() {
             style={{
               display: `flex`,
               alignItems: `center`,
+              // padding: `8rem calc((100vw - 800px + 2rem) / 2)`,
               marginBottom: `64px`,
+              // backgroundColor: `whitesmoke`,
             }}
           >
             <Image
