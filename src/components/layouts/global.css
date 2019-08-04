@@ -118,6 +118,7 @@ h6 > a:hover {
 .post .prism-code {
   padding: 1.3rem;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 .post img {
