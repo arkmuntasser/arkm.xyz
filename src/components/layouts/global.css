@@ -146,7 +146,63 @@ h6 > a:hover {
   font-size: 0.8rem;
 }
 
+.post footer {
+  margin-bottom: 48px;
+}
+
 .post .twitter-link {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   margin-right: 1rem;
+  padding: 0.2rem 0.7rem;
+  color: #8e0030;
+  border-radius: 4px;
+  background-color: #ffdfe9;
+}
+
+.post .twitter-link:hover {
+  text-decoration: none;
+  background-color: #f8cad9;
+}
+
+.post .twitter-link .icon {
+  margin-right: 0.4rem;
+}
+
+.post .twitter-link .icon svg {
+  width: 24px;
+  fill: #d80c50;
+}
+
+ol,
+ul {
+  list-style: none;
+  counter-reset: li;
+}
+
+ol:not(.no-bullets) li::before {
+  counter-increment: li;
+  content: '.' counters(li, '.');
+  color: #ff0057;
+  width: 1em;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  text-align: right;
+  font-feature-settings: 'ss01' 1;
+  font-weight: 700;
+  direction: rtl;
+  float: left;
+}
+
+ul:not(.no-bullets) li::before {
+  content: '◦';
+  color: #ff0057;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  text-align: right;
+  font-size: 1.6rem;
+  font-weight: 700;
 }
