@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "arkm",
+  "alias": ["arkm.xyz", "www.arkm.xyz"],
   "builds": [
     {
       "src": "package.json",
