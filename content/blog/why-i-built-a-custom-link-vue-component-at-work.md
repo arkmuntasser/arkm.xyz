@@ -1,6 +1,5 @@
 ---
 title: Why I built a Custom Link Vue Component at Work
-path: /why-i-built-a-custom-link-vue-component-at-work
 date: 2019-01-04
 tags: vue, links, anchors, components
 redirect_from:

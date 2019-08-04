@@ -1,6 +1,5 @@
 ---
 title: Write Cleaner Code by Separating Logic from Templates
-path: /write-cleaner-code-by-separating-logic-from-templates
 date: 2019-07-24
 tags: clean code, goatee, html, javascript
 ---

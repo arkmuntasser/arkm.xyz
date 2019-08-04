@@ -1,6 +1,5 @@
 ---
 title: How to Give an HTML Element an Aspect Ratio
-path: /how-to-give-an-html-element-an-aspect-ratio
 date: 2019-07-27
 tags: html, css, aspect ratio
 ---

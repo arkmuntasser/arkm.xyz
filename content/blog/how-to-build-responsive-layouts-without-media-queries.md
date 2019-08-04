@@ -1,6 +1,5 @@
 ---
 title: How to Build Responsive Layouts without Media Queries
-path: /how-to-build-responsive-layouts-without-media-queries
 date: 2019-08-02
 tags: responsive, layout, media queries, flexbox, css grid, multi-column, css
 ---

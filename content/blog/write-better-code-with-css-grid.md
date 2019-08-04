@@ -1,6 +1,5 @@
 ---
 title: Write Better Code with CSS Grid
-path: /write-better-code-with-css-grid
 date: 2018-02-11
 tags: css grid, layout, design, clean code, html
 redirect_from:

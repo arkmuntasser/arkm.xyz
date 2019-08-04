@@ -1,6 +1,5 @@
 ---
 title: How I Created an Assessment to Evaluate Potential New Hires
-path: /how-i-created-an-assessment-to-evaluate-potential-new-hires
 date: 2018-11-10
 tags: culture, hiring
 ---

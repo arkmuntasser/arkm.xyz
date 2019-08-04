@@ -1,6 +1,5 @@
 ---
 title: How to Improve Dropdown Navigation with Animation
-path: /how-to-improve-dropdown-navigation-with-animation
 date: 2017-12-27
 tags: animation, css, navigation, html
 redirect_from:

@@ -1,6 +1,5 @@
 ---
 title: How I Solved the Impossible Layout
-path: /how-i-solved-the-impossible-layout
 date: 2019-03-23
 tags: html, javascript, css, layout
 redirect_from:
