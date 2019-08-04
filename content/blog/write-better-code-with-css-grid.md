@@ -23,7 +23,7 @@ A big one is there are fewer `div`s cluttering up the DOM which can improve perf
 
 Let's consider this following layout:
 
-![](https://cms.arkmuntasser.com/wp-content/uploads/2018/07/1_UNxHl5_hxUI9RInGuiNvLg.png)
+![](https://res.cloudinary.com/arkmuntasser/image/upload/c_scale,f_auto,q_80,w_800/v1564885707/PixelSnap_2019-08-03_at_19.21.49_2x.png)
 
 Using Foundation, I might write some HTML like this:
 
@@ -133,7 +133,7 @@ What if we change our CSS to this:
 
 And get this:
 
-![](https://cms.arkmuntasser.com/wp-content/uploads/2018/07/1_Ql1Qe8Wwxwc6mpNcPb0KZg.png)
+![](https://res.cloudinary.com/arkmuntasser/image/upload/c_scale,f_auto,q_80,w_800/v1564885707/PixelSnap_2019-08-03_at_19.22.39_2x.png)
 
 Or maybe we want something a little wilder?
 
@@ -156,7 +156,7 @@ Or maybe we want something a little wilder?
 .articles article:nth-child(6) { grid-column: 3; }
 ```
 
-![](https://cms.arkmuntasser.com/wp-content/uploads/2018/07/1_Ysy7Ooi_8bGrRKKB5kuGsg.png)
+![](https://res.cloudinary.com/arkmuntasser/image/upload/c_scale,f_auto,q_80,w_800/v1564885707/PixelSnap_2019-08-03_at_19.23.33_2x.png)
 
 Maybe something a bit more standard?
 
@@ -170,6 +170,6 @@ Maybe something a bit more standard?
 .articles article { height: 19vw; }
 ```
 
-![](https://cms.arkmuntasser.com/wp-content/uploads/2018/07/1_h33rpmG7dEMBq8rCwf5HHw.png)
+![](https://res.cloudinary.com/arkmuntasser/image/upload/c_scale,f_auto,q_80,w_800/v1564885708/PixelSnap_2019-08-03_at_19.24.07_2x.png)
 
 Across all these layouts, there's only maybe 12 lines of CSS that's different. That's the power of CSS Grid and the power of moving layout out of the HTML.
