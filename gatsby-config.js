@@ -133,7 +133,12 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    'gatsby-redirect-from',
+    {
+      resolve: 'gatsby-redirect-from',
+      options: {
+        query: 'allMdx'
+      }
+    },
     'gatsby-plugin-meta-redirect',
   ],
 }
