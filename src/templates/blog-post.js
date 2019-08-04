@@ -14,7 +14,7 @@ class BlogPostTemplate extends React.Component {
     const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
       `https://arkm.xyz${post.fields.slug}`
     )}`;
-    const editUrl = `https://github.com/arkmuntasser/arkm/edit/master/content/blog${post.fields.slug}.md`;
+    const editUrl = `https://github.com/arkmuntasser/arkm/edit/master/content/blog${post.fields.slug.slice(0,-1)}.md`;
     const shareUrl = `http://twitter.com/share?text=${encodeURIComponent(post.frontmatter.title)}&url=${encodeURIComponent(
       `https://arkm.xyz${post.fields.slug}`
     )}&via=arkmuntasser`;
