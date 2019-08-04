@@ -14,7 +14,7 @@ I prefer an approach I learned from [Jen Simmons](https://www.youtube.com/watch?
 A big one is there are fewer `div`s cluttering up the DOM which can improve performance. And it also results in cleaner looking code since there are fewer utility-classes in the HTML (though this last one is subjective as frameworks like [Tailwind CSS](https://tailwindcss.com/) make a reasonable argument for more of these utility-classes in your HTML).
 
 * [View Demo App](https://ui-playground-grid-demo.glitch.me/)
-* [Download Source Code on GitHub]()
+* [Download Source Code on GitHub](https://github.com/arkmuntasser/css-grid-demos)
 
 ## Prerequisites
 

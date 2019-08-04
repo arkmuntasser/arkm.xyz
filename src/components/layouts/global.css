@@ -102,8 +102,22 @@ h6 > a:hover {
   line-height: 1.6;
 }
 
+.post .filename {
+  padding: 0.5rem 1.3rem;
+  font-size: 0.8rem;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  background-color: #1a1c20;
+}
+
+.post .filename + .prism-code {
+  margin-top: 0;
+  border-radius: 0 0 8px 8px;
+}
+
 .post .prism-code {
-  padding: 24px;
+  padding: 1.3rem;
+  border-radius: 8px;
 }
 
 .post img {
@@ -123,8 +137,9 @@ h6 > a:hover {
   margin-bottom: 0.5rem;
   padding: 0.5rem;
   font-size: 0.7rem;
+  color: #8e0030;
   border-radius: 4px;
-  background-color: whitesmoke;
+  background-color: #ffdfe9;
 }
 
 .post .extras {

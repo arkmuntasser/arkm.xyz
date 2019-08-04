@@ -24,26 +24,30 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <div className="post">
-          <time className="date" datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
-          <h1 className="title">
-            <span>
-              {post.frontmatter.title}
-            </span>
-          </h1>
-          <ul className="post-tags">
-            {tags.map((tag) => <li className="post-tag">{tag}</li>)}
-          </ul>
-          <div className="extras">
-            <span>{post.timeToRead} minute read</span>
-            &nbsp;//&nbsp;
-            <a href={shareUrl} target="_blank" rel="noopener noreferrer">
-              Share
-            </a>
-            &nbsp;//&nbsp;
-            <a href={editUrl} target="_blank" rel="noopener noreferrer">
-              Edit this page
-            </a>
-          </div>
+          <header style={{
+            marginBottom: `2rem`
+          }}>
+            <time className="date" datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
+            <h1 className="title">
+              <span>
+                {post.frontmatter.title}
+              </span>
+            </h1>
+            <ul className="post-tags">
+              {tags.map((tag) => <li className="post-tag">{tag}</li>)}
+            </ul>
+            <div className="extras">
+              <span>{post.timeToRead} minute read</span>
+              &nbsp;//&nbsp;
+              <a href={shareUrl} target="_blank" rel="noopener noreferrer">
+                Share
+              </a>
+              &nbsp;//&nbsp;
+              <a href={editUrl} target="_blank" rel="noopener noreferrer">
+                Edit this page
+              </a>
+            </div>
+          </header>
           <div className="content">
             <MDXRenderer>{post.code.body}</MDXRenderer>
           </div>

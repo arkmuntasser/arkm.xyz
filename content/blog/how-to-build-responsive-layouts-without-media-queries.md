@@ -10,9 +10,9 @@ A common misconception I see is that responsive web development means loading up
 Let's talk about building responsive layouts without media queries.
 
 * [View Demo App](https://inglorious-paper.glitch.me/)
-* [Download Source Code on GitHub]()
+* [Download Source Code on GitHub](https://github.com/arkmuntasser/responsive-layouts-without-media-queries)
 
-## Prerequisites
+**Prerequisites**
 
 * Working knowledge of [HTML and CSS](https://internetingishard.com/html-and-css/)
 * Familiarity with [Responsive Web Development](https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/)
@@ -24,6 +24,8 @@ In this article, we're going to discuss three ways to build a responsive layout:
 ### Multi-column
 
 Multi-column is perfect for when you want to get a newspaper like effect where the content builds downward and at some point breaks into a new column.
+
+<div class="filename">index.html</div>
 
 ```html
 <ul class="multicolumn">
@@ -40,6 +42,7 @@ Multi-column is perfect for when you want to get a newspaper like effect where t
   <li>Item 11</li>
 </ul>
 ```
+<div class="filename">style.css</div>
 
 ```css
 .multicolumn {
@@ -61,21 +64,7 @@ Flexbox can work in either a row or column context. For this article, I'm going 
 
 Where multi-column wraps vertically like a newspaper, flexbox wraps horizontally like text does.
 
-```html
-<ul class="flexbox">
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
-  <li>Item 4</li>
-  <li>Item 5</li>
-  <li>Item 6</li>
-  <li>Item 7</li>
-  <li>Item 8</li>
-  <li>Item 9</li>
-  <li>Item 10</li>
-  <li>Item 11</li>
-</ul>
-```
+<div class="filename">style.css</div>
 
 ```css
 .flexbox {
@@ -91,6 +80,8 @@ Looking at the above example, you can see the items count from left to right and
 
 Notice the last line of my CSS.
 
+<div class="filename">style.css</div>
+
 ```css
 .flexbox > * { flex: 1 1 280px; }
 ```
@@ -104,6 +95,8 @@ Flexbox is ideal for situations where you have a list of items, but you don't pa
 ### CSS Grid
 
 CSS Grid is [wickedly powerful](/write-better-code-with-css-grid) and can enable a plethora of complex layouts.
+
+<div class="filename">index.html</div>
 
 ```html
 <ul class="grid fill">
@@ -120,6 +113,8 @@ CSS Grid is [wickedly powerful](/write-better-code-with-css-grid) and can enable
   <li>Item 4</li>
 </ul>
 ```
+
+<div class="filename">style.css</div>
 
 ```css
 .grid { display: grid; }
