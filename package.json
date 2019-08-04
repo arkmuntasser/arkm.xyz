@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "arkm",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "My blog!",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Amir R Muntasser",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/arkmuntasser/arkm-gatsby/issues"
   },
   "dependencies": {
     "@mdx-js/mdx": "^0.16.6",
@@ -47,7 +47,7 @@
     "eslint-plugin-react": "^7.11.1",
     "prettier": "^1.14.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://arkm.xyz/",
   "keywords": [
     "gatsby"
   ],
@@ -55,7 +55,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/arkmuntasser/arkm-gatsby.git"
   },
   "scripts": {
     "dev": "gatsby develop",
