@@ -8,9 +8,9 @@ const Changelog = ({ location, data}) => {
   const siteTitle = data.site.siteMetadata.title
   const log = [
     {
-      date: '2019-08-03',
+      date: 'August 03, 2019',
       changes: [
-        'launch!'
+        'Launched!'
       ]
     }
   ];
@@ -19,12 +19,12 @@ const Changelog = ({ location, data}) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Changelog" />
       <h1>Changelog</h1>
-      <ul>
+      <ul className="changelog no-bullets">
         {log.map(({ date, changes }) => (
-          <li>
-            <time className="date" datetime={date}>{date}</time>
+          <li key={date}>
+            <time className="date" dateTime={date}>{date}</time>
             <ul>
-              {changes.map((change) => <li>{change}</li>)}
+              {changes.map((change, i) => <li key={i}>{change}</li>)}
             </ul>
           </li>
         ))}

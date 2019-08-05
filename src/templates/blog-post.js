@@ -34,7 +34,7 @@ class BlogPostTemplate extends React.Component {
               </span>
             </h1>
             <ul className="post-tags no-bullets">
-              {tags.map((tag) => <li className="post-tag">{tag}</li>)}
+              {tags.map((tag) => <li className="post-tag" key={tag}>{tag}</li>)}
             </ul>
             <div className="extras">
               <span>{post.timeToRead} minute read</span>
