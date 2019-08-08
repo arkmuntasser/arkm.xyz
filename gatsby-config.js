@@ -104,6 +104,7 @@ module.exports = {
               allMdx(
                 limit: 1000,
                 sort: { order: DESC, fields: [frontmatter___date] },
+                filter: { frontmatter: { template: { eq: "post" } } }
               ) {
                 edges {
                   node {
@@ -129,11 +130,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `arkm.xyz`,
+        short_name: `arkm.xyz`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#ff0057`,
         display: `minimal-ui`,
         icon: `content/assets/arkm-icon.png`,
       },
