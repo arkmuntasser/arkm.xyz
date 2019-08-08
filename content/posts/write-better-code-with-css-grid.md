@@ -9,7 +9,6 @@ tags:
   - clean code
   - html
 redirect_from:
-  - /write-better-code-with-css-grid/
   - /articles/post/laying-out-the-future-in-css-grid/321/
 ---
 

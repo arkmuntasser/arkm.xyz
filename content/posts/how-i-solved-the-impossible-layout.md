@@ -8,7 +8,6 @@ tags:
   - css
   - layout
 redirect_from:
-  - /how-i-solved-the-impossible-layout/
   - /articles/post/tackling-the-impossible-layout/470/
 ---
 

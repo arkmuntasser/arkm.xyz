@@ -5,7 +5,6 @@ date: 2018-04-01
 tags:
   - culture
 redirect_from:
-  - /what-even-are-real-developers/
   - /articles/post/on-real-developers/332/
 ---
 
