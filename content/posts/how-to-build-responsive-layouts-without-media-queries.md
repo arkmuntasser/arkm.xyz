@@ -10,6 +10,8 @@ tags:
   - css grid
   - multi-column
   - css
+redirect_from:
+  - /how-to-build-responsive-layouts-without-media-queries/
 ---
 
 A common misconception I see is that responsive web development means loading up your CSS files with media queries for everything. Don't get me wrong, media queries are important and you should definitely use them, but they aren't always necessary.

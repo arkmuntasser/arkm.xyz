@@ -15,7 +15,7 @@ const TagTemplate = ({ data, location, pageContext }) => {
     <Layout location={location} title={site.siteMetadata.title}>
       <SEO title={`Posts tagged as "${tag}"`} />
       <h1>Posts tagged as <u>{tag}</u></h1>
-      {posts.map(({ node }) => <PostSnippet post={node} />)}
+      {posts.map(({ node }) => <PostSnippet post={node} key={node.fields.slug} />)}
       <Bio />
     </Layout>
   );

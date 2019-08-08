@@ -8,6 +8,7 @@ tags:
   - navigation
   - html
 redirect_from:
+  - /how-to-improve-dropdown-navigation-with-animation/
   - /articles/post/build-a-better-nav-with-animation/314/
 ---
 

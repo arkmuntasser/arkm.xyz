@@ -8,6 +8,7 @@ tags:
   - html
   - javascript
 redirect_from:
+  - /write-cleaner-code-by-separating-logic-from-templates/
   - /articles/post/🔥-cleaner-code-separating-logic-from-templates/476/
   - /articles/post/%f0%9f%94%a5-cleaner-code-separating-logic-from-templates/476/
 ---

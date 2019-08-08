@@ -8,6 +8,7 @@ tags:
   - anchors
   - components
 redirect_from:
+  - /why-i-built-a-custom-link-vue-component-at-work/
   - /articles/post/building-a-custom-link-component-for-fun-and-profit/460/
 ---
 

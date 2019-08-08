@@ -28,7 +28,7 @@ class BlogPostTemplate extends React.Component {
           <header style={{
             marginBottom: `2rem`
           }}>
-            <time className="date" datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
+            <time className="date" dateTime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
             <h1 className="title">
               <span>
                 {post.frontmatter.title}

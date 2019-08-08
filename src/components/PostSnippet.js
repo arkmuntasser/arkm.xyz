@@ -5,10 +5,10 @@ const PostSnippet = ({ post }) => {
   const title = post.frontmatter.title || post.fields.slug
 
   return (
-    <div className="post-snippet" key={post.fields.slug}>
+    <div className="post-snippet">
       <small className="date">{post.frontmatter.date}</small>
       <h3 className="title">
-        <Link to={post.fields.slug}>
+        <Link to={`/posts${post.fields.slug}`}>
           {title}
         </Link>
       </h3>
