@@ -1,7 +1,12 @@
 ---
+template: post
 title: Why I built a Custom Link Vue Component at Work
 date: 2019-01-04
-tags: vue, links, anchors, components
+tags:
+  - vue
+  - links
+  - anchors
+  - components
 redirect_from:
   - /articles/post/building-a-custom-link-component-for-fun-and-profit/460/
 ---

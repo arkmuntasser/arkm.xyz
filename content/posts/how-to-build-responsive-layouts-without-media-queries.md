@@ -1,7 +1,15 @@
 ---
+template: post
 title: How to Build Responsive Layouts without Media Queries
 date: 2019-08-02
-tags: responsive, layout, media queries, flexbox, css grid, multi-column, css
+tags:
+  - responsive
+  - layout
+  - media queries
+  - flexbox
+  - css grid
+  - multi-column
+  - css
 ---
 
 A common misconception I see is that responsive web development means loading up your CSS files with media queries for everything. Don't get me wrong, media queries are important and you should definitely use them, but they aren't always necessary.

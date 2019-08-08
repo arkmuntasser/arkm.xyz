@@ -1,7 +1,13 @@
 ---
+template: post
 title: Write Better Code with CSS Grid
 date: 2018-02-11
-tags: css grid, layout, design, clean code, html
+tags:
+  - css grid
+  - layout
+  - design
+  - clean code
+  - html
 redirect_from:
   - /articles/post/laying-out-the-future-in-css-grid/321/
 ---

@@ -53,6 +53,15 @@ h6 > a:hover {
   text-decoration: #e91e63 underline;
 }
 
+h2 {
+  font-size: 1.2rem;
+  color: #676767;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
 .global-footer {
   display: flex;
 }
@@ -68,6 +77,10 @@ h6 > a:hover {
 .post .title,
 .post-snippet .title {
   position: relative;
+}
+
+.post-snippet .title {
+  margin-bottom: 0.25rem;
 }
 
 .post .title span {
@@ -152,6 +165,11 @@ h6 > a:hover {
   color: #8e0030;
   border-radius: 4px;
   background-color: #ffdfe9;
+}
+
+.post .post-tag:hover {
+  text-decoration: none;
+  background-color: #f8cad9;
 }
 
 .post .extras {

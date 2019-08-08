@@ -1,7 +1,10 @@
 ---
+template: post
 title: How I Created an Assessment to Evaluate Potential New Hires
 date: 2018-11-10
-tags: culture, hiring
+tags:
+  - culture
+  - hiring
 ---
 
 Earlier this year I was tasked with developing a method of evaluating developer skill for potential new hires. We have an unofficial no whiteboard-ing policy so previously we relied on resumes, referral, and interviews to measure our candidates. While this almost always resulted in a great cultural fit, it was a crapshoot how skilled the developer would actually be. This would often result in us hiring less experienced developers than we wanted and having to spend more time training.

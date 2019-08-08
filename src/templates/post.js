@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import slugify from 'slugify';
 
 import Bio from '../components/Bio'
-import { Layout } from '../components/layouts/index'
+import Layout from '../layouts/Layout'
 import SEO from '../components/seo'
 
 class BlogPostTemplate extends React.Component {
@@ -18,7 +19,7 @@ class BlogPostTemplate extends React.Component {
     const shareUrl = `http://twitter.com/share?text=${encodeURIComponent(post.frontmatter.title)}&url=${encodeURIComponent(
       `https://arkm.xyz${post.fields.slug}`
     )}&via=arkmuntasser`;
-    const tags = post.frontmatter.tags.split(', ').sort();
+    const tags = post.frontmatter.tags.sort();
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -34,7 +35,11 @@ class BlogPostTemplate extends React.Component {
               </span>
             </h1>
             <ul className="post-tags no-bullets">
-              {tags.map((tag) => <li className="post-tag" key={tag}>{tag}</li>)}
+              {tags.map((tag) => (
+                <Link className="post-tag" to={`/tags/${slugify(tag)}`} key={tag}>
+                  <li>{tag}</li>
+                </Link>
+              ))}
             </ul>
             <div className="extras">
               <span>{post.timeToRead} minute read</span>
@@ -44,7 +49,7 @@ class BlogPostTemplate extends React.Component {
               </a>
               &nbsp;//&nbsp;
               <a href={editUrl} target="_blank" rel="noopener noreferrer">
-                Edit this page
+              <i style={{ fontSize: `1rem` }} aria-hidden="true">&#9998;</i> Edit this post
               </a>
             </div>
           </header>

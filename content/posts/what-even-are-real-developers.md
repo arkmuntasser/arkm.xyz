@@ -1,7 +1,9 @@
 ---
+template: post
 title: What Even are "Real" Developers
 date: 2018-04-01
-tags: culture
+tags:
+  - culture
 redirect_from:
   - /articles/post/on-real-developers/332/
 ---

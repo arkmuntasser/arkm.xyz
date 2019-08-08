@@ -1,7 +1,11 @@
 ---
+template: post
 title: How to Give an HTML Element an Aspect Ratio
 date: 2019-07-27
-tags: html, css, aspect ratio
+tags:
+  - html
+  - css
+  - aspect ratio
 ---
 
 Sometimes you just need a element to shrink or grow in height proportionally with the width. Some tags will natutally do this like the `img` tag or `video` tag, but sometimes you need this functionality on something like a `div`. For example, you might be lazy loading an image, but want to reserve the space of the image so content doesn't jump when the image loads in.

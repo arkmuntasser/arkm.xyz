@@ -1,7 +1,12 @@
 ---
+template: post
 title: How to Improve Dropdown Navigation with Animation
 date: 2017-12-27
-tags: animation, css, navigation, html
+tags:
+  - animation
+  - css
+  - navigation
+  - html
 redirect_from:
   - /articles/post/build-a-better-nav-with-animation/314/
 ---

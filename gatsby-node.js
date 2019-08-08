@@ -1,10 +1,13 @@
 const path = require(`path`)
+const slugify = require('slugify')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const postTemplate = path.resolve(`./src/templates/post.js`)
+  const pageTemplate = path.resolve(`./src/templates/page.js`)
+  const tagTemplate = path.resolve(`./src/templates/tag.js`)
   return graphql(
     `
       {
@@ -20,6 +23,8 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                template
+                tags
               }
               code {
                 scope
@@ -34,16 +39,24 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    // Create blog posts pages.
-    const posts = result.data.allMdx.edges
+    const allMarkdownFiles = result.data.allMdx.edges;
+    const posts = allMarkdownFiles.filter(file => file.node.frontmatter.template === 'post');
+    const pages = allMarkdownFiles.filter(file => file.node.frontmatter.template === 'page');
+    const tags = new Set();
 
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
 
+      if (post.node.frontmatter.tags) {
+        post.node.frontmatter.tags.forEach(tag => {
+          tags.add(tag)
+        })
+      }
+
       createPage({
         path: post.node.fields.slug,
-        component: blogPost,
+        component: postTemplate,
         context: {
           slug: post.node.fields.slug,
           previous,
@@ -51,6 +64,27 @@ exports.createPages = ({ graphql, actions }) => {
         },
       })
     })
+
+    pages.forEach((page) => {
+      createPage({
+        path: page.node.fields.slug,
+        component: pageTemplate,
+        context: {
+          slug: page.node.fields.slug,
+        },
+      })
+    })
+
+    tags.forEach((tag) => {
+      createPage({
+        path: `/tags/${slugify(tag)}`,
+        component: tagTemplate,
+        context: {
+          tag,
+        }
+      })
+    })
+
   })
 }
 

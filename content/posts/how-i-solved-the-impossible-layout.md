@@ -1,7 +1,12 @@
 ---
+template: post
 title: How I Solved the Impossible Layout
 date: 2019-03-23
-tags: html, javascript, css, layout
+tags:
+  - html
+  - javascript
+  - css
+  - layout
 redirect_from:
   - /articles/post/tackling-the-impossible-layout/470/
 ---
