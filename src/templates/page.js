@@ -14,6 +14,7 @@ const PageTemplate = ({ data, location }) => {
       <SEO title={page.frontmatter.title} description={page.excerpt} />
       <div className="page">
         <div className="content">
+          <h1>{page.frontmatter.title}</h1>
           <MDXRenderer>{page.code.body}</MDXRenderer>
         </div>
       </div>
@@ -29,7 +30,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        author
       }
     }
     mdx(fields: { slug: { eq: $slug } }) {

@@ -53,13 +53,30 @@ h6 > a:hover {
   text-decoration: #e91e63 underline;
 }
 
+.gatsby-resp-image-wrapper {
+  margin-top: 2rem;
+  max-width: 100% !important;
+}
+
 h2 {
   font-size: 1.2rem;
   color: #676767;
 }
 
+.page h2 {
+  margin-bottom: 2rem;
+  padding: 3rem 0 1rem;
+  color: #222;
+  border-bottom: 3px solid whitesmoke;
+}
+
 h3 {
-  font-size: 1.1rem;
+  font-size: 1rem;
+}
+
+.page h3 {
+  margin: 1.5rem 0 1rem 0;
+  color: #585858;
 }
 
 .global-footer {
@@ -118,6 +135,7 @@ h3 {
   margin-bottom: 0.4rem;
 }
 
+.page .content,
 .post .content,
 .post-snippet .content {
   font-size: 1rem;
