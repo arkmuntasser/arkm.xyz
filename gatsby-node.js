@@ -55,7 +55,7 @@ exports.createPages = ({ graphql, actions }) => {
       }
 
       createPage({
-        path: `/posts${post.node.fields.slug}`,
+        path: post.node.fields.slug,
         component: postTemplate,
         context: {
           slug: post.node.fields.slug,
