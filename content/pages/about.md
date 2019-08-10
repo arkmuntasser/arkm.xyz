@@ -11,7 +11,7 @@ I’m born and raised in Tucson, AZ, but I am the son of an immigrant. My dad ca
 
 At home, I live for quiet nights in with my love, [Becks](https://twitter.com/beccabummer), and our 3 cats: Mercutio (My perfect prince), Lady, and Pizza.
 
-![My love, Becks, and I on Christmas Eve in Disneyland the night we got engaged.](../assets/me.jpg)
+![Becks and I during our engagement photo shoot](../assets/me.jpg)
 
 ## Previous Gigs
 

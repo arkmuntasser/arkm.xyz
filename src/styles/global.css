@@ -91,6 +91,7 @@ h3 {
   margin-bottom: 32px;
 }
 
+.page .title,
 .post .title,
 .post-snippet .title {
   position: relative;
@@ -100,11 +101,13 @@ h3 {
   margin-bottom: 0.25rem;
 }
 
+.page .title span,
 .post .title span {
   position: relative;
   z-index: 2;
 }
 
+.page .title::before,
 .post .title::before,
 .post-snippet .title::before {
   content: '';
@@ -119,6 +122,11 @@ h3 {
   opacity: 0.6;
 }
 
+.page .title::before {
+  transform: translate(-30%, 10%);
+}
+
+.page .date,
 .changelog .date,
 .post .date,
 .post-snippet .date {

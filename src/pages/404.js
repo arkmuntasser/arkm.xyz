@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from '../layouts/Layout'
 import SEO from '../components/seo'
@@ -6,7 +7,7 @@ import SEO from '../components/seo'
 class NotFoundPage extends React.Component {
   render() {
     return (
-      <Layout location={this.props.location}>
+      <Layout location={this.props.location} title={this.props.data.site.siteMetadata.title}>
         <SEO title="404: Not Found" />
         <h1>Not Found</h1>
         <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
@@ -16,3 +17,13 @@ class NotFoundPage extends React.Component {
 }
 
 export default NotFoundPage
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

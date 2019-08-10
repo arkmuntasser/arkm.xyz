@@ -59,7 +59,14 @@ class Layout extends React.Component {
         }}
       >
         {header}
-        {children}
+        <div
+          className="container"
+          style={{
+            minHeight: `calc(100vh - 40px - 10rem)`
+          }}
+        >
+          {children}
+        </div>
         <footer className="global-footer">
           <a className="footer-link" href="https://twitter.com/arkmuntasser" target="_blank" rel="noopener noreferrer">
             Twitter
@@ -69,6 +76,9 @@ class Layout extends React.Component {
           </a>
           <Link className="footer-link" to="/rss.xml">
             RSS
+          </Link>
+          <Link className="footer-link" to="/about">
+            About Me
           </Link>
           <Link className="footer-link" to="/changelog">
             Changelog
