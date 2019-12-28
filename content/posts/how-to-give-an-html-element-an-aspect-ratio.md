@@ -8,7 +8,7 @@ tags:
   - aspect ratio
 ---
 
-Sometimes you just need a element to shrink or grow in height proportionally with the width. Some tags will natutally do this like the `img` tag or `video` tag, but sometimes you need this functionality on something like a `div`. For example, you might be lazy loading an image, but want to reserve the space of the image so content doesn't jump when the image loads in.
+Sometimes you just need a element to shrink or grow in height proportionally with the width. Some tags will naturally do this like the `img` tag or `video` tag, but sometimes you need this functionality on something like a `div`. For example, you might be lazy loading an image, but want to reserve the space of the image so content doesn't jump when the image loads in.
 
 We can do this using a handy trick of padding. If you give an element a top or bottom padding with a percent value that percent will be in relation to width of the elements parent. Let's take a look at an example to get a better idea of what that means.
 
