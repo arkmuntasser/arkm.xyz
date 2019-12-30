@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../layouts/Layout';
 import SEO from '../components/seo';
 import PostSnippet from '../components/PostSnippet';
+import '../styles/template.css';
 
 function Index(props) {
     const siteTitle = props.data.site.siteMetadata.title;

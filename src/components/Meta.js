@@ -25,7 +25,7 @@ function Meta({ meta }) {
 	return (
 		<div className="metas">
 			<div className="meta">
-				<span className="meta-label">Date</span>
+				<span className="meta-label">Published</span>
 				<time className="meta-content date" dateTime={datetime}>{date}</time>
 			</div>
 

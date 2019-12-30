@@ -7,6 +7,19 @@
   max-width: 80ch;
 }
 
+.template .content > div > p:first-child:first-letter {
+  float: left;
+  padding-top: var(--spacing-1);
+  padding-right: var(--spacing-3);
+  padding-left: var(--spacing-1);
+  font-size: 5rem;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 4rem;
+  color: var(--brand-color);
+  font-feature-settings: 'ss02' 1;
+}
+
 .template .content .filename {
   padding: var(--spacing-2) var(--spacing-5);
   font-size: 0.8rem;
