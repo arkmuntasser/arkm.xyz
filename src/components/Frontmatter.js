@@ -7,7 +7,9 @@ function Frontmatter({ frontmatter }) {
 
 	return (
 		<header className="frontmatter">
-			<h1 className="title">{title}</h1>
+			<h1 className="title">
+				<span>{title}</span>
+			</h1>
 			<Meta meta={meta} />
 			{/* <PostImage /> */}
 		</header>

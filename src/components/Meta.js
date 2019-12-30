@@ -4,8 +4,8 @@ import slugify from 'slugify';
 
 function Tag({ tag }) {
 	return (
-		<li>
-			<Link className="tag" to={`/tags/${slugify(tag)}`}>
+		<li className="tag">
+			<Link to={`/tags/${slugify(tag)}`}>
 				{tag}
 			</Link>
 		</li>
@@ -37,9 +37,19 @@ function Meta({ meta }) {
 
 			<div className="extras">
 				<span>{timeToRead} minute read</span>
-				<a href={shareUrl} target="_blank" rel="noopener noreferrer">Share</a>
-				<a href={editUrl} target="_blank" rel="noopener noreferrer">
-					<i aria-hidden="true">&#9998;</i> Edit this post
+				<a
+					href={shareUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Share
+				</a>
+				<a
+					href={editUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Edit this post
 				</a>
 			</div>
 		</div>
