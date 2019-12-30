@@ -1,0 +1,21 @@
+.site-footer {
+  display: grid;
+  grid-template-columns: var(--spacing-12) 1fr;
+  gap: var(--spacing-6);
+  padding-top: var(--spacing-20);
+  padding-bottom: var(--spacing-12);
+  background-color: var(--gray-200);
+}
+
+.site-footer > * {
+  grid-column: 2;
+  padding: 0 var(--spacing-12);
+}
+
+.site-footer .links {
+  display: flex;
+}
+
+.site-footer .links > * + * {
+  margin-left: var(--spacing-4);
+}

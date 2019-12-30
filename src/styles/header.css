@@ -1,0 +1,44 @@
+.site-header {
+  margin-bottom: var(--spacing-6);
+  padding: 0 var(--spacing-12);
+}
+
+@media (min-width: 64em) {
+  .site-header {
+    margin-bottom: 0;
+    padding: 0;
+    writing-mode: vertical-lr;
+  }
+}
+
+.site-header .logo {
+  margin: 0;
+  padding: var(--spacing-2) var(--spacing-4);
+  max-width: 200px;
+  max-height: 200px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  background-color: var(--gray-900);
+}
+
+.site-header a,
+.site-header a:hover {
+  text-decoration: none;
+}
+
+.site-header a:hover .logo,
+.site-header a:focus .logo {
+  background-color: var(--brand-color);
+}
+
+@media (min-width: 64em) {
+  .site-header .logo {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-4) var(--spacing-2);
+    width: 100%;
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import slugify from 'slugify';
+import '../styles/meta.css';
 
 function Tag({ tag }) {
 	return (

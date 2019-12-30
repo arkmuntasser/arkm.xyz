@@ -1,0 +1,28 @@
+.template {
+  padding: 0 var(--spacing-12);
+}
+
+.template .content {
+  margin-bottom: var(--spacing-12);
+  max-width: 80ch;
+}
+
+.template .content .filename {
+  padding: var(--spacing-2) var(--spacing-5);
+  font-size: 0.8rem;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  background-color: #1a1c20;
+}
+
+.template .content .filename + .prism-code {
+  margin-top: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+.template .content .prism-code {
+  padding: var(--spacing-5);
+  border-radius: 8px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}

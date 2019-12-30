@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import '../styles/header.css';
 
 function Heading({ location, children }) {
 	const { pathname } = location;

@@ -1,28 +1,17 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../layouts/Layout';
+import SEO from '../components/seo';
+import Page from '../components/Page';
 
-import Bio from '../components/Bio'
-import Layout from '../layouts/Layout'
-import SEO from '../components/seo'
-
-const PageTemplate = ({ data, location }) => {
-  const { mdx: page, site } = data;
+function PageTemplate(props) {
+	const page = props.data.mdx;
+	const siteTitle = props.data.site.siteMetadata.title;
 
   return (
-    <Layout location={location} title={site.siteMetadata.title}>
+    <Layout location={props.location} title={siteTitle}>
       <SEO title={page.frontmatter.title} description={page.excerpt} />
-      <div className="page">
-        <div className="content">
-          <h1 className="title">
-            <span>
-              {page.frontmatter.title}
-            </span>
-          </h1>
-          <MDXRenderer>{page.code.body}</MDXRenderer>
-        </div>
-      </div>
-      <Bio />
+			<Page page={page} />
     </Layout>
   );
 };

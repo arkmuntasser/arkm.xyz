@@ -1,0 +1,16 @@
+.layout > .container {
+  min-height: calc(100vh - 289px);
+}
+
+@media (min-width: 64em) {
+  .layout {
+    display: grid;
+    grid-template-columns: var(--spacing-12) 1fr;
+    gap: var(--spacing-6);
+    padding-top: var(--spacing-16);
+  }
+
+  .layout > .site-footer {
+    grid-column: span 2;
+  }
+}

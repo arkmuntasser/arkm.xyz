@@ -1,5 +1,6 @@
 import React from 'react';
 import Meta from './Meta';
+import '../styles/frontmatter.css';
 
 function Frontmatter({ frontmatter }) {
 	const { title, image = null, ...meta } = frontmatter;
@@ -10,7 +11,7 @@ function Frontmatter({ frontmatter }) {
 			<h1 className="title">
 				<span>{title}</span>
 			</h1>
-			<Meta meta={meta} />
+			{ meta.type !== 'page' && <Meta meta={meta} /> }
 			{/* <PostImage /> */}
 		</header>
 	);

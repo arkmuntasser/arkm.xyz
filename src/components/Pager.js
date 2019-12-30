@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import '../styles/pager.css';
 
 function Pager({ context }) {
 	const { previous, next } = context;
