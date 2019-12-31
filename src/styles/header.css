@@ -6,7 +6,7 @@
 @media (min-width: 64em) {
   .site-header {
     margin-bottom: 0;
-    padding: 0;
+    padding: var(--spacing-16) 0;
     writing-mode: vertical-lr;
   }
 }
@@ -41,4 +41,8 @@
     padding: var(--spacing-4) var(--spacing-2);
     width: 100%;
   }
+}
+
+.site-header .logo .tld {
+  font-size: 0.6em;
 }

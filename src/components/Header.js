@@ -15,7 +15,9 @@ function Header({ title, location }) {
 	return (
 		<header className="site-header">
 			<Link to={'/'}>
-				<Heading location={location}>{title}</Heading>
+				<Heading location={location}>
+					{title}<span className="tld">.xyz</span>
+				</Heading>
 			</Link>
 		</header>
 	)

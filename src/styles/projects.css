@@ -1,0 +1,8 @@
+.projects {
+  padding: var(--spacing-12) var(--spacing-16);
+  background-color: var(--gray-100);
+}
+
+.projects > .inner {
+  max-width: 80ch;
+}

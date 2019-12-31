@@ -1,0 +1,49 @@
+.intro {
+  margin-bottom: var(--spacing-12);
+}
+
+.intro .title {
+  position: relative;
+  margin-bottom: var(--spacing-12);
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.intro .title::before {
+  content: '*';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  font-size: 8rem;
+  color: var(--brand-color);
+  transform: translate(-50%, -30%);
+  opacity: 0.6;
+}
+
+.intro .title span {
+  position: relative;
+  z-index: 1;
+}
+
+.intro p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.intro .social-links {
+  display: flex;
+}
+
+.intro .social-link {
+  display: flex;
+  align-items: center;
+}
+
+.intro .social-link + .social-link {
+  margin-left: var(--spacing-8);
+}
+
+.intro .social-link svg {
+  margin-right: var(--spacing-2);
+}

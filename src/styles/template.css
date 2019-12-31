@@ -1,5 +1,6 @@
 .template {
   padding: 0 var(--spacing-12);
+  padding-top: var(--spacing-16);
 }
 
 .template .content {

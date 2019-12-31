@@ -1,4 +1,7 @@
 .layout > .container {
+  display: grid;
+  grid-template-columns: calc(100ch + 2 * var(--spacing-12)) 1fr;
+  gap: var(--spacing-8);
   min-height: calc(100vh - 289px);
 }
 
@@ -6,8 +9,8 @@
   .layout {
     display: grid;
     grid-template-columns: var(--spacing-12) 1fr;
-    gap: var(--spacing-6);
-    padding-top: var(--spacing-16);
+    gap: 0 var(--spacing-6);
+    /* padding-top: var(--spacing-16); */
   }
 
   .layout > .site-footer {
