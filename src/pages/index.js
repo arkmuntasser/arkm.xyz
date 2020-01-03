@@ -1,31 +1,38 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../layouts/Layout';
+import SEO from '../components/seo';
+import PostSnippet from '../components/PostSnippet';
+import Intro from '../components/Intro';
+import '../styles/template.css';
+import Projects from '../components/Projects';
 
-import Bio from '../components/Bio'
-import Layout from '../layouts/Layout'
-import SEO from '../components/seo'
-import PostSnippet from '../components/PostSnippet'
+function Index(props) {
+	const siteTitle = props.data.site.siteMetadata.title;
+	const posts = props.data.allMdx.edges;
 
-class Index extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMdx.edges
-
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        <Bio />
-        {posts.map(({ node }) => <PostSnippet post={node} key={node.fields.slug} />)}
-      </Layout>
-    )
-  }
+	return (
+		<Layout location={props.location} title={siteTitle}>
+			<SEO
+				title="Welcome!"
+				keywords={['blog', 'javascript', 'reat', 'vue', 'css', 'html', 'web development']}
+			/>
+			<div className="template index">
+				<div className="inner">
+					<div className="content">
+						<Intro />
+						<h2>Writings</h2>
+						{posts.map(({ node }) => (
+							<PostSnippet post={node} key={node.fields.slug} />
+						))}
+					</div>
+				</div>
+			</div>
+		</Layout>
+	)
 }
 
-export default Index
+export default Index;
 
 export const pageQuery = graphql`
   query {

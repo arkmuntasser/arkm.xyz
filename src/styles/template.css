@@ -1,0 +1,80 @@
+.template {
+  padding: 0 var(--spacing-8);
+  padding-top: var(--spacing-16);
+}
+
+@media (min-width: 40em) {
+  .template {
+    padding: 0 var(--spacing-12);
+    padding-right: calc(var(--spacing-12) + 8ch);
+    padding-top: var(--spacing-16);
+  }
+}
+
+.template .content {
+  margin-bottom: var(--spacing-12);
+  max-width: 72ch;
+}
+
+.template .content > div > p:first-child:first-letter {
+  float: left;
+  padding-top: var(--spacing-1);
+  padding-right: var(--spacing-3);
+  padding-left: var(--spacing-1);
+  font-size: 5rem;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 4rem;
+  color: var(--brand-color);
+  font-feature-settings: 'ss02' 1;
+}
+
+.template .content .filename {
+  padding: var(--spacing-2) var(--spacing-5);
+  font-size: 0.8rem;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  background-color: #1a1c20;
+}
+
+.template .content .filename + .prism-code {
+  margin-top: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+.template .content .prism-code {
+  padding: var(--spacing-5);
+  border-radius: 8px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.template .content ol,
+.template .content ul {
+  list-style: none;
+  counter-reset: li;
+}
+
+.template .content ol li:before,
+.template .content ul li:before {
+  color: var(--brand-color);
+  width: 1em;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  text-align: right;
+  font-weight: 700;
+}
+
+.template .content ul li:before {
+  content: '•';
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+.template .content ol li:before {
+  counter-increment: li;
+  content: '.' counters(li, '.');
+  font-feature-settings: 'ss01' 1;
+  direction: rtl;
+  float: left;
+}

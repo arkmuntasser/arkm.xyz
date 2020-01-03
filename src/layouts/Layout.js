@@ -1,92 +1,24 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import '../styles/global.css'
+import React from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Projects from '../components/Projects';
+import '../styles/bootstrap-reboot.min.css';
+import '../styles/global.css';
+import '../styles/layout.css';
 
-class Layout extends React.Component {
-  render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+function Layout(props) {
+	const { location, title, children } = props;
 
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            fontSize: `1.5rem`,
-            marginBottom: `1.5rem`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
-    return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: `800px`,
-          padding: `3rem 2rem`,
-        }}
-      >
-        {header}
-        <div
-          className="container"
-          style={{
-            minHeight: `calc(100vh - 40px - 10rem)`
-          }}
-        >
-          {children}
-        </div>
-        <footer className="global-footer">
-          <a className="footer-link" href="https://twitter.com/arkmuntasser" target="_blank" rel="noopener noreferrer">
-            Twitter
-          </a>
-          <a className="footer-link" href="https://github.com/arkmuntasser" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          <Link className="footer-link" to="/rss.xml">
-            RSS
-          </Link>
-          <Link className="footer-link" to="/about">
-            About Me
-          </Link>
-          <Link className="footer-link" to="/changelog">
-            Changelog
-          </Link>
-        </footer>
-      </div>
-    )
-  }
+	return (
+		<div className="layout">
+			<Header title={title} location={location} />
+			<div className="container">
+				{children}
+				<Projects />
+			</div>
+			<Footer />
+		</div>
+	)
 }
 
-export default Layout
+export default Layout;

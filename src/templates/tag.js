@@ -1,22 +1,25 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../layouts/Layout';
+import SEO from '../components/seo';
+import TagPage from '../components/TagPage';
 
-import Bio from '../components/Bio'
-import Layout from '../layouts/Layout'
-import SEO from '../components/seo'
-import PostSnippet from '../components/PostSnippet'
-
-const TagTemplate = ({ data, location, pageContext }) => {
-  const posts = data.allMdx.edges;
-  const site = data.site;
-  const { tag } = pageContext;
+function TagTemplate(props) {
+	const posts = props.data.allMdx.edges;
+	const siteTitle = props.data.site.siteMetadata.title;
+	const tag = props.pageContext.tag;
+	const page = {
+		frontmatter: {
+			title: `Posts tagged as "${tag}"`,
+			type: 'page',
+		},
+		posts
+	}
 
   return (
-    <Layout location={location} title={site.siteMetadata.title}>
-      <SEO title={`Posts tagged as "${tag}"`} />
-      <h1>Posts tagged as <u>{tag}</u></h1>
-      {posts.map(({ node }) => <PostSnippet post={node} key={node.fields.slug} />)}
-      <Bio />
+    <Layout location={props.location} title={siteTitle}>
+      <SEO title={page.frontmatter.title} />
+			<TagPage page={page} />
     </Layout>
   );
 };
