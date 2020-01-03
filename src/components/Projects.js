@@ -44,7 +44,7 @@ function Projects() {
 						<p className="excerpt">{project.description}</p>
 					</div>
 				))}
-				<a href="https://github.com/arkmuntasser?tab=repositories">See all projects</a>
+				<a href="https://github.com/arkmuntasser?tab=repositories">See all projects →</a>
 			</div>
 		</section>
 	)

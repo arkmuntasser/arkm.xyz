@@ -54,14 +54,14 @@ body {
 
 .gatsby-resp-image-wrapper {
   margin-top: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
+  width: 100vw;
   max-width: 100% !important;
 }
 
-@media (min-width: 75em) {
+@media (min-width: 40em) {
   .gatsby-resp-image-wrapper {
-    margin-top: var(--spacing-8);
-    width: 100vw;
-    max-width: 100ch !important;
+    max-width: calc(100% + var(--spacing-8) + 8ch) !important;
   }
 }
 
@@ -71,4 +71,15 @@ a {
 
 a:hover {
   color: #e91e63;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--gray-900);
 }

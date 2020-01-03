@@ -27,6 +27,7 @@
 }
 
 .intro p {
+  margin-bottom: var(--spacing-8);
   font-size: 1.4rem;
   line-height: 1.6;
 }

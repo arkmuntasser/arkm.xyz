@@ -1,8 +1,14 @@
 .projects {
-  padding: var(--spacing-12) var(--spacing-16);
+  padding: var(--spacing-12) var(--spacing-8);
   background-color: var(--gray-100);
 }
 
+@media (min-width: 40em) {
+  .projects {
+    padding: var(--spacing-16) var(--spacing-12);
+  }
+}
+
 .projects > .inner {
-  max-width: 80ch;
+  max-width: 72ch;
 }
