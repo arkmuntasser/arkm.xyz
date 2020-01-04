@@ -55,7 +55,7 @@ body {
 .gatsby-resp-image-wrapper {
   margin-top: var(--spacing-8);
   margin-bottom: var(--spacing-8);
-  width: 100vw;
+  width: calc(100vw - 2 * var(--spacing-8));
   max-width: 100% !important;
 }
 

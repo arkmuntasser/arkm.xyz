@@ -83,6 +83,14 @@
 
 .template .content img {
   display: block;
-  width: 100%;
-  max-width: 100%;
+  margin-top: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
+  width: calc(100vw - 2 * var(--spacing-8));
+  max-width: 100% !important;
+}
+
+@media (min-width: 40em) {
+  .template .content img {
+    max-width: calc(100% + var(--spacing-8) + 8ch) !important;
+  }
 }
