@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { RightArrow as RightArrowIcon } from '../components/Icons';
 import '../styles/projects.css';
 import '../styles/post-snippet.css';
 
@@ -44,7 +45,10 @@ function Projects() {
 						<p className="excerpt">{project.description}</p>
 					</div>
 				))}
-				<a href="https://github.com/arkmuntasser?tab=repositories">See all projects →</a>
+				<a className="view-all" href="https://github.com/arkmuntasser?tab=repositories">
+					See all projects
+					<RightArrowIcon />
+				</a>
 			</div>
 		</section>
 	)

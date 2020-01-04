@@ -12,3 +12,12 @@
 .projects > .inner {
   max-width: 72ch;
 }
+
+.projects .view-all {
+  display: inline-flex;
+  align-items: center;
+}
+
+.projects .view-all svg {
+  margin-left: var(--spacing-2);
+}
