@@ -34,7 +34,7 @@
   font-size: 0.8rem;
   color: #fff;
   border-radius: 8px 8px 0 0;
-  background-color: #1a1c20;
+  background-color: var(--black);
 }
 
 .template .content .filename + .prism-code {
@@ -44,7 +44,9 @@
 
 .template .content .prism-code {
   padding: var(--spacing-5);
+  max-width: calc(100vw - 2 * var(--spacing-8));
   border-radius: 8px;
+  background-color: var(--gray-900) !important;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -77,4 +79,10 @@
   font-feature-settings: 'ss01' 1;
   direction: rtl;
   float: left;
+}
+
+.template .content img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }
