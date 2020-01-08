@@ -7,6 +7,7 @@
   "bugs": {
     "url": "https://github.com/arkmuntasser/arkm-gatsby/issues"
   },
+  "engines": { "node": "12.x" },
   "dependencies": {
     "@mdx-js/mdx": "^0.16.6",
     "@mdx-js/tag": "^0.16.6",
