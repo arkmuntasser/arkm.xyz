@@ -83,3 +83,8 @@ samp {
   font-weight: 600;
   color: var(--gray-900);
 }
+
+hr {
+  margin: var(--spacing-20) 0;
+  border: none;
+}

@@ -31,6 +31,9 @@ function Footer() {
 					<Link className="footer-link" to="/about">
 						About Me
 					</Link>
+					<Link className="footer-link" to="/uses">
+						Uses
+					</Link>
 					<Link className="footer-link" to="/changelog">
 						Changelog
 					</Link>

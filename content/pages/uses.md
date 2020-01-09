@@ -3,12 +3,6 @@ template: page
 title: Uses
 ---
 
-## Tech
-Gatsby
-NextJS
-Nuxt
-
-
 ## Web Development
 ### VS Code
 - Theme: Dark+ (default dark)
@@ -38,7 +32,8 @@ Nuxt
   - Search
   - Final Say
 
-## Writing
+----
+<!-- ## Writing
 ### VS Code
 ### iA Writer
 
@@ -46,9 +41,21 @@ Nuxt
 ### Pixelmator Pro
 ### Pixelmator for iPad
 ### Procreate
-### Figma
+### Figma -->
 
 ## Hardware
 ### MacBook Pro 16" (2019)
+Finally, they made a computer worth upgrading too since their mid-2015 15" MacBook Pro.
+
+#### Specs
+- Space Gray
+- 2.6GHz 6‑core Intel Core i7
+- 512GB SSD
+- 16GB of 2666MHz DDR4
+- AMD Radeon Pro 5300M with 4GB of GDDR6
+
 ### iPad Pro 11"
+For doodlin' and readin'.
+
 ### iPhone 11 Pro Max
+Because who doesn't need a professional phone for professionals?
