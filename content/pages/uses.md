@@ -59,3 +59,8 @@ For doodlin' and readin'.
 
 ### iPhone 11 Pro Max
 Because who doesn't need a professional phone for professionals?
+
+----
+
+## Logo
+[Unicorn by Luke Keil](https://thenounproject.com/search/?q=unicorn&i=291955) from the Noun Project

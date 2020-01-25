@@ -3,9 +3,8 @@ import { RightArrow as RightArrowIcon, Loader as LoaderIcon } from '../component
 import '../styles/projects.css';
 import '../styles/post-snippet.css';
 
-const projectsPromise = fetch('https://api.github.com/users/arkmuntasser/repos?sort=updated');
-
 function Projects() {
+	const projectsPromise = fetch('https://api.github.com/users/arkmuntasser/repos?sort=updated');
 	const [projects, setProjects] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
@@ -17,9 +16,9 @@ function Projects() {
 				repos = repos
 					.filter(repo => (
 						!repo.private // remove private repos
-						|| !repo.fork // remove repos that are forks
-						|| !repo.name.includes('sv-') // remove sv related repos
-						|| !repo.name.includes('arkm') // remove personal site repos
+						&& !repo.fork // remove repos that are forks
+						&& !repo.name.includes('sv-') // remove sv related repos
+						&& !repo.name.includes('arkm') // remove personal site repos
 					))
 					.slice(0, 6);
 
@@ -42,14 +41,14 @@ function Projects() {
 						: error
 							? <div>Projects are currently unavailable...</div>
 							: projects.map(project => (
-									<div className="project post-snippet" key={project.id}>
+									<article className="project post-snippet" key={project.id}>
 										<h3 className="title">
 											<a href={project.html_url}>
 												{project.name}
 											</a>
 										</h3>
 										<p className="excerpt">{project.description}</p>
-									</div>
+									</article>
 								))
 				}
 				<a className="view-all" href="https://github.com/arkmuntasser?tab=repositories">

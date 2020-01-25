@@ -5,7 +5,7 @@
 @media (min-width: 64em) {
   .layout {
     display: grid;
-    grid-template-columns: var(--spacing-12) 1fr;
+    grid-template-columns: var(--spacing-14) 1fr;
     gap: 0 var(--spacing-6);
   }
 

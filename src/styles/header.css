@@ -19,15 +19,19 @@
 
 .site-header .logo {
   margin: 0;
-  padding: var(--spacing-2) var(--spacing-4);
-  max-width: 200px;
-  max-height: 200px;
+  padding: var(--spacing-2);
+  max-width: 72px;
+  max-height: 72px;
   font-size: 1.2rem;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: 0.06em;
   color: var(--white);
   background-color: var(--gray-900);
+}
+
+.site-header .logo svg {
+  height: 100%;
 }
 
 .site-header a,
@@ -44,8 +48,9 @@
   .site-header .logo {
     display: flex;
     align-items: center;
-    padding: var(--spacing-4) var(--spacing-2);
-    width: 100%;
+    padding: var(--spacing-2);
+    width: var(--spacing-14);
+    height: var(--spacing-14);
   }
 }
 
