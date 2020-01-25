@@ -6,7 +6,7 @@ function PostSnippet({ post }) {
 	const { title, datetime, date } = post.frontmatter;
 
   return (
-    <div className="post-snippet">
+    <article className="post-snippet">
 			<time className="meta-content date" dateTime={datetime}>{date}</time>
       <h3 className="title">
         <Link to={post.fields.slug}>
@@ -14,7 +14,7 @@ function PostSnippet({ post }) {
         </Link>
       </h3>
       <p className="excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
-    </div>
+    </article>
   );
 }
 

@@ -21,3 +21,19 @@
 .projects .view-all svg {
   margin-left: var(--spacing-2);
 }
+
+.projects .loader svg {
+  margin-bottom: var(--spacing-2);
+  animation: spin 2s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

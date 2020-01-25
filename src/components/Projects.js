@@ -1,50 +1,57 @@
 import React, { useState, useEffect } from 'react';
-import { RightArrow as RightArrowIcon } from '../components/Icons';
+import { RightArrow as RightArrowIcon, Loader as LoaderIcon } from '../components/Icons';
 import '../styles/projects.css';
 import '../styles/post-snippet.css';
 
+const projectsPromise = fetch('https://api.github.com/users/arkmuntasser/repos?sort=updated');
+
 function Projects() {
 	const [projects, setProjects] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(false);
 
 	useEffect(() => {
-		async function getRepos() {
-			const res = await fetch('https://api.github.com/users/arkmuntasser/repos?sort=updated');
-			let repos = await res.json();
+		projectsPromise
+			.then(res => res.json())
+			.then(repos => {
+				repos = repos
+					.filter(repo => (
+						!repo.private // remove private repos
+						|| !repo.fork // remove repos that are forks
+						|| !repo.name.includes('sv-') // remove sv related repos
+						|| !repo.name.includes('arkm') // remove personal site repos
+					))
+					.slice(0, 6);
 
-			// remove private repos
-			repos = repos.filter(repo => repo.private === false);
-
-			// remove repos that are forks
-			repos = repos.filter(repo => repo.fork === false);
-
-			// remove sv related repos
-			repos = repos.filter(repo => !repo.name.includes('sv-'));
-
-			// remove personal site repos
-			repos = repos.filter(repo => !repo.name.includes('arkm'));
-
-			repos = repos.slice(0, 6);
-
-			setProjects(repos);
-		}
-
-		getRepos();
-	});
+				setProjects(repos);
+				setLoading(false);
+			})
+			.catch(err => {
+				console.log(err);
+				setError(true);
+			});
+	}, []);
 
 	return (
 		<section className="projects">
 			<div className="inner">
 				<h2>Recent Projects</h2>
-				{projects.map(project => (
-					<div className="project post-snippet" key={project.id}>
-						<h3 className="title">
-							<a href={project.html_url}>
-								{project.name}
-							</a>
-						</h3>
-						<p className="excerpt">{project.description}</p>
-					</div>
-				))}
+				{
+					loading
+						? <div className="loader"><LoaderIcon /></div>
+						: error
+							? <div>Projects are currently unavailable...</div>
+							: projects.map(project => (
+									<div className="project post-snippet" key={project.id}>
+										<h3 className="title">
+											<a href={project.html_url}>
+												{project.name}
+											</a>
+										</h3>
+										<p className="excerpt">{project.description}</p>
+									</div>
+								))
+				}
 				<a className="view-all" href="https://github.com/arkmuntasser?tab=repositories">
 					See all projects
 					<RightArrowIcon />
