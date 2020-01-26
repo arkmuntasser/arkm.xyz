@@ -35,6 +35,9 @@ module.exports = {
       options: {
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
+					{
+						resolve: `gatsby-remark-relative-images`,
+					},
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -50,7 +53,6 @@ module.exports = {
           {
             resolve: `gatsby-remark-copy-linked-files`,
           },
-
           {
             resolve: `gatsby-remark-smartypants`,
           },
@@ -148,6 +150,5 @@ module.exports = {
       }
     },
 		'gatsby-plugin-meta-redirect',
-		'gatsby-mdx',
   ],
 }

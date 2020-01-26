@@ -13,6 +13,8 @@ At home, I live for quiet nights in with my love, [Becks](https://twitter.com/be
 
 ![Becks and I during our engagement photo shoot](../assets/me.jpg)
 
+----
+
 ## Previous Gigs
 
 ### Host/Writer/Video Editor
