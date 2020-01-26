@@ -5,9 +5,12 @@ import Projects from '../components/Projects';
 import '../styles/bootstrap-reboot.min.css';
 import '../styles/global.css';
 import '../styles/layout.css';
+// import Portfolio from '../components/Portfolio';
 
 function Layout(props) {
 	const { location, title, children } = props;
+	const { pathname } = location;
+	const rootPath = `${__PATH_PREFIX__}/`;
 
 	return (
 		<div className="layout">
@@ -16,6 +19,9 @@ function Layout(props) {
 				{children}
 				<Projects />
 			</div>
+			{/* {pathname === rootPath && (
+				<Portfolio />
+			)} */}
 			<Footer />
 		</div>
 	)
