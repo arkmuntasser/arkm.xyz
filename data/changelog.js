@@ -14,4 +14,11 @@ export const changelog = [
 			'Added recent projects section',
 		],
 	},
+	{
+		date: 'January 25, 2020',
+		notes: [
+			'Created Timeline component to better display the changlog',
+			'Added loading spinner and better error handling for recent projects fetch',
+		],
+	},
 ];

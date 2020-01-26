@@ -40,6 +40,11 @@
   text-transform: uppercase;
 }
 
+.timeline .timeline-entry .note li {
+  display: flex;
+  align-items: baseline;
+}
+
 .timeline .timeline-entry .note p {
   display: inline-block;
   margin-bottom: 0;

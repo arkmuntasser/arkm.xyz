@@ -4,12 +4,14 @@ import '../styles/projects.css';
 import '../styles/post-snippet.css';
 
 function Projects() {
-	const projectsPromise = fetch('https://api.github.com/users/arkmuntasser/repos?sort=updated');
 	const [projects, setProjects] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
 
 	useEffect(() => {
+		const projectsPromise = fetch(
+			'https://api.github.com/users/arkmuntasser/repos?sort=updated'
+		);
 		projectsPromise
 			.then(res => res.json())
 			.then(repos => {
