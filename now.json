@@ -2,13 +2,6 @@
   "version": 2,
   "name": "arkm",
   "alias": ["arkm.xyz", "www.arkm.xyz"],
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build",
-      "config": { "distDir": "public" }
-    }
-  ],
   "routes": [
     { "handle": "filesystem" },
     { "src": "/.*", "status": 404, "dest": "404" }
