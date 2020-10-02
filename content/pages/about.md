@@ -5,7 +5,7 @@ title: About Me
 
 I’m Amir R Muntasser; I’m a **web developer** from **Tucson, Arizona**. I build tools and products that empower tourist destinations to highlight the sights, events, and culture that make them special.
 
-I’ve been building websites since 2010; I’ve done the freelance thing, but I’m presently the **Senior Lead Developer of CMS Operations** at [Simpleview](https://www.simpleviewinc.com). The sites I’ve worked on range from small, locally-owned businesses like [SWS Computers](https://www.shopsws.com/) to big community sites like [Rooster Teeth](https://roosterteeth.com/community/) all the way up to tourism sites for entire countries like [Visit Norway](https://www.visitnorway.com/).
+I’ve been building websites since 2010; I’ve done the freelance thing, but I’m presently the **Director of CMS Development** at [Simpleview](https://www.simpleviewinc.com). The sites I’ve worked on range from small, locally-owned businesses like [SWS Computers](https://www.shopsws.com/) to big community sites like [Rooster Teeth](https://roosterteeth.com/community/) all the way up to tourism sites for entire countries like [Visit Norway](https://www.visitnorway.com/).
 
 I’m born and raised in Tucson, AZ, but I am the son of an immigrant. My dad came here from Libya when he was 17. My mother, though born here, is Mexican. I’m an **Arab** and a **Muslim**. I’m a **Libyan** and an **American**. This heritage has given me a unique view of the world and my place in it.
 
