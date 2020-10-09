@@ -33,15 +33,6 @@ title: Uses
   - Final Say
 
 ----
-<!-- ## Writing
-### VS Code
-### iA Writer
-
-## Design/Art
-### Pixelmator Pro
-### Pixelmator for iPad
-### Procreate
-### Figma -->
 
 ## Hardware
 ### MacBook Pro 16" (2019)

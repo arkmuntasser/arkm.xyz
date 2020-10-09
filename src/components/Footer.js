@@ -25,9 +25,6 @@ function Footer() {
 					>
 						GitHub
 					</a>
-					<Link className="footer-link" to="/rss.xml">
-						RSS
-					</Link>
 					<Link className="footer-link" to="/about">
 						About Me
 					</Link>
