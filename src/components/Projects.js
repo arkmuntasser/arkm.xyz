@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { RightArrow as RightArrowIcon, Loader as LoaderIcon } from '../components/Icons';
+import { RightArrow as RightArrowIcon, Loader as LoaderIcon, Folder as FolderIcon } from '../components/Icons';
 import '../styles/projects.css';
-import '../styles/post-snippet.css';
 
 function Projects() {
 	const [projects, setProjects] = useState([]);
@@ -43,13 +42,18 @@ function Projects() {
 						: error
 							? <div>Projects are currently unavailable...</div>
 							: projects.map(project => (
-									<article className="project post-snippet" key={project.id}>
-										<h3 className="title">
-											<a href={project.html_url}>
-												{project.name}
-											</a>
-										</h3>
-										<p className="excerpt">{project.description}</p>
+									<article className="project" key={project.id}>
+										<div className="icon" aria-hidden="true">
+											<FolderIcon/>
+										</div>
+										<div className="text-content">
+											<h3 className="title">
+												<a href={project.html_url}>
+													{project.name}
+												</a>
+											</h3>
+											<p className="excerpt">{project.description}</p>
+										</div>
 									</article>
 								))
 				}
