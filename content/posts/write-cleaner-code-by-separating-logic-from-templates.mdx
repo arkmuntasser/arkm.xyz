@@ -1,15 +1,15 @@
 ---
-template: post
 title: Write Cleaner Code by Separating Logic from Templates
 date: "2019-07-24"
-tags:
+excerpt: CSS Frameworks like Bootstrap, Foundation, and Bulma help us describe our HTML in terms of layout structure and components, but I'm not a fan of that approach.
+author:
+  - amir
+category:
   - clean code
   - goatee
   - html
   - javascript
-redirect_from:
-  - /articles/post/🔥-cleaner-code-separating-logic-from-templates/476/
-  - /articles/post/%f0%9f%94%a5-cleaner-code-separating-logic-from-templates/476/
+featured: false
 ---
 
 Clean. Code. Clean code. CLEAN CODE! C-L-E-A-N C-O-D-E. Clean code.
@@ -69,11 +69,10 @@ Third, if I need to introduce another source, then I need to make yet another so
 Let tackle this in phases. To start, I'm going to pull out the `getUrl()` calls and make the HTML simpler to read.
 
 ```html
-{{~exec(function() {
-  helpers.var.srcSm = data.image.getUrl({ width: 900, height: 300, crop: 'fill', quality: 60 });
-  helpers.var.srcMd = data.image.getUrl({ width: 1280, height: 500, crop: 'fill', quality: 60 });
-  helpers.var.srcLg = data.image.getUrl({ width: 1600, height: 700, crop: 'fill', quality: 60 });
-})}}
+{{~exec(function() { helpers.var.srcSm = data.image.getUrl({ width: 900, height:
+300, crop: 'fill', quality: 60 }); helpers.var.srcMd = data.image.getUrl({
+width: 1280, height: 500, crop: 'fill', quality: 60 }); helpers.var.srcLg =
+data.image.getUrl({ width: 1600, height: 700, crop: 'fill', quality: 60 }); })}}
 
 <picture>
   <source srcset="{{~var.srcSm}}" media="(min-width: 641px)" />
@@ -86,34 +85,11 @@ Let tackle this in phases. To start, I'm going to pull out the `getUrl()` calls 
 Already, this feels better. It isn't actually better, but I'm headed in the right direction. I still have a lot of repeated code, but at least I can more readily see how I might be able to simplify the multiple sources into a loop over a single source. Similarly, now that I've pulled out the `getUrl()` calls into a JS context, I can standardize how I generate the URLs.
 
 ```html
-{{~exec(function() {
-  const props = {
-    641: {
-      width: 900,
-      height: 300,
-      crop: 'fill',
-      quality: 60
-    },
-    1025: {
-      width: 1280,
-      height: 500,
-      crop: 'fill',
-      quality: 60
-    },
-    1440: {
-      width: 1600,
-      height: 700,
-      crop: 'fill',
-      quality: 60
-    },
-  };
-  const widths = [641, 1025, 1440];
-
-  helpers.var.srcs = widths.map(width => ({
-    width,
-    src: data.image.getUrl(props[width]),
-  }));
-})}}
+{{~exec(function() { const props = { 641: { width: 900, height: 300, crop:
+'fill', quality: 60 }, 1025: { width: 1280, height: 500, crop: 'fill', quality:
+60 }, 1440: { width: 1600, height: 700, crop: 'fill', quality: 60 }, }; const
+widths = [641, 1025, 1440]; helpers.var.srcs = widths.map(width => ({ width,
+src: data.image.getUrl(props[width]), })); })}}
 
 <picture>
   {{#~var.srcs}}
@@ -134,24 +110,15 @@ At this point, the HTML is pretty much where I want it. However, there's still r
 Let's address that.
 
 ```html
-{{~exec(function() {
-  const sizes = {
-    641: { width: 900, height: 300 },
-    1025: { width: 1280, height: 500 },
-    1440: { width: 1600, height: 700 },
-  };
-  const settings = { crop: 'fill', quality: 60 };
-  const widths = [641, 1025, 1440];
-
-  helpers.var.srcs = widths.map(width => ({
-    width,
-    src: data.image.getUrl({ …sizes[width], …ings }),
-  }));
-})}}
+{{~exec(function() { const sizes = { 641: { width: 900, height: 300 }, 1025: {
+width: 1280, height: 500 }, 1440: { width: 1600, height: 700 }, }; const
+settings = { crop: 'fill', quality: 60 }; const widths = [641, 1025, 1440];
+helpers.var.srcs = widths.map(width => ({ width, src: data.image.getUrl({
+…sizes[width], …ings }), })); })}}
 
 <picture>
   {{#~var.srcs}}
-    <source srcset="{{src}}" media="(min-width: {{width}}px)" />
+  <source srcset="{{src}}" media="(min-width: {{width}}px)" />
   {{/}}
   <img src="/path/to/default.jpg" alt="…" />
 </picture>
@@ -164,23 +131,15 @@ Next, in the map, I spread the sizes and settings into an arguments object to be
 This is looking really slick now, but I'm not a fan of managing the viewport widths both in the `sizes` object and in the `widths` array. I really would like to keep it to a single touch point to reduce my chances to break something.
 
 ```html
-{{~exec(function() {
-  const sizes = {
-    641: { width: 900, height: 300 },
-    1025: { width: 1280, height: 500 },
-    1440: { width: 1600, height: 700 },
-  };
-  const settings = { crop: 'fill', quality: 60 };
-
-  helpers.var.srcs = Object.entries(sizes).map([width, size] => ({
-    width,
-    src: data.image.getUrl({ …size, …settings }),
-  }));
-})}}
+{{~exec(function() { const sizes = { 641: { width: 900, height: 300 }, 1025: {
+width: 1280, height: 500 }, 1440: { width: 1600, height: 700 }, }; const
+settings = { crop: 'fill', quality: 60 }; helpers.var.srcs =
+Object.entries(sizes).map([width, size] => ({ width, src: data.image.getUrl({
+…size, …settings }), })); })}}
 
 <picture>
   {{#~var.srcs}}
-    <source srcset="{{src}}" media="(min-width: {{width}}px)" />
+  <source srcset="{{src}}" media="(min-width: {{width}}px)" />
   {{/}}
   <img src="/path/to/default.jpg" alt="…" />
 </picture>

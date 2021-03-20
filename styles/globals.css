@@ -169,6 +169,7 @@ section {
 }
 
 body {
+  display: grid;
   min-width: 100%;
   min-height: 100%;
   font-family: var(--font-body);
@@ -352,7 +353,6 @@ canvas,
 audio,
 iframe {
   display: block;
-  vertical-align: middle;
   border-style: none;
   overflow: hidden;
 }

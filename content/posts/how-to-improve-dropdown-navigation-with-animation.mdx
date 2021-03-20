@@ -1,29 +1,30 @@
 ---
-template: post
 title: How to Improve Dropdown Navigation with Animation
 date: "2017-12-27"
-tags:
+excerpt: One of the most annoying things on the web is when a dropdown opens on hover and you move the most diagonally into the dropdown, but in doing so the dropdown disappears because I stopped hovering over the zone that triggers the dropdown to appear.
+author:
+  - amir
+category:
   - animation
   - css
   - navigation
   - html
-redirect_from:
-  - /articles/post/build-a-better-nav-with-animation/314/
+featured: false
 ---
 
 One of the most annoying things on the web is when a dropdown opens on hover and you move the most diagonally into the dropdown, but in doing so the dropdown disappears because I stopped hovering over the zone that triggers the dropdown to appear. There's a couple ways to go about this including this [awesome SVG-based solution from Hakim El Hattab](https://team.slides.com/hakimel/cssday-2019#/).
 
 My go to method, however, is to use a little bit of animation.
 
-* [View Demo App](https://better-dropdown.glitch.me/)
-* [Download Source Code on GitHub](https://github.com/arkmuntasser/better-dropdown)
+- [View Demo App](https://better-dropdown.glitch.me/)
+- [Download Source Code on GitHub](https://github.com/arkmuntasser/better-dropdown)
 
 What I particularly like about this method is that it doesn't require any JavaScript to implement. All you need is the right markup and a bit of CSS.
 
 ## Prerequisites
 
-* Working knowledge of [HTML and CSS](https://internetingishard.com/html-and-css/)
-* Basic knowledge of [CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+- Working knowledge of [HTML and CSS](https://internetingishard.com/html-and-css/)
+- Basic knowledge of [CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
 
 ## The Big Idea
 
@@ -41,9 +42,7 @@ Here is what the markup looks like for this dropdown.
 
 ```html
 <div class="nav-section">
-  <div class="nav-section-title">
-    Dropdown
-  </div>
+  <div class="nav-section-title">Dropdown</div>
   <div class="dropdown-helper"></div>
   <div class="nav-section-dropdown">
     <a href="#" title="link">Link</a>

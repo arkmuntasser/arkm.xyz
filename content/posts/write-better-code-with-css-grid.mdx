@@ -1,30 +1,31 @@
 ---
-template: post
 title: Write Better Code with CSS Grid
 date: "2018-02-11"
-tags:
+excerpt: CSS Frameworks like Bootstrap, Foundation, and Bulma help us describe our HTML in terms of layout structure and components, but I'm not a fan of that approach.
+author:
+  - amir
+category:
   - css grid
   - layout
   - design
   - clean code
   - html
-redirect_from:
-  - /articles/post/laying-out-the-future-in-css-grid/321/
+featured: false
 ---
 
 CSS Frameworks like Bootstrap, Foundation, and Bulma help us describe our HTML in terms of layout structure and components, but I'm not a fan of that approach.
 
-I prefer an approach I learned from [Jen Simmons](https://www.youtube.com/watch?v=qNtJ5p3h2A4) where HTML is used to describe the actual content of the page. Layout doesn't ever factor into it. After all, it is *markup* so it should be used to add semantic meaning to your content. But aside from this philosphical interpretation there are other reasons to not bake layout into your HTML.
+I prefer an approach I learned from [Jen Simmons](https://www.youtube.com/watch?v=qNtJ5p3h2A4) where HTML is used to describe the actual content of the page. Layout doesn't ever factor into it. After all, it is _markup_ so it should be used to add semantic meaning to your content. But aside from this philosphical interpretation there are other reasons to not bake layout into your HTML.
 
 A big one is there are fewer `div`s cluttering up the DOM which can improve performance. And it also results in cleaner looking code since there are fewer utility-classes in the HTML (though this last one is subjective as frameworks like [Tailwind CSS](https://tailwindcss.com/) make a reasonable argument for more of these utility-classes in your HTML).
 
-* [View Demo App](https://ui-playground-grid-demo.glitch.me/)
-* [Download Source Code on GitHub](https://github.com/arkmuntasser/css-grid-demos)
+- [View Demo App](https://ui-playground-grid-demo.glitch.me/)
+- [Download Source Code on GitHub](https://github.com/arkmuntasser/css-grid-demos)
 
 ## Prerequisites
 
-* Working knowledge of [HTML and CSS](https://internetingishard.com/html-and-css/)
-* Familiarity with [Responsive Web Development](https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/)
+- Working knowledge of [HTML and CSS](https://internetingishard.com/html-and-css/)
+- Familiarity with [Responsive Web Development](https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/)
 
 Let's consider this following layout:
 
@@ -89,9 +90,15 @@ That's a lot cleaner looking and a lot more descriptive of the content we have. 
   grid-row: span 3;
 }
 
-.articles article:nth-child(3) { grid-row: span 1; }
-.articles article:nth-child(4) { grid-row: span 2; }
-.articles article:nth-child(5) { grid-column: span 2; }
+.articles article:nth-child(3) {
+  grid-row: span 1;
+}
+.articles article:nth-child(4) {
+  grid-row: span 2;
+}
+.articles article:nth-child(5) {
+  grid-column: span 2;
+}
 ```
 
 That's it! That's all the CSS that you need to recreate the layout. I find this to be far easier to read than the framework-based solution above.
@@ -154,11 +161,21 @@ Or maybe we want something a little wilder?
   grid-row: span 1;
 }
 
-.articles article:nth-child(2) { grid-column: 3; }
-.articles article:nth-child(3) { grid-column: 5; }
-.articles article:nth-child(4) { grid-column: 2; }
-.articles article:nth-child(5) { grid-column: 4; }
-.articles article:nth-child(6) { grid-column: 3; }
+.articles article:nth-child(2) {
+  grid-column: 3;
+}
+.articles article:nth-child(3) {
+  grid-column: 5;
+}
+.articles article:nth-child(4) {
+  grid-column: 2;
+}
+.articles article:nth-child(5) {
+  grid-column: 4;
+}
+.articles article:nth-child(6) {
+  grid-column: 3;
+}
 ```
 
 ![](https://res.cloudinary.com/arkmuntasser/image/upload/c_scale,f_auto,q_80,w_800/v1564885707/PixelSnap_2019-08-03_at_19.23.33_2x.png)
@@ -172,7 +189,9 @@ Maybe something a bit more standard?
   grid-gap: 2rem 1rem;
 }
 
-.articles article { height: 19vw; }
+.articles article {
+  height: 19vw;
+}
 ```
 
 ![](https://res.cloudinary.com/arkmuntasser/image/upload/c_scale,f_auto,q_80,w_800/v1564885708/PixelSnap_2019-08-03_at_19.24.07_2x.png)

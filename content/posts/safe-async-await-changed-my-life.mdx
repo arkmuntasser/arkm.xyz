@@ -1,12 +1,15 @@
 ---
-template: post
 title: This one weird trick changed my whole async/await game
 date: "2020-10-09"
-tags:
+excerpt: Drop caps can present a unique challenge for accessibility. It may seem like a simple enough design feature to implement on a site, but given that the CSS for actual drop cap support is presently only implemented in Safari we have to get a bit hacky.
+author:
+  - amir
+category:
   - async
   - await
   - javascript
   - es6
+featured: false
 ---
 
 If you're anything like me then `async` and `await` were a revelation when they got added to JavaScript. Finally, there was a solution to the endless callbacks and chained `then()`s. It enabled us to write synchronous looking code with all the goodness asynchronicty provides.
@@ -18,12 +21,13 @@ The simplest method was to just wrap everything in a try/catch block.
 
 ```js
 try {
-	const res = await fetch('...');
-	const data = await res.json();
+  const res = await fetch("...");
+  const data = await res.json();
 } catch (err) {
-	console.log(err);
+  console.log(err);
 }
 ```
+
 I found using this method often resulted in me dumping huge amounts of code within the try block. This meant that every error would result in all the code in the try not being run which wasn't always what I would want; sometimes I would want to handle an error by simply logging the error to the console and moving on with the rest of the code.
 
 This brings to the second method.
@@ -32,7 +36,7 @@ This brings to the second method.
 With this method you handle the error handling on a per-Promise-basis by chaining a `catch()`.
 
 ```js
-const res = await fetch('...').catch(err => console.log(err));
+const res = await fetch("...").catch((err) => console.log(err));
 ```
 
 The problem here is a matter of developer experience. It SUCKS to keep writing a `.catch()` at the end of everything. And, honestly, who's got that kind of time?
@@ -43,18 +47,18 @@ And this brings me to the method that I use: the third method.
 With this method, we go back to our trusty try/catch block, but this time it's in a handy helper function. We are are going to make use of array destructuring to make the error a first-class citizen along with the desired resolution from the Promise.
 
 ```js
-const [data, err] = await call(fetch('...'));
+const [data, err] = await call(fetch("..."));
 if (err) console.log(err);
 
 async function call(promise) {
-	let data, error;
-	try {
-		const res = await promise;
-		data = await res.json();
-	} catch (err) {
-		error = err;
-	}
-	return [data, error];
+  let data, error;
+  try {
+    const res = await promise;
+    data = await res.json();
+  } catch (err) {
+    error = err;
+  }
+  return [data, error];
 }
 ```
 

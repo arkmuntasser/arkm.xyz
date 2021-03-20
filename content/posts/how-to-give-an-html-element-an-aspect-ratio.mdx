@@ -1,11 +1,14 @@
 ---
-template: post
 title: How to Give an HTML Element an Aspect Ratio
 date: "2019-07-27"
-tags:
+excerpt: Sometimes you just need a element to shrink or grow in height proportionally with the width.
+author:
+  - amir
+category:
   - html
   - css
   - aspect ratio
+featured: false
 ---
 
 Sometimes you just need a element to shrink or grow in height proportionally with the width. Some tags will naturally do this like the `img` tag or `video` tag, but sometimes you need this functionality on something like a `div`. For example, you might be lazy loading an image, but want to reserve the space of the image so content doesn't jump when the image loads in.
@@ -16,7 +19,9 @@ Consider the following:
 
 ```html
 <style>
-  .parent { width: 400px; }
+  .parent {
+    width: 400px;
+  }
 
   .child {
     padding-bottom: 50%;
@@ -37,7 +42,9 @@ Now that we've made a box with an aspect ratio, let's do something more practica
 
 ```html
 <style>
-  .post { width: 400px; }
+  .post {
+    width: 400px;
+  }
 
   .post .img-wrapper {
     position: relative;
@@ -59,9 +66,7 @@ Now that we've made a box with an aspect ratio, let's do something more practica
     <img data-src="/path/to/image.jpg" alt="..." />
   </div>
   <h3>Hello, World!</h3>
-  <p>
-    Check out my super cool internet website for online enjoyment...
-  </p>
+  <p>Check out my super cool internet website for online enjoyment...</p>
 </article>
 ```
 

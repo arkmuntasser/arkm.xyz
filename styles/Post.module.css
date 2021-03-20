@@ -1,0 +1,23 @@
+.posts {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.post {
+  display: grid;
+}
+
+.post header {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.post header * {
+  order: 1;
+  height: min-content;
+}
+
+.post header time {
+  order: 0;
+}

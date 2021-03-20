@@ -1,14 +1,15 @@
 ---
-template: post
 title: Why I built a Custom Link Vue Component at Work
 date: "2019-01-04"
-tags:
+excerpt: I’ve been working on a component library at work for about 6 months now. I want to detail some of the work and thought that went into building these components.
+author:
+  - amir
+category:
   - vue
   - links
   - anchors
   - components
-redirect_from:
-  - /articles/post/building-a-custom-link-component-for-fun-and-profit/460/
+featured: false
 ---
 
 I’ve been working on a component library at work for about 6 months now. I want to detail some of the work and thought that went into building these components.
@@ -17,9 +18,9 @@ When I first started drafting the needs for a component library I looked to what
 
 To begin I audited a number of sites to see what our links looked like and I noticed a few things:
 
-* They were often missing title attributes.
-* A proper target wasn’t always set.
-* When opening links in a new tab we were never setting the rel to either nofollow or noopener.
+- They were often missing title attributes.
+- A proper target wasn’t always set.
+- When opening links in a new tab we were never setting the rel to either nofollow or noopener.
 
 We were failing to make our links accessible and we’re weren’t following best practices. The lighthouse scores weren’t pretty.
 
@@ -29,40 +30,34 @@ I ended up building something along these lines:
 
 ```html
 <template>
-    <a
-        v-if="href"
-        :href="href"
-        :target="target"
-        :title="title"
-        :rel="rel"
-    >
-        <slot>read more</slot>
-    </a>
+  <a v-if="href" :href="href" :target="target" :title="title" :rel="rel">
+    <slot>read more</slot>
+  </a>
 </template>
 
 <script>
-export default {
+  export default {
     props: {
-        link: {
-            type: Object,
-            required: true
-        }
+      link: {
+        type: Object,
+        required: true,
+      },
     },
     computed: {
-        href() {
-            return this.link.url;
-        },
-        target() {
-            return this.link.target ? this.link.target : '_self';
-        },
-        title() {
-            return this.link.title;
-        },
-        rel() {
-            return this.target === '_blank' ? 'noopener' : undefined;
-        }
-    }
-}
+      href() {
+        return this.link.url;
+      },
+      target() {
+        return this.link.target ? this.link.target : "_self";
+      },
+      title() {
+        return this.link.title;
+      },
+      rel() {
+        return this.target === "_blank" ? "noopener" : undefined;
+      },
+    },
+  };
 </script>
 ```
 

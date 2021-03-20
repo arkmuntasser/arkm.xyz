@@ -1,8 +1,10 @@
 ---
-template: post
 title: How to Build Responsive Layouts without Media Queries
 date: "2019-08-02"
-tags:
+excerpt: A common misconception I see is that responsive web development means loading up your CSS files with media queries for everything.
+author:
+  - amir
+category:
   - responsive
   - layout
   - media queries
@@ -10,19 +12,20 @@ tags:
   - css grid
   - multi-column
   - css
+featured: false
 ---
 
 A common misconception I see is that responsive web development means loading up your CSS files with media queries for everything. Don't get me wrong, media queries are important and you should definitely use them, but they aren't always necessary.
 
 Let's talk about building responsive layouts without media queries.
 
-* [View Demo App](https://inglorious-paper.glitch.me/)
-* [Download Source Code on GitHub](https://github.com/arkmuntasser/responsive-layouts-without-media-queries)
+- [View Demo App](https://inglorious-paper.glitch.me/)
+- [Download Source Code on GitHub](https://github.com/arkmuntasser/responsive-layouts-without-media-queries)
 
 **Prerequisites**
 
-* Working knowledge of [HTML and CSS](https://internetingishard.com/html-and-css/)
-* Familiarity with [Responsive Web Development](https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/)
+- Working knowledge of [HTML and CSS](https://internetingishard.com/html-and-css/)
+- Familiarity with [Responsive Web Development](https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/)
 
 ## The Big Idea
 
@@ -49,6 +52,7 @@ Multi-column is perfect for when you want to get a newspaper like effect where t
   <li>Item 11</li>
 </ul>
 ```
+
 <div class="filename">style.css</div>
 
 ```css
@@ -57,6 +61,7 @@ Multi-column is perfect for when you want to get a newspaper like effect where t
   column-gap: 20px;
 }
 ```
+
 [See Multi-Column Example](https://inglorious-paper.glitch.me/#multi-column)
 
 With the above HTML we can see the items counting downward and eventually breaking into a new column.
@@ -79,8 +84,11 @@ Where multi-column wraps vertically like a newspaper, flexbox wraps horizontally
   flex-wrap: wrap;
 }
 
-.flexbox > * { flex: 1 1 280px; }
+.flexbox > * {
+  flex: 1 1 280px;
+}
 ```
+
 [See Flexbox Example](https://inglorious-paper.glitch.me/#flexbox)
 
 Looking at the above example, you can see the items count from left to right and drop down to a new line when there's no more room.
@@ -90,7 +98,9 @@ Notice the last line of my CSS.
 <div class="filename">style.css</div>
 
 ```css
-.flexbox > * { flex: 1 1 280px; }
+.flexbox > * {
+  flex: 1 1 280px;
+}
 ```
 
 This is shorthand notation for the following properties: `flex-grow`, `flex-shrink`, and `flex-basis`. The `flex-grow` and `flex-shrink` properties tell the columns how to, well, grow or shrink in relation to each other. With them set to `1` I'm telling them to grow and shrink at the same rate in the same proportion as each other; simply put, it's what keeps all the flex items the same size.
@@ -124,12 +134,19 @@ CSS Grid is [wickedly powerful](/write-better-code-with-css-grid) and can enable
 <div class="filename">style.css</div>
 
 ```css
-.grid { display: grid; }
+.grid {
+  display: grid;
+}
 
-.grid.fill { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+.grid.fill {
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
 
-.grid.fit { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+.grid.fit {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
 ```
+
 [See CSS Grid Examples](https://inglorious-paper.glitch.me/#grid)
 
 With Grid, you can do a similar layout to what I made with Flexbox above, but you can be a lot more explicit about how you want it to behave.
@@ -152,6 +169,6 @@ Media queries are merely another tool in our tool belt for building responsive l
 
 Check out the people I learned from for more information:
 
-* [Jen Simmons](https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag)
-* [Rachel Andrew](https://gridbyexample.com/)
-* [Wes Bos](https://www.youtube.com/playlist?list=PLu8EoSxDXHP5CIFvt9-ze3IngcdAc2xKG)
+- [Jen Simmons](https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag)
+- [Rachel Andrew](https://gridbyexample.com/)
+- [Wes Bos](https://www.youtube.com/playlist?list=PLu8EoSxDXHP5CIFvt9-ze3IngcdAc2xKG)
