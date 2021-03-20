@@ -1,0 +1,157 @@
+---
+template: post
+title: How to Build Responsive Layouts without Media Queries
+date: "2019-08-02"
+tags:
+  - responsive
+  - layout
+  - media queries
+  - flexbox
+  - css grid
+  - multi-column
+  - css
+---
+
+A common misconception I see is that responsive web development means loading up your CSS files with media queries for everything. Don't get me wrong, media queries are important and you should definitely use them, but they aren't always necessary.
+
+Let's talk about building responsive layouts without media queries.
+
+* [View Demo App](https://inglorious-paper.glitch.me/)
+* [Download Source Code on GitHub](https://github.com/arkmuntasser/responsive-layouts-without-media-queries)
+
+**Prerequisites**
+
+* Working knowledge of [HTML and CSS](https://internetingishard.com/html-and-css/)
+* Familiarity with [Responsive Web Development](https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/)
+
+## The Big Idea
+
+In this article, we're going to discuss three ways to build a responsive layout: multi-column, flexbox, and CSS Grid. This article in now way is trying to be a definitive resources on these concepts, but rather to demonstrate cool aspects of each approach.
+
+### Multi-column
+
+Multi-column is perfect for when you want to get a newspaper like effect where the content builds downward and at some point breaks into a new column.
+
+<div class="filename">index.html</div>
+
+```html
+<ul class="multicolumn">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+  <li>Item 4</li>
+  <li>Item 5</li>
+  <li>Item 6</li>
+  <li>Item 7</li>
+  <li>Item 8</li>
+  <li>Item 9</li>
+  <li>Item 10</li>
+  <li>Item 11</li>
+</ul>
+```
+<div class="filename">style.css</div>
+
+```css
+.multicolumn {
+  column-width: 280px;
+  column-gap: 20px;
+}
+```
+[See Multi-Column Example](https://inglorious-paper.glitch.me/#multi-column)
+
+With the above HTML we can see the items counting downward and eventually breaking into a new column.
+
+The reason this works is because in the CSS I've set a width of `280px` for the columns. You should think of this as a minimum width and not a strict setting. In fact, the width will grow beyond 280 until there is enough room for another column at 280 to exist. With the CSS as written, assuming there's enough content, there will be as many columns as the container can handle. You can set set specific column counts if you prefer, but when I do that I often have to acompany it with a media query, which is what I'm trying to intentionally avoid here.
+
+Whenever you need to make that newspaper-style layout there's no better tool than to use multi-column. But it's also great for [displaying sitemaps](https://www.simpleviewinc.com/sitemap/) if that's a thing you need to do.
+
+### Flexbox
+
+Flexbox can work in either a row or column context. For this article, I'm going to be focusing on row which is the default setting for flex items. Flexbox also doesn't wrap by deafult, but for this article, assume that I have set the flex container to wrap it's items.
+
+Where multi-column wraps vertically like a newspaper, flexbox wraps horizontally like text does.
+
+<div class="filename">style.css</div>
+
+```css
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flexbox > * { flex: 1 1 280px; }
+```
+[See Flexbox Example](https://inglorious-paper.glitch.me/#flexbox)
+
+Looking at the above example, you can see the items count from left to right and drop down to a new line when there's no more room.
+
+Notice the last line of my CSS.
+
+<div class="filename">style.css</div>
+
+```css
+.flexbox > * { flex: 1 1 280px; }
+```
+
+This is shorthand notation for the following properties: `flex-grow`, `flex-shrink`, and `flex-basis`. The `flex-grow` and `flex-shrink` properties tell the columns how to, well, grow or shrink in relation to each other. With them set to `1` I'm telling them to grow and shrink at the same rate in the same proportion as each other; simply put, it's what keeps all the flex items the same size.
+
+The `flex-basis` is kind of like a minimum width for each flex item. This is what gets considered when a flex-item does or doesn't drop to a new line.
+
+Flexbox is ideal for situations where you have a list of items, but you don't particularly care how tall the items are. As such I like to use it for navigations like breadcrumbs, a list of tags on a blog post, or even simple 2-columns layouts.
+
+### CSS Grid
+
+CSS Grid is [wickedly powerful](/write-better-code-with-css-grid) and can enable a plethora of complex layouts.
+
+<div class="filename">index.html</div>
+
+```html
+<ul class="grid fill">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+  <li>Item 4</li>
+</ul>
+
+<ul class="grid fit">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+  <li>Item 4</li>
+</ul>
+```
+
+<div class="filename">style.css</div>
+
+```css
+.grid { display: grid; }
+
+.grid.fill { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+
+.grid.fit { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+```
+[See CSS Grid Examples](https://inglorious-paper.glitch.me/#grid)
+
+With Grid, you can do a similar layout to what I made with Flexbox above, but you can be a lot more explicit about how you want it to behave.
+
+In the example above, we're repeating a simple pattern using `minmax()`. The `minmax()` function does what it sounds like, it provides a size that have a minimax size and a maximum size. In this case, my minimum is `120px` and my maximum is `1fr` which tell Grid to make it as large as it can with the room provided.
+
+The only difference between the two Grid examples is one is using `auto-full` and the other is using `auto-fit`.
+
+Using `auto-fill`, the Grid will err on the side of using the minimum value for each column and it will drop items to a new row when there's no more room for another column. Looking at the example, you'll also notice that it doesn't use up all the available hortizontal space.
+
+On the other hand, `auto-fit` instead errs on the side of using the maximum value. It will grow each item to fill all the available horizontal space and dynamically shrink the columns as new items are added until the columns hit the minimum size and then it drops to a new row.
+
+If you are building a layout or creating a design of any complexity, CSS Grid is probably the tool you'll want to reach for. It's incredibly expressive so you can get exactly the effect you desire.
+
+## Conclusion
+
+That's 3 ways to do responsive layouts without using a media query. There are other way certainly and I presented these 3 options as distinct from each other, but in reality you can mix and match these into each other as you need. It's very common to have a grid-item also be a flex-container.
+
+Media queries are merely another tool in our tool belt for building responsive layouts. Use the right tool for the job, but most importantly, build incredibl layouts.
+
+Check out the people I learned from for more information:
+
+* [Jen Simmons](https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag)
+* [Rachel Andrew](https://gridbyexample.com/)
+* [Wes Bos](https://www.youtube.com/playlist?list=PLu8EoSxDXHP5CIFvt9-ze3IngcdAc2xKG)

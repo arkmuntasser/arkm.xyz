@@ -1,9 +1,0 @@
-.pager {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: var(--spacing-8);
-}
-
-.pager .next {
-  margin-left: auto;
-}

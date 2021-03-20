@@ -1,0 +1,76 @@
+---
+template: post
+title: How I Solved the Impossible Layout
+date: "2019-03-23"
+tags:
+  - html
+  - javascript
+  - css
+  - layout
+redirect_from:
+  - /articles/post/tackling-the-impossible-layout/470/
+---
+
+Recently, I came across the following post on Twitter:
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Front enders… how would you achieve this layout change between small and large screens? <a href="https://t.co/CxsvAj9lXA">pic.twitter.com/CxsvAj9lXA</a></p>&mdash; Foamcow 🏴󠁧󠁢󠁷󠁬󠁳󠁿🇬🇧🇪🇺 (@foamcow) <a href="https://twitter.com/foamcow/status/1108290606458175489?ref_src=twsrc%5Etfw">March 20, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+It became known as the _Impossible Layout_ with many concluding that it couldn't be done with just CSS. Of course, I had to tackle it. In the end I came up with 2 solutions. One is a pure CSS solution, but it has a relatively minor caveat and the other requires a bit of JS, but no caveats.
+
+## Solution 1 - Pure CSS
+
+Looking at the layouts I saw there were three uniformly-sized images and an arbitrary amount of text. I also know that all the elements involved are siblings of each other and not three containers each with their distinct image and text, otherwise, the larger layout wouldn't be workable. And since the items are all siblings and I need to move things in 2 dimensions that I will be needing CSS Grid at some point.
+
+Let's elaborate on that last point.
+
+Going back to the small layout, everything is in a single column and intermixed. On the large layout, there are clearly two columns with the text on one side and images on the other. So that explains needing to manipulate the elements in one direction, horizontally. Also on the large layout, the text all sits snug together without large breaks between them where an image used to be so that means Ii'll need to move them vertically as well. And if you're working with two dimensions in CSS, then you're likely to be wanting CSS Grid to keep things tidy.
+
+To begin, let’s create our grid container and move everything in it to the second column. And then move just the images over to the first column.
+
+<iframe height="265" style={{width: '100%'}} scrolling="no" title="Impossible Layout - CSS Grid only" src="//codepen.io/arkmuntasser/embed/eXboKv/?height=265&theme-id=dark&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/arkmuntasser/pen/eXboKv/'>Impossible Layout - CSS Grid only</a> by Amir R Muntasser
+  (<a href='https://codepen.io/arkmuntasser'>@arkmuntasser</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+Now we're getting somewhere! This is starting to look like the large layout we want, but there are rows between the images when they should be immediately under each other and the height of the images are causing the rows to be too tall in some instances.
+
+To fix this, we're going to set the `position: absolute` on the images. This will allow the text on the right to sit comfortably without the images effecting the row height. But with now the images are stacked on top of one another.
+
+<iframe height="265" style={{width: '100%'}} scrolling="no" title="Impossible Layout - CSS Grid + Absolute Positioning" src="//codepen.io/arkmuntasser/embed/MxZRZJ/?height=265&theme-id=dark&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/arkmuntasser/pen/MxZRZJ/'>Impossible Layout - CSS Grid + Absolute Positioning</a> by Amir R Muntasser
+  (<a href='https://codepen.io/arkmuntasser'>@arkmuntasser</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+This is where the caveat comes in with this method. Because I am assuming the images are uniform in size, I can translate the images reproduce the desired layout. For this, I am also going to assume that you as the developer or the CMS have some way of knowing how many images there are and which number each image is. Why? So we can set an inline CSS variable (CSS Custom Property) on the images. This will let us write a very simple rule in our CSS to enable support for an arbitrary number of images.
+
+<iframe height="265" style={{width: '100%'}} scrolling="no" title="Impossible Layout - CSS Grid only" src="//codepen.io/arkmuntasser/embed/YgdMgd/?height=265&theme-id=dark&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/arkmuntasser/pen/YgdMgd/'>Impossible Layout - CSS Grid only</a> by Amir R Muntasser
+  (<a href='https://codepen.io/arkmuntasser'>@arkmuntasser</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+Finally, we can add a little extra CSS for some better styling and a media query go back to the small layout.
+
+<iframe height="265" style={{width: '100%'}} scrolling="no" title="Impossible Layout - Final" src="//codepen.io/arkmuntasser/embed/YgdbKg/?height=265&theme-id=dark&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/arkmuntasser/pen/YgdbKg/'>Impossible Layout - Final</a> by Amir R Muntasser
+  (<a href='https://codepen.io/arkmuntasser'>@arkmuntasser</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+And you're done!
+
+![](https://cdn.glitch.com/2caac55b-1244-4a5a-9e9c-6389d180ccf7%2Ftenor.gif?1553317759077)
+
+## Solution 2 - What about images of varying sizes?
+
+Not quite.
+
+What if you want to have images of different sizes? Or what if you can't know how many images there are or the index of each image? Then we're going to need a little JavaScript to help out.
+
+What we need to do is find every image in the grid and as we loop over them keep a rolling sum of their heights and set a CSS variable on the images with the current height total. Then in our CSS we can simple translate the image by that amount.
+
+<iframe height="265" style={{width: '100%'}} scrolling="no" title="Impossible Layout - Solved!" src="//codepen.io/arkmuntasser/embed/PLXvWP/?height=265&theme-id=dark&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/arkmuntasser/pen/PLXvWP/'>Impossible Layout - Solved!</a> by Amir R Muntasser
+  (<a href='https://codepen.io/arkmuntasser'>@arkmuntasser</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+With this, you can have an indefinite number of images, an indefinite amount of text, and images of varying sizes. Not so impossible after all.
