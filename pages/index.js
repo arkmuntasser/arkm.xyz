@@ -1,7 +1,6 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import { getAllNodes } from 'next-mdx';
-import { format } from 'date-fns';
+import Post from '../components/Post';
 
 import postStyles from '../styles/Post.module.css';
 
@@ -14,27 +13,11 @@ export default function Home({ posts }) {
       </Head>
 
       <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
 				{posts.length ? (
-					<section>
-						<h2>Posts</h2>
+					<section className={postStyles['posts-container']}>
+						<h2>Recent Posts</h2>
 						<div className={postStyles.posts}>
-							{posts.map((post) => (
-								<article className={postStyles.post} key={post.slug}>
-									<header>
-										<Link href={post.url} passHref>
-											<a>
-												<h3>{post.frontMatter.title}</h3>
-											</a>
-										</Link>
-										<time dateTime={post.frontMatter.date}>{format(new Date(post.frontMatter.date), 'MM.dd.yyyy')}</time>
-									</header>
-									<p>{post.frontMatter.excerpt}</p>
-								</article>
-							))}
+							{posts.map((post) => <Post data={post} key={post.slug}/>)}
 						</div>
 					</section>
 				) : null}

@@ -80,27 +80,27 @@
   --gray-800: hsl(var(--gray-hue), 23%, 23%);
   --gray-900: hsl(var(--gray-hue), 26%, 14%);
 
-  --primary-color-hue: 210;
-  --primary-color-100: hsl(var(--primary-color-hue), 100%, 96%);
-  --primary-color-200: hsl(var(--primary-color-hue), 81%, 86%);
-  --primary-color-300: hsl(var(--primary-color-hue), 82%, 76%);
-  --primary-color-400: hsl(var(--primary-color-hue), 79%, 66%);
-  --primary-color-500: hsl(var(--primary-color-hue), 73%, 57%);
-  --primary-color-600: hsl(var(--primary-color-hue), 62%, 50%);
-  --primary-color-700: hsl(var(--primary-color-hue), 61%, 43%);
-  --primary-color-800: hsl(var(--primary-color-hue), 49%, 34%);
-  --primary-color-900: hsl(var(--primary-color-hue), 47%, 22%);
+  --primary-color-hue: 340;
+  --primary-color-100: hsl(calc(var(--primary-color-hue) + 6) 95% 82%);
+  --primary-color-200: hsl(calc(var(--primary-color-hue) + 6) 95% 74%);
+  --primary-color-300: hsl(calc(var(--primary-color-hue) + 4) 100% 68%);
+  --primary-color-400: hsl(calc(var(--primary-color-hue) + 4) 100% 62%);
+  --primary-color-500: hsl(var(--primary-color-hue) 100% 50%);
+  --primary-color-600: hsl(calc(var(--primary-color-hue) - 2) 100% 48%);
+  --primary-color-700: hsl(calc(var(--primary-color-hue) - 4) 100% 44%);
+  --primary-color-800: hsl(calc(var(--primary-color-hue) - 6) 100% 40%);
+  --primary-color-900: hsl(calc(var(--primary-color-hue) - 8) 100% 36%);
 
-  --secondary-color-hue: 29;
-  --secondary-color-100: hsl(var(--secondary-color-hue), 100%, 97%);
-  --secondary-color-200: hsl(var(--secondary-color-hue), 96%, 89%);
-  --secondary-color-300: hsl(var(--secondary-color-hue), 93%, 77%);
-  --secondary-color-400: hsl(var(--secondary-color-hue), 90%, 65%);
-  --secondary-color-500: hsl(var(--secondary-color-hue), 84%, 57%);
-  --secondary-color-600: hsl(var(--secondary-color-hue), 75%, 50%);
-  --secondary-color-700: hsl(var(--secondary-color-hue), 71%, 44%);
-  --secondary-color-800: hsl(var(--secondary-color-hue), 65%, 37%);
-  --secondary-color-900: hsl(var(--secondary-color-hue), 61%, 30%);
+  --secondary-color-hue: 9;
+  --secondary-color-100: hsl(var(--secondary-color-hue) 100% 84%);
+  --secondary-color-200: hsl(var(--secondary-color-hue) 100% 78%);
+  --secondary-color-300: hsl(var(--secondary-color-hue) 100% 74%);
+  --secondary-color-400: hsl(var(--secondary-color-hue) 100% 68%);
+  --secondary-color-500: hsl(var(--secondary-color-hue) 100% 64%);
+  --secondary-color-600: hsl(var(--secondary-color-hue) 100% 56%);
+  --secondary-color-700: hsl(var(--secondary-color-hue) 100% 48%);
+  --secondary-color-800: hsl(var(--secondary-color-hue) 100% 40%);
+  --secondary-color-900: hsl(var(--secondary-color-hue) 100% 38%);
 
   --tertiary-color-hue: 0;
   --tertiary-color-100: hsl(var(--tertiary-color-hue), 93%, 94%);
