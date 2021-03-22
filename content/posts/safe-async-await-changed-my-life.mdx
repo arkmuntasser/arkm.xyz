@@ -19,14 +19,14 @@ But very quickly you might have noticed an issue handling rejected Promises. To 
 **Method 1**
 The simplest method was to just wrap everything in a try/catch block.
 
-```js
-try {
+<Code language="javascript">
+{`try {
   const res = await fetch("...");
   const data = await res.json();
 } catch (err) {
   console.log(err);
-}
-```
+}`}
+</Code>
 
 I found using this method often resulted in me dumping huge amounts of code within the try block. This meant that every error would result in all the code in the try not being run which wasn't always what I would want; sometimes I would want to handle an error by simply logging the error to the console and moving on with the rest of the code.
 
@@ -35,9 +35,9 @@ This brings to the second method.
 **Method 2**
 With this method you handle the error handling on a per-Promise-basis by chaining a `catch()`.
 
-```js
-const res = await fetch("...").catch((err) => console.log(err));
-```
+<Code language="javascript">
+{`const res = await fetch("...").catch((err) => console.log(err));`}
+</Code>
 
 The problem here is a matter of developer experience. It SUCKS to keep writing a `.catch()` at the end of everything. And, honestly, who's got that kind of time?
 
@@ -46,10 +46,9 @@ And this brings me to the method that I use: the third method.
 **Method 3**
 With this method, we go back to our trusty try/catch block, but this time it's in a handy helper function. We are are going to make use of array destructuring to make the error a first-class citizen along with the desired resolution from the Promise.
 
-```js
-const [data, err] = await call(fetch("..."));
-if (err) console.log(err);
-
+<Code language="javascript">
+{`const [data, err] = await call(fetch("..."));
+if (err) console.log(err);\n
 async function call(promise) {
   let data, error;
   try {
@@ -59,8 +58,8 @@ async function call(promise) {
     error = err;
   }
   return [data, error];
-}
-```
+}`}
+</Code>
 
 Using this method we relegate our Promise rejection and resolution handling to the `call()` function. In this case, I even have it handling the `.json()` for me so I can use `fetch` and immediately get the JSON data I care about. This helper function returns an array where the first item is the data from a resolved Promise and the second item is the err from the rejected Promise. If the Promise resolved, the error will be undefined; if the Promise rejects the data will be undefined.
 

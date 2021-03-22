@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import { getAllNodes } from 'next-mdx';
-import Post from '../components/Post';
+import PostGroup from '../components/PostGroup';
 
-import postStyles from '../styles/Post.module.css';
 
 export default function Home({ posts }) {
   return (
@@ -13,14 +12,7 @@ export default function Home({ posts }) {
       </Head>
 
       <main>
-				{posts.length ? (
-					<section className={postStyles['posts-container']}>
-						<h2>Recent Posts</h2>
-						<div className={postStyles.posts}>
-							{posts.map((post) => <Post data={post} key={post.slug}/>)}
-						</div>
-					</section>
-				) : null}
+				<PostGroup title="Recent Posts" posts={posts}/>
       </main>
     </>
   )

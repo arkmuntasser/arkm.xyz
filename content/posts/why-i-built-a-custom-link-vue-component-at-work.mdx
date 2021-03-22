@@ -28,13 +28,12 @@ I then moved to exploring how the we stored link data in our CMS. As it turned o
 
 I ended up building something along these lines:
 
-```html
-<template>
+<Code language="html">
+{`<template>
   <a v-if="href" :href="href" :target="target" :title="title" :rel="rel">
     <slot>read more</slot>
   </a>
-</template>
-
+</template>\n
 <script>
   export default {
     props: {
@@ -58,20 +57,20 @@ I ended up building something along these lines:
       },
     },
   };
-</script>
-```
+</script>`}
+</Code>
 
 With this, all the dev would need to do is pass along the link object via a prop to the component and everything would get handled automagically. This means the dev experience went from this:
 
-```html
-<a href="{{link.url}}">click me</a>
-```
+<Code language="html">
+{`<a href="{{link.url}}">click me</a>`}
+</Code>
 
 To this:
 
-```html
-<hyperlink :link="link">click me</hyperlink>
-```
+<Code language="html">
+{`<hyperlink :link="link">click me</hyperlink>`}
+</Code>
 
 It’s roughly the same amount of effort but ensures that we aren’t missing out on easy accessibility or best practices wins.
 

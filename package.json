@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-hook/intersection-observer": "^3.1.1",
     "date-fns": "^2.19.0",
     "next": "10.0.9",
     "next-mdx": "^0.4.0",

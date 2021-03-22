@@ -2,12 +2,17 @@ import { useHydrate } from 'next-mdx/client';
 import { getMdxNode, getMdxPaths } from 'next-mdx/server';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus as codeStyle } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import styles from '../../styles/PostPage.module.css';
+import { format } from 'date-fns';
 
-function Code({ children, ...props }) {
+function Code({ children, title, ...props }) {
 	return (
-		<SyntaxHighlighter {...props} showLineNumbers={true} style={codeStyle}>
-			{children}
-		</SyntaxHighlighter>
+		<div className={styles['code-sample']}>
+			{title ? <div className="code-sample-title">{title}</div> : null}
+			<SyntaxHighlighter {...props} showLineNumbers={false} style={codeStyle}>
+				{children}
+			</SyntaxHighlighter>
+		</div>
 	);
 }
 
@@ -17,14 +22,18 @@ export default function PostPage({ post }) {
 			Code,
 		}
 	});
-	// const [author] = post.relationships.author;
 
 	return (
-		<article>
-			<h1>{post.frontMatter.title}</h1>
-			<hr />
+		<div className={styles['post-page']}>
+			<header>
+				<time dateTime={post.frontMatter.date}>{format(new Date(post.frontMatter.date), 'MM.dd.yyyy')}</time>
+				<h1>{post.frontMatter.title}</h1>
+			</header>
+
 			{content}
-		</article>
+
+			<footer></footer>
+		</div>
 	)
 }
 

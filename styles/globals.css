@@ -250,13 +250,13 @@ small {
 }
 
 a {
-  color: var(--primary-500);
+  color: var(--primary-color-700);
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: var(--primary-600);
+  color: var(--primary-color-800);
   text-decoration: underline;
 }
 

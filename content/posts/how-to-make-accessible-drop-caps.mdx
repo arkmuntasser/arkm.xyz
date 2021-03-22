@@ -19,47 +19,46 @@ Consider the following design I recently implemented for a client.
 
 The outline styling you see here had been used through out the site, so I already knew how I was going to be tackling that. To produce that effect, I used this CSS:
 
-```css
-.outlined {
+<Code language="css">
+{`.outlined {
   -webkit-text-stroke: 1px #46348a;
   color: transparent;
-}
-```
+}`}
+</Code>
 
 I'll start by saying that I'm not totally pleased with this solution as it seems to result in slightly fuzzy text. Ideally, I would have prefered if the font family had a style that was an outline or if I could have had SVGs that would have been good too. But with the time constraints of the project this was what I had to do.
 
 With that in place, I had to figure out how I was going to style the first letter of the first paragraph. My first attempt was to do this:
 
-```css
-p:first-child:first-letter {
+<Code language="css">
+{`p:first-child:first-letter {
   -webkit-text-stroke: 1px #46348a;
   color: transparent;
-}
-```
+}`}
+</Code>
 
 But that didn't work. Turns out that `-webkit-text-stroke` doesn't play well with pseudo-selectors. Which meant I needed to apply the stroke to an element that had just the first letter which in turn means I needed to modify the HTML coming out of the CMS.
 
-```html
-<!-- How the HTML initially came from the CMS -->
-<p>Lorem ipsum dolor sit amet.</p>
-
+<Code language="html">
+{`<!-- How the HTML initially came from the CMS -->
+<p>Lorem ipsum dolor sit amet.</p>\n
 <!-- The HTML post-modification -->
-<p><span class="outlined">L</span>orem ipsum dolor sit amet.</p>
-```
+<p><span class="outlined">L</span>orem ipsum dolor sit amet.</p>`}
+</Code>
 
 Now I could style the firslt letter directly and I was able to get the desired look. Success!
 
 Except it's totally inaccessible. For anyone using a screen-reader to read the page will hear "L-orem" instead of "Lorem". To rememdy this we're going to need a bit more HTML and some ARIA attributes.
 
-```html
-<p>
+<Code language="html">
+{`<p>
   <span class="first-word">
     <span class="sr-only">Lorem</span>
     <span aria-hidden="true"> <span class="outlined">L</span>orem </span>
   </span>
   ipsum dolor sit amet.
-</p>
-```
+</p>`}
+</Code>
 
 Let's break this down.
 

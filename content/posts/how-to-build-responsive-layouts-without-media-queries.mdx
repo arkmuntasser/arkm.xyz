@@ -35,10 +35,8 @@ In this article, we're going to discuss three ways to build a responsive layout:
 
 Multi-column is perfect for when you want to get a newspaper like effect where the content builds downward and at some point breaks into a new column.
 
-<div class="filename">index.html</div>
-
-```html
-<ul class="multicolumn">
+<Code language="html" title="index.html">
+{`<ul class="multicolumn">
   <li>Item 1</li>
   <li>Item 2</li>
   <li>Item 3</li>
@@ -50,17 +48,15 @@ Multi-column is perfect for when you want to get a newspaper like effect where t
   <li>Item 9</li>
   <li>Item 10</li>
   <li>Item 11</li>
-</ul>
-```
+</ul>`}
+</Code>
 
-<div class="filename">style.css</div>
-
-```css
-.multicolumn {
+<Code language="css" title="style.css">
+{`.multicolumn {
   column-width: 280px;
   column-gap: 20px;
-}
-```
+}`}
+</Code>
 
 [See Multi-Column Example](https://inglorious-paper.glitch.me/#multi-column)
 
@@ -76,18 +72,15 @@ Flexbox can work in either a row or column context. For this article, I'm going 
 
 Where multi-column wraps vertically like a newspaper, flexbox wraps horizontally like text does.
 
-<div class="filename">style.css</div>
-
-```css
-.flexbox {
+<Code language="css" title="style.css">
+{`.flexbox {
   display: flex;
   flex-wrap: wrap;
-}
-
+}\n
 .flexbox > * {
   flex: 1 1 280px;
-}
-```
+}`}
+</Code>
 
 [See Flexbox Example](https://inglorious-paper.glitch.me/#flexbox)
 
@@ -95,13 +88,11 @@ Looking at the above example, you can see the items count from left to right and
 
 Notice the last line of my CSS.
 
-<div class="filename">style.css</div>
-
-```css
-.flexbox > * {
+<Code language="css" title="style.css">
+{`.flexbox > * {
   flex: 1 1 280px;
-}
-```
+}`}
+</Code>
 
 This is shorthand notation for the following properties: `flex-grow`, `flex-shrink`, and `flex-basis`. The `flex-grow` and `flex-shrink` properties tell the columns how to, well, grow or shrink in relation to each other. With them set to `1` I'm telling them to grow and shrink at the same rate in the same proportion as each other; simply put, it's what keeps all the flex items the same size.
 
@@ -113,39 +104,32 @@ Flexbox is ideal for situations where you have a list of items, but you don't pa
 
 CSS Grid is [wickedly powerful](/write-better-code-with-css-grid) and can enable a plethora of complex layouts.
 
-<div class="filename">index.html</div>
-
-```html
-<ul class="grid fill">
+<Code language="html" title="index.html">
+{`<ul class="grid fill">
   <li>Item 1</li>
   <li>Item 2</li>
   <li>Item 3</li>
   <li>Item 4</li>
-</ul>
-
+</ul>\n
 <ul class="grid fit">
   <li>Item 1</li>
   <li>Item 2</li>
   <li>Item 3</li>
   <li>Item 4</li>
-</ul>
-```
+</ul>`}
+</Code>
 
-<div class="filename">style.css</div>
-
-```css
-.grid {
+<Code language="css" title="style.css">
+{`.grid {
   display: grid;
-}
-
+}\n
 .grid.fill {
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-}
-
+}\n
 .grid.fit {
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-}
-```
+}`}
+</Code>
 
 [See CSS Grid Examples](https://inglorious-paper.glitch.me/#grid)
 

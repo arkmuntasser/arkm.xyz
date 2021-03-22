@@ -40,8 +40,8 @@ So that's the idea, but what does the code actually look like?
 
 Here is what the markup looks like for this dropdown.
 
-```html
-<div class="nav-section">
+<Code language="html">
+{`<div class="nav-section">
   <div class="nav-section-title">Dropdown</div>
   <div class="dropdown-helper"></div>
   <div class="nav-section-dropdown">
@@ -55,32 +55,31 @@ Here is what the markup looks like for this dropdown.
     <a href="#" title="link">Link</a>
     <a href="#" title="link">Link</a>
   </div>
-</div>
-```
+</div>`}
+</Code>
 
 And here's the CSS that handles the making the dropdown visible on hover.
 
-```css
-.header .nav-section-dropdown {
+<Code language="css">
+{`.header .nav-section-dropdown {
   display: none;
-}
-
+}\n
 .header .nav-section:hover .nav-section-dropdown {
   display: grid;
-}
-```
+}`}
+</Code>
 
 By default, the dropdown is not shown and when we hover over anything in the `.nav-section` we show the dropdown. That's the setup, let's take a look at the animation.
 
 First, we define the initial state of the dropdown helper and how it's animation is going to work.
 
-```css
-.header .dropdown-helper {
+<Code language="css">
+{`.header .dropdown-helper {
   transform: scaleY(0);
   transform-origin: bottom center;
   transition: transform 300ms ease 200ms;
-}
-```
+}`}
+</Code>
 
 By default, we want to this to essentially not exist but we want it readily animatable. To do this, we set the Y scale to 0.
 
@@ -90,12 +89,12 @@ And last, we set the transition we want. I find having a slight delay of about 2
 
 Next, we need to make the helper full scale on hover.
 
-```css
-.header .nav-section-title:hover + .dropdown-helper {
+<Code language="css">
+{`.header .nav-section-title:hover + .dropdown-helper {
   transform: scaleY(1);
   transition: none;
-}
-```
+}`}
+</Code>
 
 There are 2 things to note here:
 
@@ -107,34 +106,32 @@ Now when we move away from the title, the animation will begin and the user can 
 
 Finally, there's one last thing to take care of.
 
-```css
-.header .nav-section-title {
+<Code language="css">
+{`.header .nav-section-title {
   position: relative;
   z-index: 2;
-}
-```
+}`}
+</Code>
 
 We want to make sure that the title sits above the helper so we don't accidentally cause the helper to animate out early.
 
 Altogether, we get this:
 
-```css
-.header .dropdown-helper {
+<Code language="css">
+{`.header .dropdown-helper {
   transform: scaleY(0);
   transform-origin: bottom center;
   transition: transform 300ms ease 200ms;
-}
-
+}\n
 .header .nav-section-title:hover + .dropdown-helper {
   transform: scaleY(1);
   transition: none;
-}
-
+}\n
 .header .nav-section-title {
   position: relative;
   z-index: 2;
-}
-```
+}`}
+</Code>
 
 It's a little extra CSS, but the effect goes a long way toward providing a better user experience. And I'm personally happy when I can get a win like this without needing to add more JavaScript to a site.
 
