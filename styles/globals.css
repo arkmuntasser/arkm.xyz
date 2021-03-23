@@ -33,10 +33,6 @@
   --space-56: 224px;
   --space-64: 256px;
 
-  /*  Containers  */
-  --container-single: calc(var(--width-comfortable) + var(--space-10));
-  --container-double: calc(var(--width-double) + var(--space-24));
-
   /*  Font Size  */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;

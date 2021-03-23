@@ -1,6 +1,8 @@
 .post-page {
   margin-inline: auto;
-  inline-size: var(--container-single);
+  padding-inline: var(--space-5);
+  inline-size: 100%;
+  max-inline-size: var(--width-comfortable);
 }
 
 .post-page header {
