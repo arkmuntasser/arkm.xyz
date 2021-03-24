@@ -4,6 +4,8 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus as codeStyle } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import styles from '../../styles/PostPage.module.css';
 import { format } from 'date-fns';
+import { FiShare2 } from 'react-icons/fi';
+import Link from 'next/link';
 
 function Code({ children, title, ...props }) {
 	return (
@@ -16,6 +18,28 @@ function Code({ children, title, ...props }) {
 	);
 }
 
+function ShareButton({ text, url, via }) {
+	return (
+		<a
+			className={styles.share}
+			href={`https://twitter.com/share?text=${text}&url=${url}&via=${via}`}
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			Share
+			<FiShare2 />
+		</a>
+	)
+}
+
+function Chips({ items }) {
+	return (
+		<div className={styles.chips}>
+			{items.map(item => <Link href={item.url} passHref key={item.slug}><a>{item.frontMatter.name}</a></Link>)}
+		</div>
+	)
+}
+
 export default function PostPage({ post }) {
 	const content = useHydrate(post, {
 		components: {
@@ -26,13 +50,18 @@ export default function PostPage({ post }) {
 	return (
 		<div className={styles['post-page']}>
 			<header>
-				<time dateTime={post.frontMatter.date}>{format(new Date(post.frontMatter.date), 'MM.dd.yyyy')}</time>
+				<div>
+					<time dateTime={post.frontMatter.date}>{format(new Date(post.frontMatter.date), 'MM.dd.yyyy')}</time>
+					<ShareButton text={post.frontMatter.title} url={`https://arkm.xyz/blog/${post.slug}`} via="arkmuntasser" />
+				</div>
 				<h1>{post.frontMatter.title}</h1>
 			</header>
 
 			{content}
 
-			<footer></footer>
+			<footer>
+				<Chips items={post.relationships.category}/>
+			</footer>
 		</div>
 	)
 }

@@ -1,5 +1,6 @@
 .post-page {
   margin-inline: auto;
+  padding-block: var(--space-12);
   padding-inline: var(--space-5);
   inline-size: 100%;
   max-inline-size: var(--width-comfortable);
@@ -12,9 +13,15 @@
 }
 
 .post-page header time {
-  padding-block: var(--space-1);
   font-weight: 700;
   color: var(--gray-700);
+}
+
+.post-page header > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding-block: var(--space-1);
   border-block-end: solid 2px var(--gray-300);
 }
 
@@ -93,8 +100,10 @@
 }
 
 .post-page :is(ul, ol) {
-  padding-bottom: var(--space-4);
-  padding-inline-start: var(--space-8);
+  display: grid;
+  grid-template-columns: var(--space-6) 1fr;
+  gap: var(--space-4);
+  padding-block-end: var(--space-4);
 }
 
 .post-page ul {
@@ -103,6 +112,14 @@
 
 .post-page ol {
   list-style: decimal;
+}
+
+.post-page li {
+  grid-column: 2;
+}
+
+.post-page li::marker {
+  color: var(--primary-color-500);
 }
 
 .post-page p code {
@@ -128,4 +145,34 @@
   padding-inline: var(--space-4);
   color: var(--gray-100);
   background-color: var(--black);
+}
+
+.share {
+  display: flex;
+  gap: var(--space-1);
+  align-items: center;
+  font-weight: 700;
+  background: none !important;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  padding-block: var(--space-5);
+}
+
+.chips a {
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--gray-900);
+  background-image: none !important;
+  background-color: transparent;
+  border-radius: var(--rounded-full);
+  border: 1px solid var(--gray-400);
+}
+
+.chips a:hover {
+  background-color: var(--gray-100);
 }

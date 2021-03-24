@@ -8,5 +8,13 @@
 	"author": {
 		"contentPath": "content/authors",
 		"basePath": "/authors"
-	}
+	},
+	"category": {
+    "contentPath": "content/categories",
+    "basePath": "/blog/tags"
+  },
+	"page": {
+    "contentPath": "content/pages",
+    "basePath": "/"
+  }
 }
