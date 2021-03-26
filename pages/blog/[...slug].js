@@ -6,6 +6,8 @@ import styles from '../../styles/PostPage.module.css';
 import { format } from 'date-fns';
 import { FiShare2 } from 'react-icons/fi';
 import Link from 'next/link';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
+import Layout from '../../components/Layout';
 
 function Code({ children, title, ...props }) {
 	return (
@@ -44,25 +46,28 @@ export default function PostPage({ post }) {
 	const content = useHydrate(post, {
 		components: {
 			Code,
+			TwitterTweetEmbed,
 		}
 	});
 
 	return (
-		<div className={styles['post-page']}>
-			<header>
-				<div>
-					<time dateTime={post.frontMatter.date}>{format(new Date(post.frontMatter.date), 'MM.dd.yyyy')}</time>
-					<ShareButton text={post.frontMatter.title} url={`https://arkm.xyz/blog/${post.slug}`} via="arkmuntasser" />
-				</div>
-				<h1>{post.frontMatter.title}</h1>
-			</header>
+		<Layout>
+			<main className={styles['post-page']}>
+				<header>
+					<div>
+						<time dateTime={post.frontMatter.date}>{format(new Date(post.frontMatter.date), 'MM.dd.yyyy')}</time>
+						<ShareButton text={post.frontMatter.title} url={`https://arkm.xyz/blog/${post.slug}`} via="arkmuntasser" />
+					</div>
+					<h1>{post.frontMatter.title}</h1>
+				</header>
 
-			{content}
+				{content}
 
-			<footer>
-				<Chips items={post.relationships.category}/>
-			</footer>
-		</div>
+				<footer>
+					<Chips items={post.relationships.category}/>
+				</footer>
+			</main>
+		</Layout>
 	)
 }
 
@@ -76,7 +81,12 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
 	return {
 		props: {
-			post: await getMdxNode('post', context)
+			post: await getMdxNode('post', context, {
+				components: {
+					Code,
+					TwitterTweetEmbed,
+				}
+			})
 		}
 	}
 }

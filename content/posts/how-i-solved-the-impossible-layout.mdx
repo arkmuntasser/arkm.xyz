@@ -14,19 +14,9 @@ featured: false
 
 Recently, I came across the following post on Twitter:
 
-<blockquote class="twitter-tweet" data-lang="en">
-  <p lang="en" dir="ltr">
-    Front enders… how would you achieve this layout change between small and
-    large screens?{" "}
-    <a href="https://t.co/CxsvAj9lXA">pic.twitter.com/CxsvAj9lXA</a>
-  </p>
-  &mdash; Foamcow 🏴󠁧󠁢󠁷󠁬󠁳󠁿🇬🇧🇪🇺 (@foamcow) <a href="https://twitter.com/foamcow/status/1108290606458175489?ref_src=twsrc%5Etfw">March 20, 2019</a>
-</blockquote>
-<script
-  async
-  src="https://platform.twitter.com/widgets.js"
-  charset="utf-8"
-></script>
+<TwitterTweetEmbed
+  tweetId={'1108290606458175489'}
+/>
 
 It became known as the _Impossible Layout_ with many concluding that it couldn't be done with just CSS. Of course, I had to tackle it. In the end I came up with 2 solutions. One is a pure CSS solution, but it has a relatively minor caveat and the other requires a bit of JS, but no caveats.
 
@@ -46,9 +36,9 @@ To begin, let’s create our grid container and move everything in it to the sec
   scrolling="no"
   title="Impossible Layout - CSS Grid only"
   src="//codepen.io/arkmuntasser/embed/eXboKv/?height=265&theme-id=dark&default-tab=html,result"
-  frameborder="no"
+  frameBorder="no"
   allowtransparency="true"
-  allowfullscreen="true"
+  allowFullScreen={true}
 >
   See the Pen{" "}
   <a href="https://codepen.io/arkmuntasser/pen/eXboKv/">
@@ -69,9 +59,9 @@ To fix this, we're going to set the `position: absolute` on the images. This wil
   scrolling="no"
   title="Impossible Layout - CSS Grid + Absolute Positioning"
   src="//codepen.io/arkmuntasser/embed/MxZRZJ/?height=265&theme-id=dark&default-tab=html,result"
-  frameborder="no"
+  frameBorder="no"
   allowtransparency="true"
-  allowfullscreen="true"
+  allowFullScreen={true}
 >
   See the Pen{" "}
   <a href="https://codepen.io/arkmuntasser/pen/MxZRZJ/">
@@ -90,9 +80,9 @@ This is where the caveat comes in with this method. Because I am assuming the im
   scrolling="no"
   title="Impossible Layout - CSS Grid only"
   src="//codepen.io/arkmuntasser/embed/YgdMgd/?height=265&theme-id=dark&default-tab=html,result"
-  frameborder="no"
+  frameBorder="no"
   allowtransparency="true"
-  allowfullscreen="true"
+  allowFullScreen={true}
 >
   See the Pen{" "}
   <a href="https://codepen.io/arkmuntasser/pen/YgdMgd/">
@@ -111,9 +101,9 @@ Finally, we can add a little extra CSS for some better styling and a media query
   scrolling="no"
   title="Impossible Layout - Final"
   src="//codepen.io/arkmuntasser/embed/YgdbKg/?height=265&theme-id=dark&default-tab=html,result"
-  frameborder="no"
+  frameBorder="no"
   allowtransparency="true"
-  allowfullscreen="true"
+  allowFullScreen={true}
 >
   See the Pen{" "}
   <a href="https://codepen.io/arkmuntasser/pen/YgdbKg/">
@@ -142,9 +132,9 @@ What we need to do is find every image in the grid and as we loop over them keep
   scrolling="no"
   title="Impossible Layout - Solved!"
   src="//codepen.io/arkmuntasser/embed/PLXvWP/?height=265&theme-id=dark&default-tab=html,result"
-  frameborder="no"
+  frameBorder="no"
   allowtransparency="true"
-  allowfullscreen="true"
+  allowFullScreen={true}
 >
   See the Pen{" "}
   <a href="https://codepen.io/arkmuntasser/pen/PLXvWP/">

@@ -1,15 +1,23 @@
 import { getAllNodes, getMdxPaths, getNode } from 'next-mdx';
+import Layout from '../../../components/Layout';
 import PostGroup from '../../../components/PostGroup';
+import Section from '../../../components/Section';
 
 export default function TagPage({ tag, posts }) {
 	return (
-		<div>
-			<h1>{tag.frontMatter.name}</h1>
-			{posts?.length
-				? <PostGroup title={tag.frontMatter.name} posts={posts}/>
-				: <p>No posts found.</p>
-			}
-		</div>
+		<Layout>
+			<main>
+				<Section>
+					<h1>{tag.frontMatter.name}</h1>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</Section>
+
+				{posts?.length
+					? <PostGroup posts={posts}/>
+					: <p>No posts found.</p>
+				}
+			</main>
+		</Layout>
 	)
 }
 

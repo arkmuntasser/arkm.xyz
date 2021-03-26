@@ -1,16 +1,50 @@
 .posts-container {
-  padding: 0 var(--space-5);
+  position: relative;
+}
+
+/* .posts-container::before {
+  content: "";
+  position: absolute;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGUlEQVQoU2NkIBIwEqmOYVQh3pAiNnj+AwALaAEK//wciwAAAABJRU5ErkJggg==);
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 40%;
+  height: 20%;
+} */
+
+.posts-container > div {
+  display: grid;
+  gap: var(--space-8);
+  margin-inline: auto;
+  padding-block: var(--space-12);
+  padding-inline: var(--space-5);
+  max-width: var(--width-base);
 }
 
 .posts-container h2 {
-  margin-block-end: var(--space-8);
   font-weight: 700;
   font-size: var(--text-3xl);
 }
 
+.posts-container > div > header a {
+  background-image: linear-gradient(
+    to right,
+    var(--primary-color-500),
+    var(--secondary-color-500)
+  );
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.3s;
+}
+.posts-container > div > header a:is(:hover, :focus) {
+  text-decoration: none;
+  background-size: 100% 2px;
+}
+
 .posts {
   display: grid;
-  gap: var(--space-6);
+  gap: var(--space-8) var(--space-6);
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 

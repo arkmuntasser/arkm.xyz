@@ -1,0 +1,55 @@
+.section {
+  margin-inline: auto;
+  padding-block: var(--space-12);
+  padding-inline: var(--space-5);
+  max-inline-size: var(--width-base);
+}
+
+:is(.post-page, .section) h1 {
+  margin-bottom: var(--space-8);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+}
+
+:is(.post-page, .section) h2 {
+  margin-bottom: var(--space-6);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+}
+
+:is(.post-page, .section) h3 {
+  margin-bottom: var(--space-6);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+}
+
+:is(.post-page, .section) h4 {
+  margin-bottom: var(--space-6);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+}
+
+:is(.post-page, .section) h5 {
+  margin-bottom: var(--space-6);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+}
+
+:is(.post-page, .section) h6 {
+  margin-bottom: var(--space-6);
+  font-size: var(--text-base);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+}
+
+:is(.post-page, .section) p {
+  margin-bottom: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}

@@ -25,49 +25,49 @@
   border-block-end: solid 2px var(--gray-300);
 }
 
-:is(.post-page, .contentRender_name_plugins_core_textbox) h1 {
+:is(.post-page, .section) h1 {
   margin-bottom: var(--space-8);
   font-size: var(--text-4xl);
   font-weight: 700;
   line-height: var(--leading-tight);
 }
 
-:is(.post-page, .contentRender_name_plugins_core_textbox) h2 {
+:is(.post-page, .section) h2 {
   margin-bottom: var(--space-6);
   font-size: var(--text-3xl);
   font-weight: 700;
   line-height: var(--leading-tight);
 }
 
-:is(.post-page, .contentRender_name_plugins_core_textbox) h3 {
+:is(.post-page, .section) h3 {
   margin-bottom: var(--space-6);
   font-size: var(--text-2xl);
   font-weight: 700;
   line-height: var(--leading-tight);
 }
 
-:is(.post-page, .contentRender_name_plugins_core_textbox) h4 {
+:is(.post-page, .section) h4 {
   margin-bottom: var(--space-6);
   font-size: var(--text-xl);
   font-weight: 700;
   line-height: var(--leading-snug);
 }
 
-:is(.post-page, .contentRender_name_plugins_core_textbox) h5 {
+:is(.post-page, .section) h5 {
   margin-bottom: var(--space-6);
   font-size: var(--text-lg);
   font-weight: 700;
   line-height: var(--leading-snug);
 }
 
-:is(.post-page, .contentRender_name_plugins_core_textbox) h6 {
+:is(.post-page, .section) h6 {
   margin-bottom: var(--space-6);
   font-size: var(--text-base);
   font-weight: 700;
   line-height: var(--leading-snug);
 }
 
-:is(.post-page, .contentRender_name_plugins_core_textbox) p {
+:is(.post-page, .section) p {
   margin-bottom: var(--space-4);
   font-family: var(--font-body);
   font-size: var(--text-base);
@@ -128,6 +128,10 @@
   color: var(--gray-900);
   border-radius: var(--rounded);
   background-color: var(--gray-300);
+}
+
+.post-page iframe {
+  margin-block-end: var(--space-4);
 }
 
 .code-sample {
