@@ -1,11 +1,13 @@
 import { getAllNodes, getMdxPaths, getNode } from 'next-mdx';
 import Layout from '../../../components/Layout';
+import Meta from '../../../components/Meta';
 import PostGroup from '../../../components/PostGroup';
 import Section from '../../../components/Section';
 
 export default function TagPage({ tag, posts }) {
 	return (
 		<Layout>
+			<Meta title={`Posts tagged '${tag.frontMatter.name}'`}/>
 			<main>
 				<Section>
 					<h1>{tag.frontMatter.name}</h1>

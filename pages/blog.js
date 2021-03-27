@@ -1,24 +1,19 @@
-import Head from 'next/head';
 import { getAllNodes } from 'next-mdx';
+import Layout from '../components/Layout';
+import Meta from '../components/Meta';
 import PostGroup from '../components/PostGroup';
 
 export default function Blog({ posts }) {
   return (
-    <>
-      <Head>
-        <title>ARKM - Welcome to die!</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-			<Layout>
-				<main>
-					<PostGroup
-						title="All Posts"
-						posts={posts}
-					/>
-				</main>
-			</Layout>
-    </>
+		<Layout>
+			<Meta title="All blog posts"/>
+			<main>
+				<PostGroup
+					title="All Posts"
+					posts={posts}
+				/>
+			</main>
+		</Layout>
   )
 }
 

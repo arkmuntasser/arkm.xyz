@@ -8,6 +8,7 @@ import { FiShare2 } from 'react-icons/fi';
 import Link from 'next/link';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 import Layout from '../../components/Layout';
+import Meta from '../../components/Meta';
 
 function Code({ children, title, ...props }) {
 	return (
@@ -52,6 +53,7 @@ export default function PostPage({ post }) {
 
 	return (
 		<Layout>
+			<Meta title={post.frontMatter.title}/>
 			<main className={styles['post-page']}>
 				<header>
 					<div>

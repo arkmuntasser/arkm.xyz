@@ -164,6 +164,12 @@ section {
   display: block;
 }
 
+main {
+  display: grid;
+  gap: var(--space-16);
+  grid-auto-rows: min-content;
+}
+
 body {
   display: grid;
   min-width: 100%;

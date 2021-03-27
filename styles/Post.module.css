@@ -2,16 +2,6 @@
   position: relative;
 }
 
-/* .posts-container::before {
-  content: "";
-  position: absolute;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGUlEQVQoU2NkIBIwEqmOYVQh3pAiNnj+AwALaAEK//wciwAAAABJRU5ErkJggg==);
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  width: 40%;
-  height: 20%;
-} */
-
 .posts-container > div {
   display: grid;
   gap: var(--space-8);
