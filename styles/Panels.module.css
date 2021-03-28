@@ -1,0 +1,15 @@
+.twocol {
+  display: grid;
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 64em) {
+  .twocol {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+}
+
+.smallcol {
+  max-width: var(--width-comfortable);
+}

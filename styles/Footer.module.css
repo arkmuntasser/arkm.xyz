@@ -45,7 +45,7 @@
   color: var(--gray-700);
 }
 
-.footer a {
+.footer p:first-child a {
   display: inline-flex;
   gap: var(--space-1);
   align-items: baseline;
@@ -78,7 +78,7 @@
 }
 
 .footer p:last-child svg {
-  color: red;
+  color: var(--primary-color-500);
   stroke-width: 3px;
 }
 

@@ -166,7 +166,7 @@ section {
 
 main {
   display: grid;
-  gap: var(--space-16);
+  gap: var(--space-8);
   grid-auto-rows: min-content;
 }
 

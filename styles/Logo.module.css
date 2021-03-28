@@ -1,0 +1,24 @@
+.logo {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.logo-sm {
+  font-size: var(--text-base);
+}
+
+.logo:hover {
+  color: var(--gray-900);
+  text-decoration: none;
+}
+
+.logo svg {
+  display: inline-block;
+  color: var(--primary-color-500);
+  stroke-width: 3px;
+}
+
+.logo:hover svg {
+  fill: var(--primary-color-500);
+}

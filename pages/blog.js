@@ -2,12 +2,17 @@ import { getAllNodes } from 'next-mdx';
 import Layout from '../components/Layout';
 import Meta from '../components/Meta';
 import PostGroup from '../components/PostGroup';
+import Section from '../components/Section';
 
 export default function Blog({ posts }) {
   return (
 		<Layout>
-			<Meta title="All blog posts"/>
+			<Meta title="The Blog"/>
 			<main>
+				<Section>
+					<h1>The Blog</h1>
+					<p>Irregularly updated, but always a treat!</p>
+				</Section>
 				<PostGroup
 					title="All Posts"
 					posts={posts}

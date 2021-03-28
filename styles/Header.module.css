@@ -1,0 +1,31 @@
+.header > div {
+  display: flex;
+  gap: var(--space-10);
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+  padding-block: var(--space-3);
+  padding-inline: var(--space-5);
+  width: 100%;
+  max-width: var(--width-base);
+}
+
+.header a {
+  padding-block: var(--space-2);
+}
+
+.header nav {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: var(--space-2);
+}
+
+.header nav a {
+  padding-inline: var(--space-2);
+  border-radius: var(--rounded-lg);
+}
+
+.header nav a:hover {
+  text-decoration: none;
+  background-color: var(--gray-200);
+}

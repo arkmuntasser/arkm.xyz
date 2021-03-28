@@ -1,9 +1,14 @@
 .post-page {
+  display: block;
   margin-inline: auto;
   padding-block: var(--space-12);
   padding-inline: var(--space-5);
   inline-size: 100%;
   max-inline-size: var(--width-comfortable);
+}
+
+.post-page[data-layout="double"] {
+  max-inline-size: var(--width-base);
 }
 
 .post-page header {

@@ -1,7 +1,8 @@
 .section {
   margin-inline: auto;
-  padding-block: var(--space-12);
+  padding-block: var(--space-3);
   padding-inline: var(--space-5);
+  inline-size: 100%;
   max-inline-size: var(--width-base);
 }
 
