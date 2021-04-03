@@ -17,6 +17,7 @@
 }
 
 .posts-container > div > header a {
+  display: inline-block;
   background-image: linear-gradient(
     to right,
     var(--primary-color-500),

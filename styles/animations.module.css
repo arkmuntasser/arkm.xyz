@@ -1,11 +1,23 @@
 .chain > * {
   opacity: 0;
   transform: scale(0.1);
-  transition: 240ms transform ease, 140ms opacity ease;
+  transition: 240ms transform ease, 240ms opacity ease;
   transform-origin: bottom center;
 }
 
 .chain-loaded > * {
   opacity: 1;
   transform: scale(1);
+}
+
+.reveal > * {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: 480ms transform ease, 480ms opacity ease;
+  transform-origin: bottom center;
+}
+
+.reveal-loaded > * {
+  opacity: 1;
+  transform: none;
 }

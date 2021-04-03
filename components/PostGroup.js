@@ -2,12 +2,20 @@ import Post from '../components/Post';
 import styles from '../styles/Post.module.css';
 import animations from '../styles/animations.module.css';
 import useIntersectionObserver from '@react-hook/intersection-observer';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
 export default function PostGroup({ title, posts, viewAllCTA, viewAllHref }) {
 	const ref = useRef(null);
-	const { isIntersecting } = useIntersectionObserver(ref)
+	const { isIntersecting } = useIntersectionObserver(ref);
+
+	const [intersected, setIntersected] = useState(false);
+
+	useEffect(function() {
+		if (isIntersecting) {
+			setIntersected(true);
+		}
+	}, [isIntersecting]);
 
 	return (
 		<>
@@ -16,17 +24,17 @@ export default function PostGroup({ title, posts, viewAllCTA, viewAllHref }) {
 					<div>
 						{title || viewAllHref
 							? (
-								<header>
+								<header className={intersected ? `${animations.reveal} ${animations['reveal-loaded']}` : animations.reveal}>
 									{title ? <h2>{title}</h2> : null}
-									{viewAllHref && viewAllCTA ?<Link href={viewAllHref} passHref><a>{viewAllCTA}</a></Link> : null}
+									{viewAllHref && viewAllCTA ? <div><Link href={viewAllHref} passHref><a>{viewAllCTA}</a></Link></div> : null}
 								</header>
 							)
 							: null
 						}
-						<div className={isIntersecting
+						<div className={intersected
 							? `${styles.posts} ${animations.chain} ${animations['chain-loaded']}`
 							: `${styles.posts} ${animations.chain}`}>
-							{posts.map((post, i) => <Post data={post} key={post.slug} style={{ transitionDelay: `${80 * i}ms` }}/>)}
+							{posts.map((post, i) => <Post data={post} key={post.slug} style={{ transitionDuration: `${240 + 80 * i}ms` }}/>)}
 						</div>
 					</div>
 				</section>
