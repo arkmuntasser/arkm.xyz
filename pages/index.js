@@ -11,7 +11,7 @@ export default function Home({ posts }) {
 			<Meta title="Welcome to die!"/>
 			<main>
 				{/* <Hero/> */}
-				{/* <Welcome/> */}
+				<Welcome/>
 				<PostGroup
 					title="Recent Posts"
 					posts={posts}

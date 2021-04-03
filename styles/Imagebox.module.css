@@ -1,0 +1,10 @@
+.imagebox {
+  display: grid;
+  gap: var(--space-1);
+  margin-block-end: var(--space-4);
+}
+
+.imagebox figcaption {
+  font-size: var(--text-sm);
+  color: var(--gray-700);
+}

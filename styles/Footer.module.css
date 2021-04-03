@@ -36,6 +36,7 @@
   padding-inline: var(--space-10);
   font-size: var(--text-4xl);
   color: var(--primary-color-500);
+  line-height: var(--leading-none);
   background: var(--white);
   transform: translate(-50%, -50%);
 }

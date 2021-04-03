@@ -77,6 +77,7 @@
   --gray-900: hsl(var(--gray-hue), 26%, 14%);
 
   --primary-color-hue: 340;
+  --primary-color-50: hsl(calc(var(--primary-color-hue) + 6) 95% 92%);
   --primary-color-100: hsl(calc(var(--primary-color-hue) + 6) 95% 82%);
   --primary-color-200: hsl(calc(var(--primary-color-hue) + 6) 95% 74%);
   --primary-color-300: hsl(calc(var(--primary-color-hue) + 4) 100% 68%);
