@@ -5,10 +5,10 @@ import { vscDarkPlus as codeStyle } from 'react-syntax-highlighter/dist/cjs/styl
 import styles from '../../styles/PostPage.module.css';
 import { format } from 'date-fns';
 import { FiShare2 } from 'react-icons/fi';
-import Link from 'next/link';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 import Layout from '../../components/Layout';
 import Meta from '../../components/Meta';
+import Chips from '../../components/Chips';
 
 function Code({ children, title, ...props }) {
 	return (
@@ -32,14 +32,6 @@ function ShareButton({ text, url, via }) {
 			Share
 			<FiShare2 />
 		</a>
-	)
-}
-
-function Chips({ items }) {
-	return (
-		<div className={styles.chips}>
-			{items.map(item => <Link href={item.url} passHref key={item.slug}><a>{item.frontMatter.name}</a></Link>)}
-		</div>
 	)
 }
 

@@ -6,6 +6,10 @@
   max-inline-size: var(--width-base);
 }
 
+.section[data-layout="small"] {
+  padding-block: var(--space-1);
+}
+
 :is(.post-page, .section) h1 {
   margin-bottom: var(--space-8);
   font-size: var(--text-4xl);
@@ -53,4 +57,13 @@
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: var(--leading-normal);
+}
+
+.section > p {
+  max-width: var(--width-comfortable);
+}
+
+.section small {
+  font-size: var(--text-lg);
+  color: var(--gray-700);
 }

@@ -4,14 +4,13 @@ import Meta from '../../../components/Meta';
 import PostGroup from '../../../components/PostGroup';
 import Section from '../../../components/Section';
 
-export default function TagPage({ tag, posts }) {
+export default function CatPage({ cat, posts }) {
 	return (
 		<Layout>
-			<Meta title={`Posts tagged '${tag.frontMatter.name}'`}/>
+			<Meta title={`Posts tagged '${cat.frontMatter.name}'`}/>
 			<main>
 				<Section>
-					<h1>{tag.frontMatter.name}</h1>
-					<p>Lorem ipsum dolor sit amet.</p>
+					<h1 style={{ transitionDuration: `${400 + 80 * 1}ms` }}><small>Category:</small><br/>{cat.frontMatter.name}</h1>
 				</Section>
 
 				{posts?.length
@@ -31,10 +30,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const tag = await getNode('category', context);
-	console.log
+  const cat = await getNode('category', context);
 
-  if (!tag) {
+  if (!cat) {
     return {
       notFound: true,
     }
@@ -44,9 +42,9 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      tag,
+      cat,
       posts: posts.filter((post) =>
-        post?.relationships?.category.some(cat => cat?.slug === tag.slug)
+        post?.relationships?.category.some(c => c?.slug === cat.slug)
       ),
     },
   }

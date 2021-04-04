@@ -11,7 +11,7 @@
 	},
 	"category": {
     "contentPath": "content/categories",
-    "basePath": "/blog/tags"
+    "basePath": "/blog/categories"
   },
 	"page": {
     "contentPath": "content/pages",
