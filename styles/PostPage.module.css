@@ -38,6 +38,7 @@
 }
 
 :is(.post-page, .section) h2 {
+  padding-top: var(--space-3);
   margin-bottom: var(--space-6);
   font-size: var(--text-3xl);
   font-weight: 700;
@@ -45,10 +46,12 @@
 }
 
 :is(.post-page, .section) h3 {
+  padding-top: var(--space-1);
   margin-bottom: var(--space-6);
   font-size: var(--text-2xl);
   font-weight: 700;
   line-height: var(--leading-tight);
+  color: var(--gray-700);
 }
 
 :is(.post-page, .section) h4 {
