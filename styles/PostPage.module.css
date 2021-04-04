@@ -90,21 +90,24 @@
 }
 
 .post-page a {
+  font-weight: 700;
   background-image: linear-gradient(
     to right,
     var(--primary-color-500),
-    var(--secondary-color-500)
+    var(--secondary-color-500) 50%,
+    var(--gray-500) 50%,
+    var(--gray-500)
   );
-  background-position: 0% 100%;
+  background-position: 100% 100%;
   background-repeat: no-repeat;
-  background-size: 0% 2px;
-  transition: background-size 0.3s;
+  background-size: 200% 2px;
+  transition: background-position 0.3s;
 }
 
 .post-page a:hover,
 .post-page a:focus {
   text-decoration: none;
-  background-size: 100% 2px;
+  background-position: 0% 100%;
 }
 
 .post-page :is(ul, ol) {
