@@ -88,7 +88,7 @@
   background-position: 100% 100%;
   background-repeat: no-repeat;
   background-size: 200% 2px;
-  transition: background-position 0.3s;
+  transition: background-position 0.3s ease-in;
 }
 
 .welcome a:is(:hover, :focus) {
