@@ -9,6 +9,8 @@ import { TwitterTweetEmbed } from 'react-twitter-embed';
 import Layout from '../../components/Layout';
 import Meta from '../../components/Meta';
 import Chips from '../../components/Chips';
+import animations from '../../styles/animations.module.css';
+import { useEffect, useRef, useState } from 'react';
 
 function Code({ children, title, ...props }) {
 	return (
@@ -36,6 +38,7 @@ function ShareButton({ text, url, via }) {
 }
 
 export default function PostPage({ post }) {
+	const ref = useRef(null);
 	const content = useHydrate(post, {
 		components: {
 			Code,
@@ -43,10 +46,35 @@ export default function PostPage({ post }) {
 		}
 	});
 
+	const [animReady, setAnimReady] = useState(false);
+	const [runAnimation, setRunAnimation] = useState(false);
+
+	useEffect(() => {
+		const children = [...ref.current.children];
+
+		for (let i = 0; i < children.length; i++) {
+			children[i].style.transitionDuration = `${400 + 80 * i}ms`;
+		}
+
+		setAnimReady(true);
+	}, [content]);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setRunAnimation(true);
+		}, 200);
+		return () => clearTimeout(timer);
+	}, [animReady]);
+
 	return (
 		<Layout>
 			<Meta title={post.frontMatter.title}/>
-			<main className={styles['post-page']}>
+			<main
+				ref={ref}
+				className={runAnimation
+					? `${styles['post-page']} ${animations.reveal} ${animations['reveal-loaded']}`
+					: `${styles['post-page']} ${animations.reveal}`}
+			>
 				<header>
 					<div>
 						<time dateTime={post.frontMatter.date}>{format(new Date(post.frontMatter.date), 'MM.dd.yyyy')}</time>
