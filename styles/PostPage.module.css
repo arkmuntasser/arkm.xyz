@@ -13,7 +13,7 @@
 
 .post-page header {
   display: grid;
-  gap: var(--space-4);
+  gap: var(--space-1);
   align-items: flex-start;
 }
 
@@ -23,11 +23,10 @@
 }
 
 .post-page header > div {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: min-content min-content;
   gap: var(--space-5);
   padding-block: var(--space-1);
-  border-block-end: solid 2px var(--gray-300);
 }
 
 :is(.post-page, .section) h1 {

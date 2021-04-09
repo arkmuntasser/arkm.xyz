@@ -9,6 +9,7 @@
   padding-block: var(--space-2);
   padding-inline: var(--space-3);
   font-size: var(--text-sm);
+  font-weight: 400;
   color: var(--gray-900);
   background-image: none !important;
   background-color: transparent;
