@@ -37,41 +37,9 @@
   border-radius: var(--rounded-lg);
 }
 
+.header nav a[data-current="true"],
 .header nav a:hover {
   text-decoration: none;
   color: var(--primary-color-900);
   background-color: var(--primary-color-50);
 }
-
-/* .header hr {
-  position: relative;
-  margin-inline: auto;
-  margin-block-start: var(--space-4);
-  margin-block-end: var(--space-8);
-  max-inline-size: var(--width-comfortable);
-  block-size: 2px;
-  border: none;
-  background: var(--white);
-  background-size: 100%;
-  background-image: linear-gradient(
-    to right,
-    transparent,
-    var(--gray-300),
-    transparent
-  );
-  outline: none;
-}
-
-.header hr:before {
-  content: attr(data-symbol);
-  position: absolute;
-  inset-block-start: 0;
-  left: 50%;
-  padding-block: var(--space-2);
-  padding-inline: var(--space-10);
-  font-size: var(--text-4xl);
-  color: var(--primary-color-500);
-  line-height: var(--leading-none);
-  background: var(--white);
-  transform: translate(-50%, -50%);
-} */

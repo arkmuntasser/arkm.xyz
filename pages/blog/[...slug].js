@@ -10,7 +10,8 @@ import Layout from '../../components/Layout';
 import Meta from '../../components/Meta';
 import Chips from '../../components/Chips';
 import animations from '../../styles/animations.module.css';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
+import useLoadInAnimation from '../../hooks/useLoadInAnimation';
 
 function Code({ children, title, ...props }) {
 	return (
@@ -46,25 +47,7 @@ export default function PostPage({ post }) {
 		}
 	});
 
-	const [animReady, setAnimReady] = useState(false);
-	const [runAnimation, setRunAnimation] = useState(false);
-
-	useEffect(() => {
-		const children = [...ref.current.children];
-
-		for (let i = 0; i < children.length; i++) {
-			children[i].style.transitionDuration = `${400 + 80 * i}ms`;
-		}
-
-		setAnimReady(true);
-	}, [content]);
-
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setRunAnimation(true);
-		}, 200);
-		return () => clearTimeout(timer);
-	}, [animReady]);
+	const runAnimation = useLoadInAnimation(ref, content);
 
 	return (
 		<Layout>

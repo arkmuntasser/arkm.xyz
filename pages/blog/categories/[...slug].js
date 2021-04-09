@@ -7,7 +7,7 @@ import Section from '../../../components/Section';
 export default function CatPage({ cat, posts }) {
 	return (
 		<Layout>
-			<Meta title={`Posts tagged '${cat.frontMatter.name}'`}/>
+			<Meta title={`Posts in the '${cat.frontMatter.name}' category`}/>
 			<main>
 				<Section>
 					<h1 style={{ transitionDuration: `${400 + 80 * 1}ms` }}><small>Category:</small><br/>{cat.frontMatter.name}</h1>

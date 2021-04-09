@@ -2,7 +2,6 @@ import { getAllNodes } from 'next-mdx';
 import PostGroup from '../components/PostGroup';
 import Layout from '../components/Layout';
 import Meta from '../components/Meta';
-import Hero from '../components/Hero';
 import Welcome from '../components/Welcome';
 
 export default function Home({ posts }) {
@@ -10,7 +9,6 @@ export default function Home({ posts }) {
 		<Layout>
 			<Meta title="Welcome to die!"/>
 			<main>
-				{/* <Hero/> */}
 				<Welcome/>
 				<PostGroup
 					title="Recent Posts"

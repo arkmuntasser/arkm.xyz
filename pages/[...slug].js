@@ -5,6 +5,9 @@ import Layout from '../components/Layout';
 import Meta from '../components/Meta';
 import panelStyles from '../styles/Panels.module.css';
 import ImageBox from '../components/ImageBox';
+import { useRef } from 'react';
+import useLoadInAnimation from '../hooks/useLoadInAnimation';
+import animations from '../styles/animations.module.css';
 
 function TwoCol({ children }) {
 	return (
@@ -23,6 +26,7 @@ function SmallCol({ children }) {
 }
 
 export default function Page({ page }) {
+	const ref = useRef(null);
 	const content = useHydrate(page, {
 		components: {
 			TwoCol,
@@ -31,10 +35,18 @@ export default function Page({ page }) {
 		}
 	});
 
+	const runAnimation = useLoadInAnimation(ref, content);
+
 	return (
 		<Layout>
 			<Meta title={page.frontMatter.title}/>
-			<main className={styles['post-page']} data-layout={page.frontMatter.layout}>
+			<main
+				ref={ref}
+				className={runAnimation
+					? `${styles['post-page']} ${animations.reveal} ${animations['reveal-loaded']}`
+					: `${styles['post-page']} ${animations.reveal}`}
+				data-layout={page.frontMatter.layout}
+			>
 				<h1>{page.frontMatter.title}</h1>
 				{content}
 			</main>

@@ -13,11 +13,12 @@
 .reveal > * {
   opacity: 0;
   transform: translateY(48px);
-  transition: 480ms transform ease, 480ms opacity ease;
   transform-origin: bottom center;
+  transition: none;
 }
 
 .reveal-loaded > * {
   opacity: 1;
   transform: none;
+  transition: 480ms transform ease, 480ms opacity ease;
 }
