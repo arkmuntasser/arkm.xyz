@@ -25,11 +25,13 @@
 
 .header nav {
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(5, auto);
   gap: var(--space-4);
 }
 
 .header nav a {
+  display: grid;
+  place-items: center;
   padding-inline: var(--space-2);
   font-weight: 700;
   color: var(--gray-900);
@@ -42,4 +44,8 @@
   text-decoration: none;
   color: var(--primary-color-900);
   background-color: var(--primary-color-50);
+}
+
+.header nav a svg {
+  stroke-width: 4px;
 }
