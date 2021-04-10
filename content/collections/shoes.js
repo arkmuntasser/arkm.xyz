@@ -1,14 +1,4 @@
----
-title: Collections
----
-
-## Shoes
-
-My love of shoes started relatively recently when Jen Bartel partnered with Adidas to make the limited edition Captain Marvel UltraBoosts. And then it was the Nike Adapt Huaraches that really locked me in (they're robot shoes!).
-
-Though I enjoy collecting shoes I find pretty, I try not to be too precious about them and will wear them out
-
-<Collection items={[
+export default [
 	{
 		title: `Adidas D.O.N. Issue #2 Marvel Spidey Sense Shoes`,
 		image: '/images/shoes-spidey.jpg',
@@ -21,7 +11,7 @@ Though I enjoy collecting shoes I find pretty, I try not to be too precious abou
 	},
 	{
 		title: `Adidas Ultraboost DNA x LEGO Plates Shoes`,
-		image: '/images/shoes-lego-2.png',
+		image: '/images/shoes-leg-2.jpg',
 		link: 'https://www.adidas.com/us/adidas-ultraboost-dna-x-lego-plates-shoes/FY7690.html'
 	},
 	{
@@ -31,32 +21,32 @@ Though I enjoy collecting shoes I find pretty, I try not to be too precious abou
 	},
 	{
 		title: `Nike Space Hippie 01 'This Is Trash'`,
-		image: '/images/shoes-trash.jpeg',
+		image: '/images/shoes-trash.jpg',
 		link: 'https://stockx.com/nike-space-hippie-01-vast-grey-hyper-crimson'
 	},
 	{
 		title: `Nike Blazer Mid '77 Vintage 'Have A Good Game'`,
-		image: '/images/shoes-gamer.jpeg',
+		image: '/image/shoes-gamer.png',
 		link: 'https://www.goat.com/sneakers/blazer-mid-77-vintage-have-a-good-game-dc3280-101'
 	},
 	{
 		title: `Nike Adapt Huarache 'Opti Yellow'`,
-		image: '/images/shoes-haurache.png',
+		image: '/imaes/shoes-haurache.jpg',
 		link: 'https://www.nike.com/launch/t/adapt-huarache-opti-yellow'
 	},
 	{
 		title: `Nintendo x J. Cole x Puma RS-Dreamer 'Super Mario 64'`,
-		image: '/images/shoes-mario.jpeg',
+		image: '/images/shoes-mario.jpg',
 		link: 'https://www.goat.com/sneakers/nintendo-x-j-cole-x-rs-dreamer-super-mario-64-194606-01'
 	},
 	{
 		title: `U.S.C.M. Bug x Reebok Alien Stomper '40th Anniversary'`,
-		image: '/images/shoes-alien.jpeg',
+		image: '/images/shoes-alien.jpg',
 		link: 'https://www.goat.com/sneakers/u-s-c-m-bug-x-alien-stomper-40th-anniversary-fv5052'
 	},
 	{
 		title: `Disney x Vans Sk8-Hi 'Sorcerer's Apprentice'`,
-		image: '/images/shoes-disney.jpeg',
+		image: '/images/disney.jpg',
 		link: 'https://www.vans.com/shop/ProductDisplay?storeId=10165&urlLangId=-36&productId=3819215&urlRequestType=Base&langId=-36&catalogId=11261'
 	},
 	{
@@ -64,16 +54,4 @@ Though I enjoy collecting shoes I find pretty, I try not to be too precious abou
 		image: '/images/shoes-destiny.jpg',
 		link: 'https://bungiestore.com/products/preorder-pampa-baggy-moon-palladium-boot'
 	},
-]}/>
-
-## Apple Computers & Devices
-
-I worked at a local electonics store a long time ago when a customer brought in a Apple Macintosh M1000 to trade in. The store owner didn't care about this awesome piece of history that just got dropped in his lap so he sold it to me for basically nothing.
-
-Since then I've been working on collection pivotal "firsts" in Apple's history.
-
-- Apple Macintosh 128K M0001
-- Apple iPhone (1st Generation) w/ Apple Bluetooth Headset
-- Apple iMac (2nd Generation)
-- Apple iBook
-- Apple Watch (1st Generation)
+];

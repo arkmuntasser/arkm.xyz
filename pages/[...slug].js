@@ -8,6 +8,7 @@ import ImageBox from '../components/ImageBox';
 import { useRef } from 'react';
 import useLoadInAnimation from '../hooks/useLoadInAnimation';
 import animations from '../styles/animations.module.css';
+import Image from 'next/image';
 
 function TwoCol({ children }) {
 	return (
@@ -35,7 +36,7 @@ function Collection({ items }) {
 							{item.title}
 						</a>
 					</h3>
-					<img src="https://via.placeholder.com/100x75" alt="" />
+					<Image src={item.image} alt={''} layout="responsive" width="100" height="75" />
 				</article>
 			))}
 		</section>
