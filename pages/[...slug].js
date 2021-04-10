@@ -25,6 +25,23 @@ function SmallCol({ children }) {
 	)
 }
 
+function Collection({ items }) {
+	return (
+		<section className={styles.collection}>
+			{items.map((item, i) => (
+				<article key={i}>
+					<h3>
+						<a href={item.link} rel="noopener noreferer" target="_blank">
+							{item.title}
+						</a>
+					</h3>
+					<img src="https://via.placeholder.com/100x75" alt="" />
+				</article>
+			))}
+		</section>
+	)
+}
+
 export default function Page({ page }) {
 	const ref = useRef(null);
 	const content = useHydrate(page, {
@@ -32,6 +49,7 @@ export default function Page({ page }) {
 			TwoCol,
 			ImageBox,
 			SmallCol,
+			Collection,
 		}
 	});
 

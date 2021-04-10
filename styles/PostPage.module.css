@@ -192,3 +192,39 @@
   font-weight: 700;
   background: none !important;
 }
+
+.collection {
+  display: grid;
+  gap: var(--space-2);
+  margin-block-end: var(--space-12);
+}
+
+.collection article {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: var(--rounded-lg);
+  border: 2px solid var(--gray-300);
+  overflow: hidden;
+}
+
+.collection article h3 {
+  margin: 0;
+  padding: var(--space-4);
+  font-size: var(--text-base);
+}
+
+.collection img {
+  height: auto;
+}
+
+.collection article a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
