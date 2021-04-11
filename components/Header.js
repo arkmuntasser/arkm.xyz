@@ -13,9 +13,10 @@ export default function Header() {
 				<Logo/>
 				<nav>
 					<Link href="/blog" passHref><a data-current={router.asPath === '/blog'}>Blog</a></Link>
-					<Link href="/about" passHref><a data-current={router.asPath === '/about'}>About</a></Link>
+					<Link href="/weeknotes" passHref><a data-current={router.asPath === '/weeknotes'}>Weeknotes</a></Link>
 					<Link href="/uses" passHref><a data-current={router.asPath === '/uses'}>Uses</a></Link>
 					<Link href="/collections" passHref><a data-current={router.asPath === '/collections'}>Collections</a></Link>
+					<Link href="/about" passHref><a data-current={router.asPath === '/about'}>About</a></Link>
 					<a href="/rss.xml" aria-label="RSS Feed"><FiRss/></a>
 				</nav>
 			</div>

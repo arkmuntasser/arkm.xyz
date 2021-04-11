@@ -5,10 +5,11 @@ import Layout from '../components/Layout';
 import Meta from '../components/Meta';
 import panelStyles from '../styles/Panels.module.css';
 import ImageBox from '../components/ImageBox';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useLoadInAnimation from '../hooks/useLoadInAnimation';
 import animations from '../styles/animations.module.css';
 import Image from 'next/image';
+import useIntersectionObserver from '@react-hook/intersection-observer';
 
 function TwoCol({ children }) {
 	return (
@@ -27,10 +28,23 @@ function SmallCol({ children }) {
 }
 
 function Collection({ items }) {
+	const ref = useRef(null);
+	const { isIntersecting } = useIntersectionObserver(ref);
+
+	const [intersected, setIntersected] = useState(false);
+
+	useEffect(function() {
+		if (isIntersecting) {
+			setIntersected(true);
+		}
+	}, [isIntersecting]);
+
 	return (
-		<section className={styles.collection}>
+		<section ref={ref} className={intersected
+			? `${styles.collection} ${animations.chain} ${animations['chain-loaded']}`
+			: `${styles.collection} ${animations.chain}`}>
 			{items.map((item, i) => (
-				<article key={i}>
+				<article key={i} style={{ transitionDuration: `${240 + 80 * i}ms` }}>
 					<h3>
 						<a href={item.link} rel="noopener noreferer" target="_blank">
 							{item.title}
