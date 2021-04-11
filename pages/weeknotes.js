@@ -11,12 +11,8 @@ export default function Weeknotes({ posts, cats }) {
 			<main>
 				<Section>
 					<h1 style={{ transitionDuration: `${400 + 80 * 1}ms` }}>Weeknotes</h1>
-					<p style={{ transitionDuration: `${400 + 80 * 2}ms` }}>
-						This is where you can find a collection of all my writings. Topics will range from development, to politics, to social justice issues. Whatever is on my mind, really. Have yourself a read and hopefully you get something out of it, but these posts are for me.
-					</p>
 				</Section>
 				<PostGroup
-					title="The Notes"
 					posts={posts}
 				/>
 			</main>

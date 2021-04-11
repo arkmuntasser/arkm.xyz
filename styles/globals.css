@@ -6,6 +6,7 @@
   --font-display: var(--font-body);
 
   /*  Widths  */
+  --width-small: 280px;
   --width-compact: calc(var(--width-comfortable) * (2 / 3));
   --width-comfortable: 72ch;
   --width-double: calc(var(--width-comfortable) * 2);
