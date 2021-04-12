@@ -3,7 +3,8 @@ import { format } from 'date-fns';
 import styles from '../styles/Post.module.css';
 
 export default function Post({ data, style }) {
-	const date = new Date(data.frontMatter.date);
+	const [year, month, day] = data.frontMatter.date.split('-');
+	const date = new Date(parseInt(year), (parseInt(month) - 1), parseInt(day));
 	const correctedDate = date.valueOf() + date.getTimezoneOffset() * 60 * 1000;
 
   return (

@@ -22,13 +22,13 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getAllNodes('post');
-	posts.sort((a,b) => {
+  let posts = await getAllNodes('post');
+	posts = posts.sort((a,b) => {
 		const aDate = new Date(a.frontMatter.date);
 		const bDate = new Date(b.frontMatter.date);
 
 		return bDate.valueOf() - aDate.valueOf();
-	});
+	}).filter(post => post.frontMatter.weeknotes === false);
 
   return {
     props: {
