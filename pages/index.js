@@ -7,7 +7,7 @@ import Welcome from '../components/Welcome';
 export default function Home({ posts }) {
   return (
 		<Layout>
-			<Meta title="Welcome to die!"/>
+			<Meta title="Welcome!"/>
 			<main>
 				<Welcome/>
 				<PostGroup
