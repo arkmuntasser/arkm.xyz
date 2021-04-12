@@ -12,6 +12,7 @@ import Chips from '../../components/Chips';
 import animations from '../../styles/animations.module.css';
 import { useRef } from 'react';
 import useLoadInAnimation from '../../hooks/useLoadInAnimation';
+import ImageBox from '../../components/ImageBox';
 
 function Code({ children, title, ...props }) {
 	return (
@@ -44,6 +45,7 @@ export default function PostPage({ post }) {
 		components: {
 			Code,
 			TwitterTweetEmbed,
+			ImageBox,
 		}
 	});
 
@@ -90,6 +92,7 @@ export async function getStaticProps(context) {
 				components: {
 					Code,
 					TwitterTweetEmbed,
+					ImageBox,
 				}
 			})
 		}

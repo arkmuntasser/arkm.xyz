@@ -16,9 +16,13 @@ export default function Header() {
 		<header className={styles.header}>
 			<div>
 				<Logo/>
-				{wWidth <= 640 ? <button onClick={() => setMenuOpen(!menuOpen)}>Menu</button> : null}
+				{wWidth <= 640 ? <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu" aria-expanded={menuOpen} aria-controls="menu">
+					<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+					</svg>
+				</button> : null}
 				{wWidth > 640 || menuOpen ? (
-					<nav>
+					<nav id="menu">
 						<Link href="/blog" passHref><a data-current={router.asPath === '/blog'}>Blog</a></Link>
 						<Link href="/weeknotes" passHref><a data-current={router.asPath === '/weeknotes'}>Weeknotes</a></Link>
 						<Link href="/uses" passHref><a data-current={router.asPath === '/uses'}>Uses</a></Link>

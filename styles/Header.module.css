@@ -27,6 +27,21 @@
   padding-block: var(--space-1);
 }
 
+.header button {
+  color: var(--primary-color-700);
+  background-color: transparent;
+}
+
+@media (min-width: 640px) {
+  .header button {
+    display: none;
+  }
+}
+
+.header button svg path {
+  stroke-width: 3px;
+}
+
 .header nav {
   position: absolute;
   z-index: 10;
@@ -42,7 +57,7 @@
   box-shadow: var(--shadow-xl), var(--shadow-md);
 }
 
-@media (min-width: 48em) {
+@media (min-width: 640px) {
   .header nav {
     position: static;
     display: grid;
@@ -66,7 +81,7 @@
   border-radius: var(--rounded-lg);
 }
 
-@media (min-width: 48em) {
+@media (min-width: 640px) {
   .header nav a {
     place-items: center;
     text-align: center;
