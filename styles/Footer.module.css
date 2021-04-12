@@ -47,6 +47,10 @@
   color: var(--gray-700);
 }
 
+.footer p:first-child {
+  line-height: var(--leading-loose);
+}
+
 .footer p:first-child a {
   display: inline-flex;
   gap: var(--space-1);
