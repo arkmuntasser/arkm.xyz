@@ -10,7 +10,6 @@ export default function Header() {
 	const router = useRouter();
 	const [menuOpen, setMenuOpen] = useState(false);
 	const wWidth = useWindowWidth();
-	// const [showMenuButton, setShowMenuButton] = useState(wWidth <= 640px &&)
 
 	return (
 		<header className={styles.header}>

@@ -102,6 +102,7 @@ export async function getStaticProps(context) {
 					TwoCol,
 					ImageBox,
 					SmallCol,
+					Collection,
 				}
 			})
 		}
