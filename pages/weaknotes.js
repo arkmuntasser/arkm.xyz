@@ -4,13 +4,16 @@ import Meta from '../components/Meta';
 import PostGroup from '../components/PostGroup';
 import Section from '../components/Section';
 
-export default function Weeknotes({ posts, cats }) {
+export default function Weaknotes({ posts }) {
   return (
 		<Layout>
-			<Meta title="Weeknotes"/>
+			<Meta title="Weaknotes"/>
 			<main>
 				<Section>
-					<h1 style={{ transitionDuration: `${400 + 80 * 1}ms` }}>Weeknotes</h1>
+					<h1 style={{ transitionDuration: `${400 + 80 * 1}ms` }}>Weaknotes</h1>
+					<p>
+						I saw this developer I really respect, <a href="https://meowni.ca/weaknotes/" target="_blank" rel="noopener noreferrer">Monica Dinculescu</a>, started doing weeknotes and thought it was something I could get a lot of benefit from. I also appreciated the pun of 'weak'-notes vs weeknotes that she pointed out so I'm shamelessly copying it.
+					</p>
 				</Section>
 				<PostGroup
 					posts={posts}
