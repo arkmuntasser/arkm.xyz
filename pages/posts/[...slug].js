@@ -50,6 +50,9 @@ export default function PostPage({ post }) {
 	});
 
 	const runAnimation = useLoadInAnimation(ref, content);
+	const [year, month, day] = post.frontMatter.date.split('-');
+	const date = new Date(parseInt(year), (parseInt(month) - 1), parseInt(day));
+	const correctedDate = date.valueOf() + date.getTimezoneOffset() * 60 * 1000;
 
 	return (
 		<Layout>
@@ -62,17 +65,19 @@ export default function PostPage({ post }) {
 			>
 				<header>
 					<div>
-						<time dateTime={post.frontMatter.date}>{format(new Date(post.frontMatter.date), 'MM.dd.yyyy')}</time>
-						<ShareButton text={post.frontMatter.title} url={`https://arkm.xyz/blog/${post.slug}`} via="arkmuntasser" />
+						<time dateTime={post.frontMatter.date}>{format(correctedDate, 'MM.dd.yyyy')}</time>
+						<ShareButton text={post.frontMatter.title} url={`https://arkm.xyz/posts/${post.slug}`} via="arkmuntasser" />
 					</div>
 					<h1>{post.frontMatter.title}</h1>
 				</header>
 
 				{content}
 
-				<footer>
-					<Chips items={post.relationships.category}/>
-				</footer>
+				{post.relationships.category ? (
+					<footer>
+						<Chips items={post.relationships.category}/>
+					</footer>
+				) : null}
 			</main>
 		</Layout>
 	)

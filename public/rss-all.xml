@@ -4,89 +4,101 @@
         <description><![CDATA[Amir R Muntasser's Firehose]]></description>
         <link>https://arkm.xyz</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 12 Apr 2021 05:55:38 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 13 Apr 2021 03:07:31 GMT</lastBuildDate>
+        <item>
+            <title><![CDATA[Creating an RSS feed with Next.js and Next-MDX]]></title>
+            <link>https://arkm.xyz/posts/create-an-rss-feed-nextjs-mdx-blog</link>
+            <guid isPermaLink="false">/posts/create-an-rss-feed-nextjs-mdx-blog</guid>
+            <pubDate>Mon, 12 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[How I Created an Assessment to Evaluate Potential New Hires]]></title>
-            <link>https://arkm.xyz/blog/how-i-created-an-assessment-to-evaluate-potential-new-hires</link>
-            <guid isPermaLink="false">/blog/how-i-created-an-assessment-to-evaluate-potential-new-hires</guid>
+            <link>https://arkm.xyz/posts/how-i-created-an-assessment-to-evaluate-potential-new-hires</link>
+            <guid isPermaLink="false">/posts/how-i-created-an-assessment-to-evaluate-potential-new-hires</guid>
             <pubDate>Sat, 10 Nov 2018 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[How I Solved the Impossible Layout]]></title>
-            <link>https://arkm.xyz/blog/how-i-solved-the-impossible-layout</link>
-            <guid isPermaLink="false">/blog/how-i-solved-the-impossible-layout</guid>
+            <link>https://arkm.xyz/posts/how-i-solved-the-impossible-layout</link>
+            <guid isPermaLink="false">/posts/how-i-solved-the-impossible-layout</guid>
             <pubDate>Sat, 23 Mar 2019 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[How to Build Responsive Layouts without Media Queries]]></title>
-            <link>https://arkm.xyz/blog/how-to-build-responsive-layouts-without-media-queries</link>
-            <guid isPermaLink="false">/blog/how-to-build-responsive-layouts-without-media-queries</guid>
+            <link>https://arkm.xyz/posts/how-to-build-responsive-layouts-without-media-queries</link>
+            <guid isPermaLink="false">/posts/how-to-build-responsive-layouts-without-media-queries</guid>
             <pubDate>Fri, 02 Aug 2019 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[How to Give an HTML Element an Aspect Ratio]]></title>
-            <link>https://arkm.xyz/blog/how-to-give-an-html-element-an-aspect-ratio</link>
-            <guid isPermaLink="false">/blog/how-to-give-an-html-element-an-aspect-ratio</guid>
+            <link>https://arkm.xyz/posts/how-to-give-an-html-element-an-aspect-ratio</link>
+            <guid isPermaLink="false">/posts/how-to-give-an-html-element-an-aspect-ratio</guid>
             <pubDate>Sat, 27 Jul 2019 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[How to Improve Dropdown Navigation with Animation]]></title>
-            <link>https://arkm.xyz/blog/how-to-improve-dropdown-navigation-with-animation</link>
-            <guid isPermaLink="false">/blog/how-to-improve-dropdown-navigation-with-animation</guid>
+            <link>https://arkm.xyz/posts/how-to-improve-dropdown-navigation-with-animation</link>
+            <guid isPermaLink="false">/posts/how-to-improve-dropdown-navigation-with-animation</guid>
             <pubDate>Wed, 27 Dec 2017 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Making Accessible Drop Caps]]></title>
-            <link>https://arkm.xyz/blog/how-to-make-accessible-drop-caps</link>
-            <guid isPermaLink="false">/blog/how-to-make-accessible-drop-caps</guid>
+            <link>https://arkm.xyz/posts/how-to-make-accessible-drop-caps</link>
+            <guid isPermaLink="false">/posts/how-to-make-accessible-drop-caps</guid>
             <pubDate>Sat, 07 Mar 2020 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Phobia and the Mislabeling of Hate]]></title>
-            <link>https://arkm.xyz/blog/phobia-and-the-mislabelling-of-hate</link>
-            <guid isPermaLink="false">/blog/phobia-and-the-mislabelling-of-hate</guid>
+            <link>https://arkm.xyz/posts/phobia-and-the-mislabelling-of-hate</link>
+            <guid isPermaLink="false">/posts/phobia-and-the-mislabelling-of-hate</guid>
             <pubDate>Sat, 21 Apr 2018 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Punching Nazis is an American Pastime]]></title>
-            <link>https://arkm.xyz/blog/punching-nazi-american-pastime</link>
-            <guid isPermaLink="false">/blog/punching-nazi-american-pastime</guid>
+            <link>https://arkm.xyz/posts/punching-nazi-american-pastime</link>
+            <guid isPermaLink="false">/posts/punching-nazi-american-pastime</guid>
             <pubDate>Mon, 23 Jan 2017 07:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[This one weird trick changed my whole async/await game]]></title>
-            <link>https://arkm.xyz/blog/safe-async-await-changed-my-life</link>
-            <guid isPermaLink="false">/blog/safe-async-await-changed-my-life</guid>
+            <link>https://arkm.xyz/posts/safe-async-await-changed-my-life</link>
+            <guid isPermaLink="false">/posts/safe-async-await-changed-my-life</guid>
             <pubDate>Fri, 09 Oct 2020 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Finding Respite in Lego]]></title>
-            <link>https://arkm.xyz/blog/therapy-via-lego-during-pandemic</link>
-            <guid isPermaLink="false">/blog/therapy-via-lego-during-pandemic</guid>
+            <link>https://arkm.xyz/posts/therapy-via-lego-during-pandemic</link>
+            <guid isPermaLink="false">/posts/therapy-via-lego-during-pandemic</guid>
             <pubDate>Sun, 11 Apr 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA[Week 1]]></title>
+            <link>https://arkm.xyz/posts/week-1</link>
+            <guid isPermaLink="false">/posts/week-1</guid>
+            <pubDate>Fri, 16 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[What Even are "Real" Developers]]></title>
-            <link>https://arkm.xyz/blog/what-even-are-real-developers</link>
-            <guid isPermaLink="false">/blog/what-even-are-real-developers</guid>
+            <link>https://arkm.xyz/posts/what-even-are-real-developers</link>
+            <guid isPermaLink="false">/posts/what-even-are-real-developers</guid>
             <pubDate>Sun, 01 Apr 2018 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Why I built a Custom Link Vue Component at Work]]></title>
-            <link>https://arkm.xyz/blog/why-i-built-a-custom-link-vue-component-at-work</link>
-            <guid isPermaLink="false">/blog/why-i-built-a-custom-link-vue-component-at-work</guid>
+            <link>https://arkm.xyz/posts/why-i-built-a-custom-link-vue-component-at-work</link>
+            <guid isPermaLink="false">/posts/why-i-built-a-custom-link-vue-component-at-work</guid>
             <pubDate>Fri, 04 Jan 2019 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Write Better Code with CSS Grid]]></title>
-            <link>https://arkm.xyz/blog/write-better-code-with-css-grid</link>
-            <guid isPermaLink="false">/blog/write-better-code-with-css-grid</guid>
+            <link>https://arkm.xyz/posts/write-better-code-with-css-grid</link>
+            <guid isPermaLink="false">/posts/write-better-code-with-css-grid</guid>
             <pubDate>Sun, 11 Feb 2018 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Write Cleaner Code by Separating Logic from Templates]]></title>
-            <link>https://arkm.xyz/blog/write-cleaner-code-by-separating-logic-from-templates</link>
-            <guid isPermaLink="false">/blog/write-cleaner-code-by-separating-logic-from-templates</guid>
+            <link>https://arkm.xyz/posts/write-cleaner-code-by-separating-logic-from-templates</link>
+            <guid isPermaLink="false">/posts/write-cleaner-code-by-separating-logic-from-templates</guid>
             <pubDate>Wed, 24 Jul 2019 00:00:00 GMT</pubDate>
         </item>
     </channel>

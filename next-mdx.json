@@ -1,7 +1,7 @@
 {
 	"post": {
 		"contentPath": "content/posts",
-		"basePath": "/blog",
+		"basePath": "/posts",
 		"sortBy": "date",
     "sortOrder": "desc"
 	},
@@ -11,7 +11,7 @@
 	},
 	"category": {
     "contentPath": "content/categories",
-    "basePath": "/blog/categories"
+    "basePath": "/posts/categories"
   },
 	"page": {
     "contentPath": "content/pages",

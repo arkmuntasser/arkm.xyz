@@ -5,7 +5,7 @@ import useIntersectionObserver from '@react-hook/intersection-observer';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
-export default function PostGroup({ title, posts, viewAllCTA, viewAllHref }) {
+export default function PostGroup({ title, posts, viewAllCTA, viewAllHref, type = 'post' }) {
 	const ref = useRef(null);
 	const { isIntersecting } = useIntersectionObserver(ref);
 
@@ -32,10 +32,12 @@ export default function PostGroup({ title, posts, viewAllCTA, viewAllHref }) {
 				<div className={intersected
 					? `${styles.posts} ${animations.chain} ${animations['chain-loaded']}`
 					: `${styles.posts} ${animations.chain}`}
+					data-layout={type}
 				>
 					{posts.length
 						? posts.map((post, i) => (<Post
 								data={post}
+								type={type}
 								key={post.slug}
 								style={{ transitionDuration: `${240 + 80 * i}ms` }}
 							/>))

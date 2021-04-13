@@ -43,8 +43,8 @@ export async function getStaticProps(context) {
   return {
     props: {
       cat,
-      posts: posts.filter((post) =>
-        post?.relationships?.category.some(c => c?.slug === cat.slug)
+      posts: posts.filter(post => post.frontMatter.weeknotes === false).filter((post) =>
+        post?.relationships?.category?.some(c => c?.slug === cat.slug)
       ),
     },
   }

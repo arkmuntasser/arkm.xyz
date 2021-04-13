@@ -14,9 +14,13 @@ export default function Weaknotes({ posts }) {
 					<p>
 						I saw this developer I really respect, <a href="https://meowni.ca/weaknotes/" target="_blank" rel="noopener noreferrer">Monica Dinculescu</a>, started doing weeknotes and thought it was something I could get a lot of benefit from. I also appreciated the pun of 'weak'-notes vs weeknotes that she pointed out so I'm shamelessly copying it.
 					</p>
+					<p style={{ transitionDuration: `${400 + 80 * 3}ms` }}>
+						<a href="/rss-weaknotes.xml">Subscribe to the weaknotes-only RSS feed</a>
+					</p>
 				</Section>
 				<PostGroup
 					posts={posts}
+					type="weeknote"
 				/>
 			</main>
 		</Layout>

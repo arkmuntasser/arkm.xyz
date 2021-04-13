@@ -67,3 +67,24 @@
   font-size: var(--text-lg);
   color: var(--gray-700);
 }
+
+.section a {
+  font-weight: 700;
+  background-image: linear-gradient(
+    to right,
+    var(--primary-color-500),
+    var(--secondary-color-500) 50%,
+    var(--gray-500) 50%,
+    var(--gray-500)
+  );
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 200% 2px;
+  transition: background-position 0.3s;
+}
+
+.section a:hover,
+.section a:focus {
+  text-decoration: none;
+  background-position: 0% 100%;
+}

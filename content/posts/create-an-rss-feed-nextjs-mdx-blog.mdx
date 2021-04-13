@@ -1,0 +1,70 @@
+---
+title: Creating an RSS feed with Next.js and Next-MDX
+date: "2021-04-12"
+excerpt: I recently decided to fully rebuild my blog from the ground up using Next.js. By default, there's no built-in support to auto-generate an RSS for blog posts like there are in so many starters for Gatsby. As such I needed to roll my own.
+author:
+  - amir
+category:
+  - javascript
+  - next
+  - mdx
+featured: false
+weeknotes: false
+---
+
+I recently decided to fully rebuild my blog from the ground up using Next.js. By default, there's no built-in support to auto-generate an RSS for blog posts like there are in so many starters for Gatsby. As such I needed to roll my own.
+
+Ultimately, an RSS feed is just an XML file that gets updated with new entries as new posts are made. Lucklily, we can take advantage of the fact that committing a new blog post will trigger a new build of the site. Using that, we can update the build command in our `package.json` to run a node script before our actual build like this:
+
+<Code language="json">
+{`"scripts": {
+	"build": "node ./buildFeed && next build",
+},`}
+</Code>
+
+Now we just need to update our `buildFeed.js` (which lives in our root directory) to create a new XML file when it's run. To do that I'm going to 3 packages: `fs`, [`rss`](https://www.npmjs.com/package/rss), and [`next-mdx`](https://www.next-mdx.org/).
+
+<Code language="javascript">
+{`const fs = require('fs')
+const RSS = require('rss')
+const { getAllNodes } = require('next-mdx');`}
+</Code>
+
+First we need to create a new RSS feed.
+
+<Code language="javascript">
+{`const feed = new RSS({
+	title: 'My Blog',
+	site_url: 'https://my-blog.com'
+});`}
+</Code>
+
+Next we need to get the blog posts to load into this feed.
+
+<Code language="javascript">
+{`const posts = await getAllNodes('post');`}
+</Code>
+
+Then we need to iterate over our posts and add them to our feed.
+
+<Code language="javascript">
+{`posts.forEach(post => {
+	feed.item({
+		title: post.frontMatter.title,
+		guid: post.slug,
+		url: 'https://my-blog.com/post/' + post.url,
+		date: post.frontMatter.date
+	});
+});`}
+</Code>
+
+Now we have our feed built out, we just need to generate the XML and write it out to a file.
+
+<Code language="javascript">
+{`const xml = feed.xml({ indent: true });\n
+fx.writeFileSync('public/rss.xml', xml);`}
+</Code>
+
+This will write our `rss.xml` file to the public folder of our Next.js app so that it will be at a publicly available URL at `https://my-blog.com/rss.xml`.
+
+[See the gist for the full code](https://gist.github.com/arkmuntasser/7d73909b3c7d7cc8f61c915f1df1b65f).
