@@ -1,13 +1,13 @@
 import { useHydrate } from 'next-mdx/client';
 import { getMdxNode, getMdxPaths } from 'next-mdx/server';
-import styles from '../styles/PostPage.module.css';
-import Layout from '../components/Layout';
-import Meta from '../components/Meta';
-import panelStyles from '../styles/Panels.module.css';
-import ImageBox from '../components/ImageBox';
+import styles from '../src/styles/PostPage.module.css';
+import Layout from '../src/components/Layout';
+import Meta from '../src/components/Meta';
+import panelStyles from '../src/styles/Panels.module.css';
+import ImageBox from '../src/components/ImageBox';
 import { useEffect, useRef, useState } from 'react';
-import useLoadInAnimation from '../hooks/useLoadInAnimation';
-import animations from '../styles/animations.module.css';
+import useLoadInAnimation from '../src/hooks/useLoadInAnimation';
+import animations from '../src/styles/animations.module.css';
 import Image from 'next/image';
 import useIntersectionObserver from '@react-hook/intersection-observer';
 

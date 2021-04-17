@@ -2,17 +2,17 @@ import { useHydrate } from 'next-mdx/client';
 import { getMdxNode, getMdxPaths } from 'next-mdx/server';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus as codeStyle } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import styles from '../../styles/PostPage.module.css';
+import styles from '../../src/styles/PostPage.module.css';
 import { format } from 'date-fns';
 import { FiShare2 } from 'react-icons/fi';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
-import Layout from '../../components/Layout';
-import Meta from '../../components/Meta';
-import Chips from '../../components/Chips';
-import animations from '../../styles/animations.module.css';
+import Layout from '../../src/components/Layout';
+import Meta from '../../src/components/Meta';
+import Chips from '../../src/components/Chips';
+import animations from '../../src/styles/animations.module.css';
 import { useRef } from 'react';
-import useLoadInAnimation from '../../hooks/useLoadInAnimation';
-import ImageBox from '../../components/ImageBox';
+import useLoadInAnimation from '../../src/hooks/useLoadInAnimation';
+import ImageBox from '../../src/components/ImageBox';
 
 function Code({ children, title, ...props }) {
 	return (

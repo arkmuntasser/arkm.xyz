@@ -1,8 +1,8 @@
 import { getAllNodes } from 'next-mdx';
-import PostGroup from '../components/PostGroup';
-import Layout from '../components/Layout';
-import Meta from '../components/Meta';
-import Welcome from '../components/Welcome';
+import PostGroup from '../src/components/PostGroup';
+import Layout from '../src/components/Layout';
+import Meta from '../src/components/Meta';
+import Welcome from '../src/components/Welcome';
 
 export default function Home({ posts }) {
   return (

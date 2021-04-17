@@ -1,9 +1,9 @@
 import { getAllNodes } from 'next-mdx';
-import Chips from '../components/Chips';
-import Layout from '../components/Layout';
-import Meta from '../components/Meta';
-import PostGroup from '../components/PostGroup';
-import Section from '../components/Section';
+import Chips from '../src/components/Chips';
+import Layout from '../src/components/Layout';
+import Meta from '../src/components/Meta';
+import PostGroup from '../src/components/PostGroup';
+import Section from '../src/components/Section';
 
 export default function Blog({ posts, cats }) {
   return (

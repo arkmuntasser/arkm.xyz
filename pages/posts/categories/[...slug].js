@@ -1,8 +1,8 @@
 import { getAllNodes, getMdxPaths, getNode } from 'next-mdx';
-import Layout from '../../../components/Layout';
-import Meta from '../../../components/Meta';
-import PostGroup from '../../../components/PostGroup';
-import Section from '../../../components/Section';
+import Layout from '../../../src/components/Layout';
+import Meta from '../../../src/components/Meta';
+import PostGroup from '../../../src/components/PostGroup';
+import Section from '../../../src/components/Section';
 
 export default function CatPage({ cat, posts }) {
 	return (
