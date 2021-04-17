@@ -1,0 +1,16 @@
+.imagebox {
+  display: grid;
+  gap: var(--space-1);
+  margin-block: var(--space-8);
+}
+
+.imagebox > div {
+  border-radius: var(--rounded-lg);
+  background-color: var(--gray-200);
+  overflow: hidden;
+}
+
+.imagebox figcaption {
+  font-size: var(--text-sm);
+  color: var(--gray-700);
+}

@@ -1,37 +1,30 @@
-# arkm.xyz [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-It's a website! My website. Blog technically, but I plan on expanding it with more stuff as time goes on.
+## Getting Started
 
-## Installation
-
-Run local server:
+First, run the development server:
 
 ```bash
-git clone https://github.com/arkmuntasser/arkm.xyz
-cd arkm.xyz
-npm install
 npm run dev
+# or
+yarn dev
 ```
 
-Navigate to `localhost:8000`.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Features
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-- Posts and pages in Markdown
-- Tags
+## Learn More
 
-## Contributing
+To learn more about Next.js, take a look at the following resources:
 
-See a typo? Maybe some other error? Please feel free to submit a pull request to fix it!
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Acknowledgements
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-- Matt Hagner - [Gatsby Starter Blog MDX](https://github.com/hagnerd/gatsby-starter-blog-mdx)
+## Deploy on Vercel
 
-## Author
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- [Amir R Muntasser](https://arkm.xyz)
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

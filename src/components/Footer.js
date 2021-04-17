@@ -1,43 +1,15 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import Bio from '../components/Bio';
-import '../styles/footer.css';
+import styles from '../styles/Footer.module.css';
+import { FiGithub, FiTwitter } from 'react-icons/fi';
+import Logo from './Logo';
 
-function Footer() {
-	return (
-		<footer className="site-footer">
-			<div className="inner">
-				<Bio />
-				<div className="links">
-					<a
-						className="footer-link"
-						href="https://twitter.com/arkmuntasser"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Twitter
-					</a>
-					<a
-						className="footer-link"
-						href="https://github.com/arkmuntasser"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						GitHub
-					</a>
-					<Link className="footer-link" to="/about">
-						About Me
-					</Link>
-					<Link className="footer-link" to="/uses">
-						Uses
-					</Link>
-					<Link className="footer-link" to="/changelog">
-						Changelog
-					</Link>
-				</div>
+export default function Footer() {
+  return (
+		<footer className={styles.footer}>
+			<hr data-symbol="⊛"/>
+			<div>
+				<p>Codes on <a href="https://github.com/arkmuntasser" target="_blank" rel="noopener noreferrer"><span style={{backgroundColor: '#000'}}><FiGithub/></span> GitHub</a>. Shitposts on <a href="https://twitter.com/arkmuntasser" target="_blank" rel="noopener noreferrer"><span style={{backgroundColor: '#1da1f2'}}><FiTwitter/></span> Twitter</a>.</p>
+				<p><Logo size="sm"/> &copy; 2010 - {new Date().getFullYear()}</p>
 			</div>
 		</footer>
-	)
+  )
 }
-
-export default Footer;

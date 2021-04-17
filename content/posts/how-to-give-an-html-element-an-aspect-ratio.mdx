@@ -1,0 +1,79 @@
+---
+title: How to Give an HTML Element an Aspect Ratio
+date: "2019-07-27"
+excerpt: Sometimes you just need a element to shrink or grow in height proportionally with the width.
+author:
+  - amir
+category:
+  - html
+  - css
+featured: false
+weeknotes: false
+---
+
+Sometimes you just need a element to shrink or grow in height proportionally with the width. Some tags will naturally do this like the `img` tag or `video` tag, but sometimes you need this functionality on something like a `div`. For example, you might be lazy loading an image, but want to reserve the space of the image so content doesn't jump when the image loads in.
+
+We can do this using a handy trick of padding. If you give an element a top or bottom padding with a percent value that percent will be in relation to width of the elements parent. Let's take a look at an example to get a better idea of what that means.
+
+Consider the following:
+
+<Code language="html">
+{`<style>
+  .parent {
+    width: 400px;
+  }\n
+  .child {
+    padding-bottom: 50%;
+    height: 0;
+    background-color: tomato;
+  }
+</style>\n
+<div class="parent">
+  <div class="child"></div>
+</div>`}
+</Code>
+
+Here we have an element called `.parent` with a width of 400px and an element called `.child` with a bottom padding of 50%. When this renders the browser will resolve the bottom padding to 200px because that's what 50% of 400px (the width of the parent element) is. This results in the child element having an aspect ratio of 2:1. But you may be wondering why I set the height to 0 on the child element.
+
+By default, a `div` will have a height to fit its contents; I want to make sure the height of the element is being only determined by my bottom padding and the quickest way to do that is to set the height to 0.
+
+Now that we've made a box with an aspect ratio, let's do something more practical like reserving space for a lazy-loading image.
+
+<Code language="html">
+{`<style>
+  .post {
+    width: 400px;
+  }\n
+  .post .img-wrapper {
+    position: relative;
+    padding-bottom: calc(600 / 800 * 100%);
+    height: 0;
+  }\n
+  .post .img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>\n
+<article class="post">
+  <div class="img-wrapper">
+    <img data-src="/path/to/image.jpg" alt="..." />
+  </div>
+  <h3>Hello, World!</h3>
+  <p>Check out my super cool internet website for online enjoyment...</p>
+</article>`}
+</Code>
+
+Here we have an bit of content with an image, title, and some body content. In this scenario, my image that I'm using has dimensions 800x600 and I'm using those dimensions to define bottom padding percentage of the `.img-wrapper`.
+
+<Code language="css">
+{`.post .img-wrapper {
+  padding-bottom: calc(600 / 800 * 100%);
+}`}
+</Code>
+
+In this case, I could have just set the bottom padding to 75%, but I find using the dimensions of the image in a `calc()` makes things very clear and readily update-able if my image aspect ratio ever needs to change. You'll also notice that we're absolutely positioning the `img` element; we have to do this because the `.img-wrapper` is being entirely filled with padding leaving no room for the `img` to sit in naturally. Absolutely positioning the `img` lets us place it in the top-left corner of the `.img-wrapper` and stretch it fill the available width and height.
+
+All that is left to do is to lazy load in the image when it comes into the viewport. To do that, we can use an [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) which will be a topic for a future post.

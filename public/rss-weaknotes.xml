@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Amir R Muntasser's Weaknotes]]></title>
+        <description><![CDATA[Amir R Muntasser's Weaknotes]]></description>
+        <link>https://arkm.xyz/weaknotes</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sat, 17 Apr 2021 08:57:04 GMT</lastBuildDate>
+        <item>
+            <title><![CDATA[Week 1]]></title>
+            <link>https://arkm.xyz/posts/week-1</link>
+            <guid isPermaLink="false">/posts/week-1</guid>
+            <pubDate>Fri, 16 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

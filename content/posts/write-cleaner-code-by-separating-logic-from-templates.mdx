@@ -1,0 +1,188 @@
+---
+title: Write Cleaner Code by Separating Logic from Templates
+date: "2019-07-24"
+excerpt: CSS Frameworks like Bootstrap, Foundation, and Bulma help us describe our HTML in terms of layout structure and components, but I'm not a fan of that approach.
+author:
+ - amir
+category:
+ - clean-code
+ - html
+ - javascript
+featured: false
+weeknotes: false
+---
+
+Clean. Code. Clean code. CLEAN CODE! C-L-E-A-N C-O-D-E. Clean code.
+
+What does that even mean? It's something we all say at some point, but it's meaningless. Or, more accurately, means different things to different people with different priorities and contexts.
+
+For the purpose of this post I'm going to focus on separating business logic from the template. To illustrate this, I'll be using a code snippet I pulled from actual production code a developer on my team wrote. I've slightly modified it for clarity. Additionally, this is not meant to be an end-all-be-all way to write "clean code", but rather how I would approach writing this bit of code.
+
+Before I get started, just a couple notes about the code:
+
+1. The solution I end up with is not intended to be production-ready.
+2. I am using server-side rendered [goatee](https://github.com/simpleviewinc/goatee) for templating, so syntax may seem unfamiliar at times.
+
+Let's get into it:
+
+<Code language="html">
+{`<picture>
+	<source
+		srcset="{{image.getUrl({
+			width: 900,
+			height: 300,
+			crop: 'fill',
+			quality: 60
+		})}}"
+		media="(min-width: 641px)"
+	/>
+	<source
+		srcset="{{image.getUrl({
+			width: 1280,
+			height: 500,
+			crop: 'fill',
+			quality: 60
+		})}}"
+		media="(min-width: 1025px)"
+	/>
+	<source
+		srcset="{{image.getUrl({
+			width: 1600,
+			height: 700,
+			crop: 'fill',
+			quality: 60
+		})}}"
+		media="(min-width: 1440px)"
+	/>
+	<img src="/path/to/default.jpg" alt="…" />
+</picture>`}
+</Code>
+
+Here our dev created a responsive image to draw on the page. It works! But there's a few things that stand out to me about it.
+
+First, there are 3 source elements that are nearly identical; that looks like an opportunity to simplify.
+
+Second, it looks like the crop and quality properties are the same across all calls to `getUrl()`.
+
+Third, if I need to introduce another source, then I need to make yet another source element and it's own call to `getUrl()` which grows adds visual clutter to the template and promotes copy/pasting which can lead to unexpected results if the dev isn't paying attention.
+
+Let tackle this in phases. To start, I'm going to pull out the `getUrl()` calls and make the HTML simpler to read.
+
+<Code language="html">
+{`{{~exec(function() {
+	helpers.var.srcSm = data.image.getUrl({ width: 900, height: 300, crop: 'fill', quality: 60 });
+	helpers.var.srcMd = data.image.getUrl({ width: 1280, height: 500, crop: 'fill', quality: 60 });
+	helpers.var.srcLg = data.image.getUrl({ width: 1600, height: 700, crop: 'fill', quality: 60 });
+})}}\n
+<picture>
+	<source srcset="{{~var.srcSm}}" media="(min-width: 641px)" />
+	<source srcset="{{~var.srcMd}}" media="(min-width: 1025px)" />
+	<source srcset="{{~var.srcLg}}" media="(min-width: 1440px)" />
+	<img src="/path/to/default.jpg" alt="…" />
+</picture>`}
+</Code>
+
+Already, this feels better. It isn't actually better, but I'm headed in the right direction. I still have a lot of repeated code, but at least I can more readily see how I might be able to simplify the multiple sources into a loop over a single source. Similarly, now that I've pulled out the `getUrl()` calls into a JS context, I can standardize how I generate the URLs.
+
+<Code language="html">
+{`{{~exec(function() {
+	const props = {
+		641: { width: 900, height: 300, crop: 'fill', quality: 60 },
+		1025: { width: 1280, height: 500, crop: 'fill', quality: 60 },
+		1440: { width: 1600, height: 700, crop: 'fill', quality: 60 },
+	};
+	const widths = [641, 1025, 1440];
+	helpers.var.srcs = widths.map(width => ({
+		width,
+		src: data.image.getUrl(props[width]),
+	}));
+})}}\n
+<picture>
+	{{#~var.srcs}}
+		<source srcset="{{src}}" media="(min-width: {{width}}px)" />
+	{{/}}
+	<img src="/path/to/default.jpg" alt="…" />
+</picture>`}
+</Code>
+
+This is starting to look much better now.
+
+Starting with the HTML, I've condensed the multiple sources into a single, easy-to-read loop. This also means, that if I needed to add a 4th or 5th source, I modify the array.
+
+Next, let's take a look at the JS. I've created an array of viewport widths called `widths`; these widths are also the keys in the `props` object so I can associate a width with a set of arguments for our `getUrl()` call. And lastly, I map over the widgets to create and array of `srcs` which is what drives the generation of source elements in our HTML.
+
+At this point, the HTML is pretty much where I want it. However, there's still room for improvement in the JS; `crop` and `quality` are still shared across all the sets of arguments.
+
+Let's address that.
+
+<Code language="html">
+{`{{~exec(function() {
+	const sizes = {
+		641: { width: 900, height: 300 },
+		1025: { width: 1280, height: 500 },
+		1440: { width: 1600, height: 700 },
+	};
+	const settings = { crop: 'fill', quality: 60 };
+	const widths = [641, 1025, 1440];
+	helpers.var.srcs = widths.map(width => ({
+		width,
+		src: data.image.getUrl({
+			...sizes[width],
+			...settings
+		}),
+	}));
+})}}\n
+<picture>
+	{{#~var.srcs}}
+		<source srcset="{{src}}" media="(min-width: {{width}}px)" />
+	{{/}}
+	<img src="/path/to/default.jpg" alt="…" />
+</picture>`}
+</Code>
+
+Here I've pulled out the `crop` and `quality` into their own object called `settings`. I've also renamed `props` to `sizes` which is much more descriptive now since all that object is concerned with are the sizes of the images to render.
+
+Next, in the map, I spread the sizes and settings into an arguments object to be passed to `getUrl()`.
+
+This is looking really slick now, but I'm not a fan of managing the viewport widths both in the `sizes` object and in the `widths` array. I really would like to keep it to a single touch point to reduce my chances to break something.
+
+<Code language="html">
+{`{{~exec(function() {
+	const sizes = {
+		641: { width: 900, height: 300 },
+		1025: { width: 1280, height: 500 },
+		1440: { width: 1600, height: 700 },
+	};
+	const settings = { crop: 'fill', quality: 60 };
+	helpers.var.srcs = Object.entries(sizes).map([width, size] => ({
+		width,
+		src: data.image.getUrl({
+			...size,
+			...settings
+		}),
+	}));
+})}}\n
+<picture>
+	{{#~var.srcs}}
+		<source srcset="{{src}}" media="(min-width: {{width}}px)" />
+	{{/}}
+	<img src="/path/to/default.jpg" alt="…" />
+</picture>`}
+</Code>
+
+To simplify the handling of widths, I removed the `widths` array altogether and am, instead, mapping over the entries of the `sizes` object and destructuring out the size and the width. This is what I would consider "clean code".
+
+First off, the HTML is greatly reduced and can support an indefinite number of sources. And there's no ambiguity about what the HTML is doing: it's putting a picture on the page.
+
+Second, I have a single entry point for getting the actual image URLs that, ideally, I or a future developer supporting this site shouldn't need to touch.
+
+Third, moving out the shared settings like `crop` and `quality` afford me two things:
+
+1. I can easily make a global quality or crop change.
+2. I can ignore them if I don't actually care about what they're set to.
+
+Lastly, I am freed up to focus on the part that I most care about: defining sizes of images for different screen sizes.
+
+I would and have delivered something like this in production. I find it to be much more readable, maintainable, and extendable compared to any of the previous iterations I ran through in this post.
+
+How would you approach this? Do you have a better idea? Let me know in the comments below.

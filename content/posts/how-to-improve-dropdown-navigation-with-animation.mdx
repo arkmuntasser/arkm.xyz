@@ -1,0 +1,138 @@
+---
+title: How to Improve Dropdown Navigation with Animation
+date: "2017-12-27"
+excerpt: One of the most annoying things on the web is when a dropdown opens on hover and you move the most diagonally into the dropdown, but in doing so the dropdown disappears because I stopped hovering over the zone that triggers the dropdown to appear.
+author:
+  - amir
+category:
+  - animation
+  - css
+  - html
+featured: false
+weeknotes: false
+---
+
+One of the most annoying things on the web is when a dropdown opens on hover and you move the most diagonally into the dropdown, but in doing so the dropdown disappears because I stopped hovering over the zone that triggers the dropdown to appear. There's a couple ways to go about this including this [awesome SVG-based solution from Hakim El Hattab](https://team.slides.com/hakimel/cssday-2019#/).
+
+My go to method, however, is to use a little bit of animation.
+
+- [View Demo App](https://better-dropdown.glitch.me/)
+- [Download Source Code on GitHub](https://github.com/arkmuntasser/better-dropdown)
+
+What I particularly like about this method is that it doesn't require any JavaScript to implement. All you need is the right markup and a bit of CSS.
+
+## Prerequisites
+
+- Working knowledge of [HTML and CSS](https://internetingishard.com/html-and-css/)
+- Basic knowledge of [CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+
+## The Big Idea
+
+Conceptually, we're not doing anything too dissimilar than what Hakim is doing with his solution. What we're after is an extended hoverable area going from our trigger point to our menu. To do this, we create have an invisible dropdown helper element that is the width of the dropdown and the height of the trigger area and we place it over trigger area.
+
+In the demo app, if you hover over the the word "dropdown" you'll see a red rectangle appear: this is our dropdown helper. As you move off the word "dropdown" you'll notice the red area starts shrinking downward toward the menu.
+
+What this results in is a time limit in which you can move diagonally from the trigger point to the dropdown. As you move horizontally, the valid hoverable area shrinks vertically, this gives us our triangular area to move in. And because the easing isn't linear, we actually get a nice curve like in Hakim's solution that is a lot more natural to work in.
+
+So that's the idea, but what does the code actually look like?
+
+## The Code
+
+Here is what the markup looks like for this dropdown.
+
+<Code language="html">
+{`<div class="nav-section">
+  <div class="nav-section-title">Dropdown</div>
+  <div class="dropdown-helper"></div>
+  <div class="nav-section-dropdown">
+    <a href="#" title="link">Link</a>
+    <a href="#" title="link">Link</a>
+    <a href="#" title="link">Link</a>
+    <a href="#" title="link">Link</a>
+    <a href="#" title="link">Link</a>
+    <a href="#" title="link">Link</a>
+    <a href="#" title="link">Link</a>
+    <a href="#" title="link">Link</a>
+    <a href="#" title="link">Link</a>
+  </div>
+</div>`}
+</Code>
+
+And here's the CSS that handles the making the dropdown visible on hover.
+
+<Code language="css">
+{`.header .nav-section-dropdown {
+  display: none;
+}\n
+.header .nav-section:hover .nav-section-dropdown {
+  display: grid;
+}`}
+</Code>
+
+By default, the dropdown is not shown and when we hover over anything in the `.nav-section` we show the dropdown. That's the setup, let's take a look at the animation.
+
+First, we define the initial state of the dropdown helper and how it's animation is going to work.
+
+<Code language="css">
+{`.header .dropdown-helper {
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 300ms ease 200ms;
+}`}
+</Code>
+
+By default, we want to this to essentially not exist but we want it readily animatable. To do this, we set the Y scale to 0.
+
+We also want this to animate downward so we need to set the transform origin accordingly.
+
+And last, we set the transition we want. I find having a slight delay of about 200ms gives a much better feel to the whole effect, but you might find you need or want to adjust these numbers for your needs and taste.
+
+Next, we need to make the helper full scale on hover.
+
+<Code language="css">
+{`.header .nav-section-title:hover + .dropdown-helper {
+  transform: scaleY(1);
+  transition: none;
+}`}
+</Code>
+
+There are 2 things to note here:
+
+1. The hover is **not** on the `.nav-section` itself, but instead on the `.nav-section-title`. We're also using the immediate sibling selector to target the helper. This is because the dropdown is closed, the title is essentially the entire valid trigger area and it's also what the user will be hovering off of to get into the dropdown.
+
+2. The transition is set to `none` when the title is hovered. We don't want the helper to animate in, because if the user is moving quickly, they may trigger the animate out animation before the helper has fully animated in which would likely break the effect. So we remove the transition and have the helper instantly blink to full size.
+
+Now when we move away from the title, the animation will begin and the user can move diagonally into the dropdown.
+
+Finally, there's one last thing to take care of.
+
+<Code language="css">
+{`.header .nav-section-title {
+  position: relative;
+  z-index: 2;
+}`}
+</Code>
+
+We want to make sure that the title sits above the helper so we don't accidentally cause the helper to animate out early.
+
+Altogether, we get this:
+
+<Code language="css">
+{`.header .dropdown-helper {
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 300ms ease 200ms;
+}\n
+.header .nav-section-title:hover + .dropdown-helper {
+  transform: scaleY(1);
+  transition: none;
+}\n
+.header .nav-section-title {
+  position: relative;
+  z-index: 2;
+}`}
+</Code>
+
+It's a little extra CSS, but the effect goes a long way toward providing a better user experience. And I'm personally happy when I can get a win like this without needing to add more JavaScript to a site.
+
+That said, do also check out Hakim's method. There are many ways to tackle a problem and just as many contexts in which a particular solution is best. The only truly wrong way to go about it, is to not try to provide an optimal experience for your users.
