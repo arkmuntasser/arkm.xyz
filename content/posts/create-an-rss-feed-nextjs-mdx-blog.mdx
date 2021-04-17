@@ -22,7 +22,7 @@ Ultimately, an RSS feed is just an XML file that gets updated with new entries a
 },`}
 </Code>
 
-Now we just need to update our `buildFeed.js` (which lives in our root directory) to create a new XML file when it's run. To do that I'm going to 3 packages: `fs`, [`rss`](https://www.npmjs.com/package/rss), and [`next-mdx`](https://www.next-mdx.org/).
+Now we just need to update our `buildFeed.js` (which lives in our root directory) to create a new XML file when it's run. To do that I'm going to use 3 packages: `fs`, [`rss`](https://www.npmjs.com/package/rss), and [`next-mdx`](https://www.next-mdx.org/).
 
 <Code language="javascript">
 {`const fs = require('fs')
