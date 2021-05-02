@@ -4,7 +4,13 @@
         <description><![CDATA[Amir R Muntasser's Blog Posts]]></description>
         <link>https://arkm.xyz/blog</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 23 Apr 2021 11:45:47 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 02 May 2021 00:49:20 GMT</lastBuildDate>
+        <item>
+            <title><![CDATA[Sprite Animation]]></title>
+            <link>https://arkm.xyz/posts/animation</link>
+            <guid isPermaLink="false">/posts/animation</guid>
+            <pubDate>Sat, 01 May 2021 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Creating an RSS feed with Next.js and Next-MDX]]></title>
             <link>https://arkm.xyz/posts/create-an-rss-feed-nextjs-mdx-blog</link>

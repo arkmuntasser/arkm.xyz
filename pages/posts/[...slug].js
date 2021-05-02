@@ -13,6 +13,7 @@ import animations from '../../src/styles/animations.module.css';
 import { useRef } from 'react';
 import useLoadInAnimation from '../../src/hooks/useLoadInAnimation';
 import ImageBox from '../../src/components/ImageBox';
+import Embed from '../../src/components/Embed';
 
 function Code({ children, title, ...props }) {
 	return (
@@ -39,14 +40,17 @@ function ShareButton({ text, url, via }) {
 	)
 }
 
+const mdxComponents = {
+	Code,
+	TwitterTweetEmbed,
+	ImageBox,
+	Embed,
+}
+
 export default function PostPage({ post }) {
 	const ref = useRef(null);
 	const content = useHydrate(post, {
-		components: {
-			Code,
-			TwitterTweetEmbed,
-			ImageBox,
-		}
+		components: mdxComponents
 	});
 
 	const runAnimation = useLoadInAnimation(ref, content);
@@ -94,11 +98,7 @@ export async function getStaticProps(context) {
 	return {
 		props: {
 			post: await getMdxNode('post', context, {
-				components: {
-					Code,
-					TwitterTweetEmbed,
-					ImageBox,
-				}
+				components: mdxComponents
 			})
 		}
 	}
