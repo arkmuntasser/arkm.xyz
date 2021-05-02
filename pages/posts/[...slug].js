@@ -19,7 +19,7 @@ function Code({ children, title, ...props }) {
 	return (
 		<div className={styles['code-sample']}>
 			{title ? <div className="code-sample-title">{title}</div> : null}
-			<SyntaxHighlighter {...props} showLineNumbers={false} style={codeStyle}>
+			<SyntaxHighlighter {...props} showLineNumbers={false} style={codeStyle} wrapLongLines={true}>
 				{children}
 			</SyntaxHighlighter>
 		</div>
