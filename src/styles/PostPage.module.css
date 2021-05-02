@@ -132,7 +132,7 @@
   color: var(--primary-color-500);
 }
 
-.post-page p code {
+.post-page :is(p, li) code {
   padding: var(--space-1);
   font-size: var(--text-base);
   color: var(--gray-900);
