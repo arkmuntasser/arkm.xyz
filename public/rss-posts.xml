@@ -4,7 +4,7 @@
         <description><![CDATA[Amir R Muntasser's Blog Posts]]></description>
         <link>https://arkm.xyz/blog</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 02 May 2021 04:38:34 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 14 May 2021 00:46:44 GMT</lastBuildDate>
         <item>
             <title><![CDATA[Creating an RSS feed with Next.js and Next-MDX]]></title>
             <link>https://arkm.xyz/posts/create-an-rss-feed-nextjs-mdx-blog</link>
@@ -22,6 +22,12 @@
             <link>https://arkm.xyz/posts/how-i-solved-the-impossible-layout</link>
             <guid isPermaLink="false">/posts/how-i-solved-the-impossible-layout</guid>
             <pubDate>Sat, 23 Mar 2019 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How I Use Tailwind CSS]]></title>
+            <link>https://arkm.xyz/posts/how-i-use-tailwind-css</link>
+            <guid isPermaLink="false">/posts/how-i-use-tailwind-css</guid>
+            <pubDate>Thu, 13 May 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[How to Animate Sprites on the Web]]></title>

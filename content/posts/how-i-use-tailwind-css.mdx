@@ -1,0 +1,47 @@
+---
+title: How I Use Tailwind CSS
+date: "2021-05-13"
+excerpt: Everyone else has been talking about Tailwind CSS lately so I might as well jump on this bandwagon. And, actually, I've not seen anyone state my point of view on it yet so I have something to add.
+author:
+  - amir
+category:
+  - css
+  - clean-code
+featured: false
+weeknotes: false
+---
+
+[Tailwind CSS](https://tailwindcss.com/) has been the talk of the web dev Twitter all this week with people getting heated on both sides with bad take after bad take with actual, legit criticism in the mix [getting shouted down because of the classic tech-bro double whammy of racism and sexism](https://dev.to/cher/sexism-racism-toxic-positivity-and-tailwindcss-cil). So I figure I might as well jump into the conversation a bit and talk about my thoughts on Tailwind because god knows we need another man coming in with his opinion. However, I do think I maybe have a slightly interesting point of view on the topic as I do use Tailwind, but totally not how they want me to because I fundamentally don't agree with the conceit of the framework. Let's dig in.
+
+1. **Should you be using Tailwind?** Sure, why not. I'm always of the mindset of use the tools you like and make you productive. Our field changes so quickly that if you are going to survive you will eventually need to learn good ol' HTML, CSS, and JavaScript outside the context of a framework. If you don't agree, then I'm sorry you are so very, very wrong.
+
+2. **Does Tailwind fix and/or replace CSS?** Absolutely not. So why are people over the moon for it? It does 3 things very well: compiles down to a very small bundle, reduces issues with specificity and scope, forces people to use a design system. Where does it fall short? It can be very tough to read, it creates a pseudo second syntax for CSS, it hides the power of the cascade, and it feeds, unintentionally (likely... hopefully...), into the growing perception that CSS is fundamentally broken or bad that a lot of devs, usually young inexperienced devs, have been promoting which usually stems from the popular mix of incompetence, arrogance, and sexism.
+
+3. **Are frameworks bad?** Of course not! Frameworks area great tools and certainly have their place. Need to spin up a concept quickly? Just starting and don't know how to make pretty things yet? Need a quick template to get a project off the ground? Go get that framework! They are incredible tools that can help bridge knowledge gaps and product gaps. In fact, I primarily learned CSS via reading through how Bootstrap was put together back in the day.
+
+So now that all the caveats are out of the way, let's get down to business on how I use Tailwind. To start, I don't use the actually framework at all. As presented, Tailwind just doesn't jive with how I think about CSS; I can't deal with the cryptic looking utility classes cluttering up my HTML and I understand and use the cascade a lot. But I love how Tailwind forces you into a design system.
+
+When I say design system, I mean a system of [spacings](https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale), [font sizes](https://tailwindcss.com/docs/font-size), [color palettes](https://tailwindcss.com/docs/customizing-colors), etc. Instead of having these as utility classes, I map them to CSS variables. [Here's an example of my early work playing around with Tailwind inspired CSS variables](https://sv-design-system.glitch.me/).
+
+I've found this approach to suit my needs nicely and have even expanded on it when it comes to colors:
+
+<Code language="css">
+{`--primary-color-hue: 210;
+--primary-color-100: hsl(var(--primary-color-hue), 100%, 96%);
+--primary-color-200: hsl(var(--primary-color-hue), 81%, 86%);
+--primary-color-300: hsl(var(--primary-color-hue), 82%, 76%);
+--primary-color-400: hsl(var(--primary-color-hue), 79%, 66%);
+--primary-color-500: hsl(var(--primary-color-hue), 73%, 57%);
+--primary-color-600: hsl(var(--primary-color-hue), 62%, 50%);
+--primary-color-700: hsl(var(--primary-color-hue), 61%, 43%);
+--primary-color-800: hsl(var(--primary-color-hue), 49%, 34%);
+--primary-color-900: hsl(var(--primary-color-hue), 47%, 22%);`}
+</Code>
+
+Here I have a gradient of pinks all being generated off a defined hue. This means that I can simply change the hue and get a dramatically different gradient of colors. It also means that I can, if needed, leverage the hue outside of the standard primary color variables in other contexts. Another benefit is that I can quickly create a dark theme or any other kind of theme by simply redefining these low-level variables.
+
+Now, this isn't as ideal as it could be due to HSL being kind of a mess, but once [LCH is broadly available this approach will become even more ideal](https://lea.verou.me/2020/04/lch-colors-in-css-what-why-and-how/).
+
+Now I have a model for building out a design system that lets me write CSS the way I want to write CSS, leverages the cascade, enables easy themes. And, I have to say, it's been an absolute joy to use. I liked it so much that we've adopted this practice at my work for my teams core product and it's been game changing for us.
+
+Is this something you should do? I don't know. It works for me and the work I do for the type of product I develop. You'll have your own needs and should evaluate what is going to work best for you. And, really, that's the only thing that matters; what works best for you for your specific situation. Maybe it's something you roll yourself. Maybe it's a framework. Maybe, like for me, it's something in the middle. Good ideas exist everywhere and we can always learn something from someone elses work.
