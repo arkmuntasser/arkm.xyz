@@ -4,7 +4,7 @@
         <description><![CDATA[Amir R Muntasser's Firehose]]></description>
         <link>https://arkm.xyz</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 14 May 2021 00:46:44 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 12 Jun 2021 07:27:17 GMT</lastBuildDate>
         <item>
             <title><![CDATA[Creating an RSS feed with Next.js and Next-MDX]]></title>
             <link>https://arkm.xyz/posts/create-an-rss-feed-nextjs-mdx-blog</link>
@@ -84,6 +84,12 @@
             <pubDate>Sun, 11 Apr 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA[They Threw Rocks]]></title>
+            <link>https://arkm.xyz/posts/they-threw-rocks</link>
+            <guid isPermaLink="false">/posts/they-threw-rocks</guid>
+            <pubDate>Sat, 15 May 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[Week 1]]></title>
             <link>https://arkm.xyz/posts/week-1</link>
             <guid isPermaLink="false">/posts/week-1</guid>
@@ -106,6 +112,30 @@
             <link>https://arkm.xyz/posts/week-4</link>
             <guid isPermaLink="false">/posts/week-4</guid>
             <pubDate>Fri, 07 May 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 5]]></title>
+            <link>https://arkm.xyz/posts/week-5</link>
+            <guid isPermaLink="false">/posts/week-5</guid>
+            <pubDate>Fri, 14 May 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 6]]></title>
+            <link>https://arkm.xyz/posts/week-6</link>
+            <guid isPermaLink="false">/posts/week-6</guid>
+            <pubDate>Fri, 21 May 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 7]]></title>
+            <link>https://arkm.xyz/posts/week-7</link>
+            <guid isPermaLink="false">/posts/week-7</guid>
+            <pubDate>Fri, 28 May 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 8]]></title>
+            <link>https://arkm.xyz/posts/week-8</link>
+            <guid isPermaLink="false">/posts/week-8</guid>
+            <pubDate>Fri, 04 Jun 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[What Even are "Real" Developers]]></title>

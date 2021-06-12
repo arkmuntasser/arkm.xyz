@@ -4,7 +4,7 @@
         <description><![CDATA[Amir R Muntasser's Blog Posts]]></description>
         <link>https://arkm.xyz/blog</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 14 May 2021 00:46:44 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 12 Jun 2021 07:27:17 GMT</lastBuildDate>
         <item>
             <title><![CDATA[Creating an RSS feed with Next.js and Next-MDX]]></title>
             <link>https://arkm.xyz/posts/create-an-rss-feed-nextjs-mdx-blog</link>
@@ -82,6 +82,12 @@
             <link>https://arkm.xyz/posts/therapy-via-lego-during-pandemic</link>
             <guid isPermaLink="false">/posts/therapy-via-lego-during-pandemic</guid>
             <pubDate>Sun, 11 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[They Threw Rocks]]></title>
+            <link>https://arkm.xyz/posts/they-threw-rocks</link>
+            <guid isPermaLink="false">/posts/they-threw-rocks</guid>
+            <pubDate>Sat, 15 May 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[What Even are "Real" Developers]]></title>
