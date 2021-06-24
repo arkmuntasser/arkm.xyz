@@ -23,3 +23,9 @@
   border-color: var(--primary-color-500);
   text-decoration: none;
 }
+
+@media (prefers-color-scheme: dark) {
+  .chips a:hover {
+    background-color: var(--primary-color-200);
+  }
+}

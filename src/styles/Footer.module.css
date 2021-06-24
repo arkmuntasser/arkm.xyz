@@ -38,8 +38,25 @@
   font-size: var(--text-4xl);
   color: var(--primary-color-500);
   line-height: var(--leading-none);
-  background: var(--white);
+  background: var(--site-background);
   transform: translate(-50%, -50%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer hr {
+    background: var(--black);
+    background-size: 100%;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      var(--gray-700),
+      transparent
+    );
+  }
+
+  .footer hr:before {
+    color: var(--primary-color-700);
+  }
 }
 
 .footer P {
@@ -86,6 +103,12 @@
 .footer p:last-child svg {
   color: var(--primary-color-500);
   stroke-width: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer p:last-child svg {
+    color: var(--primary-color-700);
+  }
 }
 
 .footer b {

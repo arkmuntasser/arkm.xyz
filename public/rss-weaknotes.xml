@@ -4,12 +4,18 @@
         <description><![CDATA[Amir R Muntasser's Weaknotes]]></description>
         <link>https://arkm.xyz/weaknotes</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 12 Jun 2021 07:27:17 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 22 Jun 2021 04:54:15 GMT</lastBuildDate>
         <item>
             <title><![CDATA[Week 1]]></title>
             <link>https://arkm.xyz/posts/week-1</link>
             <guid isPermaLink="false">/posts/week-1</guid>
             <pubDate>Fri, 16 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 10]]></title>
+            <link>https://arkm.xyz/posts/week-10</link>
+            <guid isPermaLink="false">/posts/week-10</guid>
+            <pubDate>Fri, 18 Jun 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Week 2]]></title>
@@ -52,6 +58,12 @@
             <link>https://arkm.xyz/posts/week-8</link>
             <guid isPermaLink="false">/posts/week-8</guid>
             <pubDate>Fri, 04 Jun 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 9]]></title>
+            <link>https://arkm.xyz/posts/week-9</link>
+            <guid isPermaLink="false">/posts/week-9</guid>
+            <pubDate>Fri, 11 Jun 2021 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

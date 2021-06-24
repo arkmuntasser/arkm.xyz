@@ -41,8 +41,15 @@
   font-weight: 900;
   line-height: var(--leading-tight);
   color: var(--black);
-  background: var(--white);
+  background: var(--site-background);
   mix-blend-mode: color-dodge;
+}
+
+@media (prefers-color-scheme: dark) {
+  .welcome h1 {
+    color: var(--white);
+    mix-blend-mode: color-burn;
+  }
 }
 
 .welcome p {
