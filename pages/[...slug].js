@@ -50,7 +50,7 @@ function Collection({ items }) {
 							{item.title}
 						</a>
 					</h3>
-					<Image src={item.image} alt={''} layout="responsive" width="100" height="75" />
+					{item.image ? <Image src={item.image} alt={''} layout="responsive" width="100" height="75" /> : false}
 				</article>
 			))}
 		</section>

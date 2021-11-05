@@ -4,7 +4,7 @@
         <description><![CDATA[Amir R Muntasser's Firehose]]></description>
         <link>https://arkm.xyz</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 22 Jun 2021 04:54:15 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 05 Nov 2021 09:14:01 GMT</lastBuildDate>
         <item>
             <title><![CDATA[Creating an RSS feed with Next.js and Next-MDX]]></title>
             <link>https://arkm.xyz/posts/create-an-rss-feed-nextjs-mdx-blog</link>
@@ -100,6 +100,18 @@
             <link>https://arkm.xyz/posts/week-10</link>
             <guid isPermaLink="false">/posts/week-10</guid>
             <pubDate>Fri, 18 Jun 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 11]]></title>
+            <link>https://arkm.xyz/posts/week-11</link>
+            <guid isPermaLink="false">/posts/week-11</guid>
+            <pubDate>Fri, 25 Jun 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 12]]></title>
+            <link>https://arkm.xyz/posts/week-12</link>
+            <guid isPermaLink="false">/posts/week-12</guid>
+            <pubDate>Fri, 30 Jul 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Week 2]]></title>

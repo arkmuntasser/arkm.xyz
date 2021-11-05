@@ -229,7 +229,8 @@
   font-size: var(--text-base);
 }
 
-.collection article > div {
+.collection article > span {
+  display: block;
   min-width: 100px;
   width: 100px;
   max-width: 100px;
@@ -237,7 +238,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .collection article > div {
+  .collection article > span {
     background-color: var(--white);
   }
 }
