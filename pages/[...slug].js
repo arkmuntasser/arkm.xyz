@@ -5,11 +5,7 @@ import Layout from '../src/components/Layout';
 import Meta from '../src/components/Meta';
 import panelStyles from '../src/styles/Panels.module.css';
 import ImageBox from '../src/components/ImageBox';
-import { useEffect, useRef, useState } from 'react';
-import useLoadInAnimation from '../src/hooks/useLoadInAnimation';
-import animations from '../src/styles/animations.module.css';
 import Image from 'next/image';
-import useIntersectionObserver from '@react-hook/intersection-observer';
 
 function TwoCol({ children }) {
 	return (
@@ -28,23 +24,10 @@ function SmallCol({ children }) {
 }
 
 function Collection({ items }) {
-	const ref = useRef(null);
-	const { isIntersecting } = useIntersectionObserver(ref);
-
-	const [intersected, setIntersected] = useState(false);
-
-	useEffect(function() {
-		if (isIntersecting) {
-			setIntersected(true);
-		}
-	}, [isIntersecting]);
-
 	return (
-		<section ref={ref} className={intersected
-			? `${styles.collection} ${animations.chain} ${animations['chain-loaded']}`
-			: `${styles.collection} ${animations.chain}`}>
+		<section>
 			{items.map((item, i) => (
-				<article key={i} style={{ transitionDuration: `${240 + 80 * i}ms` }}>
+				<article key={i}>
 					<h3>
 						<a href={item.link} rel="noopener noreferer" target="_blank">
 							{item.title}
@@ -58,7 +41,6 @@ function Collection({ items }) {
 }
 
 export default function Page({ page }) {
-	const ref = useRef(null);
 	const content = useHydrate(page, {
 		components: {
 			TwoCol,
@@ -68,18 +50,10 @@ export default function Page({ page }) {
 		}
 	});
 
-	const runAnimation = useLoadInAnimation(ref, content);
-
 	return (
 		<Layout>
 			<Meta title={page.frontMatter.title}/>
-			<main
-				ref={ref}
-				className={runAnimation
-					? `${styles['post-page']} ${animations.reveal} ${animations['reveal-loaded']}`
-					: `${styles['post-page']} ${animations.reveal}`}
-				data-layout={page.frontMatter.layout}
-			>
+			<main className={styles['post-page']} data-layout={page.frontMatter.layout}>
 				<h1>{page.frontMatter.title}</h1>
 				{content}
 			</main>

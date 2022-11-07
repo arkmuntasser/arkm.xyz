@@ -25,11 +25,11 @@ export default function Header() {
 					id="menu"
 					className={ (isWide || menuOpen) ? `${animations.popup} ${animations['popup-loaded']}` : animations.popup}
 				>
-					<Link href="/blog" passHref><a data-current={router.asPath === '/blog'}>Blog</a></Link>
-					<Link href="/weaknotes" passHref><a data-current={router.asPath === '/weaknotes'}>Weaknotes</a></Link>
-					<Link href="/uses" passHref><a data-current={router.asPath === '/uses'}>Uses</a></Link>
-					<Link href="/collections" passHref><a data-current={router.asPath === '/collections'}>Collections</a></Link>
-					<Link href="/about" passHref><a data-current={router.asPath === '/about'}>About</a></Link>
+					<Link href="/blog">Blog</Link>
+					<Link href="/weaknotes">Weaknotes</Link>
+					<Link href="/uses">Uses</Link>
+					<Link href="/collections">Collections</Link>
+					<Link href="/about">About</Link>
 					<a href="/rss-all.xml" aria-label="RSS Feed"><FiRss/></a>
 				</nav>
 			</div>

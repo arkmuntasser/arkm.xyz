@@ -4,11 +4,9 @@ import styles from '../styles/Logo.module.css';
 
 export default function Logo({ size = 'base' }) {
 	return (
-		<Link href="/" passHref>
-			<a className={size === 'base' ? `${styles.logo}` : `${styles.logo} ${styles['logo-sm']}`}>
-				arkm
-				<sup><FiHeart/></sup>
-			</a>
+		<Link href="/" className={size === 'base' ? `${styles.logo}` : `${styles.logo} ${styles['logo-sm']}`}>
+			arkm
+			<sup><FiHeart/></sup>
 		</Link>
 	)
 }

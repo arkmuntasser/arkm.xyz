@@ -11,10 +11,8 @@ export default function Post({ data, style, type }) {
 		<article className={styles[type]} style={style}>
 			<header>
 				<time dateTime={data.frontMatter.date}>{format(correctedDate, 'MM.dd.yyyy')}</time>
-				<Link href={data.url} passHref>
-					<a>
-						<h3 className="title">{data.frontMatter.title}</h3>
-					</a>
+				<Link href={data.url}>
+					<h3 className="title">{data.frontMatter.title}</h3>
 				</Link>
 			</header>
 			{data.frontMatter.excerpt ? (

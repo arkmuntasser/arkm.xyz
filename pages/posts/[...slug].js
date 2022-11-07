@@ -9,9 +9,6 @@ import { TwitterTweetEmbed } from 'react-twitter-embed';
 import Layout from '../../src/components/Layout';
 import Meta from '../../src/components/Meta';
 import Chips from '../../src/components/Chips';
-import animations from '../../src/styles/animations.module.css';
-import { useRef } from 'react';
-import useLoadInAnimation from '../../src/hooks/useLoadInAnimation';
 import ImageBox from '../../src/components/ImageBox';
 import Embed from '../../src/components/Embed';
 
@@ -48,12 +45,10 @@ const mdxComponents = {
 }
 
 export default function PostPage({ post }) {
-	const ref = useRef(null);
 	const content = useHydrate(post, {
 		components: mdxComponents
 	});
 
-	const runAnimation = useLoadInAnimation(ref, content);
 	const [year, month, day] = post.frontMatter.date.split('-');
 	const date = new Date(parseInt(year), (parseInt(month) - 1), parseInt(day));
 	const correctedDate = date.valueOf() + date.getTimezoneOffset() * 60 * 1000;
@@ -61,12 +56,7 @@ export default function PostPage({ post }) {
 	return (
 		<Layout>
 			<Meta title={post.frontMatter.title}/>
-			<main
-				ref={ref}
-				className={runAnimation
-					? `${styles['post-page']} ${animations.reveal} ${animations['reveal-loaded']}`
-					: `${styles['post-page']} ${animations.reveal}`}
-			>
+			<main className={styles['post-page']}>
 				<header>
 					<div>
 						<time dateTime={post.frontMatter.date}>{format(correctedDate, 'MM.dd.yyyy')}</time>

@@ -12,7 +12,7 @@ export default function Custom404() {
 				<Section>
 					<h1 style={{ transitionDuration: `${400 + 80 * 1}ms` }}>There should have been a page here...</h1>
 					<p style={{ transitionDuration: `${400 + 80 * 2}ms` }}>
-						Try heading back to the <Link href="/" passHref><a>homepage</a></Link> maybe? Or maybe you were looking for my <Link href="/blog" passHref><a>blog</a></Link>? My <Link href="/weaknotes" passHref><a>weaknotes</a></Link>? I don't have anything else on in this site so if it's not one of those I'm afraid you're SOL.
+						Try heading back to the <Link href="/">homepage</Link> maybe? Or maybe you were looking for my <Link href="/blog">blog</Link>? My <Link href="/weaknotes">weaknotes</Link>? I don't have anything else on in this site so if it's not one of those I'm afraid you're SOL.
 					</p>
 					<ImageBox
 						src="/images/404.gif"
