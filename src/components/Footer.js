@@ -1,5 +1,5 @@
 import styles from '../styles/Footer.module.css';
-import { FiGithub, FiTwitter } from 'react-icons/fi';
+import { FiGithub } from 'react-icons/fi';
 import { RiBlueskyLine } from "react-icons/ri";
 import Logo from './Logo';
 
