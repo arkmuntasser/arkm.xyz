@@ -18,7 +18,7 @@ export default async function Page(props) {
       <Meta title={`Category: ${params.slug}`} />
       <main>
 				<Section>
-					<h1 style={{ transitionDuration: `${400 + 80 * 1}ms` }}><small>Category:</small><br/>{cat.frontMatter.name}</h1>
+					<h1 style={{ transitionDuration: `${400 + 80 * 1}ms` }}><small>Category:</small><br/>{params.slug}</h1>
 				</Section>
 
 				{posts?.length
