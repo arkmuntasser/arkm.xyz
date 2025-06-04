@@ -1,8 +1,28 @@
+import Link from "next/link";
+import ImageBox from "../src/components/ImageBox";
+import Layout from "../src/components/Layout";
+import Meta from "../src/components/Meta";
+import Section from "../src/components/Section";
+
 export default function NotFound() {
   return (
-    <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-      <h1>404 - Page Not Found</h1>
-      <p>Sorry, the page you are looking for does not exist.</p>
-    </div>
+    <Layout>
+			<Meta title="404 - Page Not Found"/>
+			<main>
+				<Section>
+					<h1 style={{ transitionDuration: `${400 + 80 * 1}ms` }}>There should have been a page here...</h1>
+					<p style={{ transitionDuration: `${400 + 80 * 2}ms` }}>
+						Try heading back to the <Link href="/">homepage</Link> maybe? Or maybe you were looking for my <Link href="/blog">blog</Link>? My <Link href="/weaknotes">weaknotes</Link>? I don't have anything else on in this site so if it's not one of those I'm afraid you're SOL.
+					</p>
+					<ImageBox
+						src="/images/404.gif"
+						width="426"
+						height="213"
+						alt="The meme of John Travolta in Pulp Fiction looking confused"
+						style={{ transitionDuration: `${400 + 80 * 3}ms` }}
+					/>
+				</Section>
+			</main>
+		</Layout>
   );
 }
