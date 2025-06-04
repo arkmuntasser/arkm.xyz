@@ -2,6 +2,7 @@ import { getAllNodes } from 'next-mdx';
 import Layout from '../../../../src/components/Layout';
 import Meta from '../../../../src/components/Meta';
 import PostGroup from '../../../../src/components/PostGroup';
+import Section from '../../../../src/components/Section';
 
 export default async function Page(props) {
   const params = await props.params;
@@ -16,11 +17,14 @@ export default async function Page(props) {
     <Layout>
       <Meta title={`Category: ${params.slug}`} />
       <main>
-        <h1>Category: {params.slug}</h1>
-        <PostGroup
-          title={`Posts in ${params.slug}`}
-          posts={posts}
-        />
+				<Section>
+					<h1 style={{ transitionDuration: `${400 + 80 * 1}ms` }}><small>Category:</small><br/>{cat.frontMatter.name}</h1>
+				</Section>
+
+				{posts?.length
+					? <PostGroup posts={posts}/>
+					: <p>No posts found.</p>
+				}
       </main>
     </Layout>
   );
