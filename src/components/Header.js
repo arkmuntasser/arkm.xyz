@@ -1,14 +1,14 @@
+'use client'
+
 import styles from '../styles/Header.module.css';
 import animations from '../styles/animations.module.css';
 import Logo from './Logo';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { FiRss } from 'react-icons/fi';
 import { useState } from 'react';
 import useMedia from '../hooks/useMedia';
 
 export default function Header() {
-	const router = useRouter();
 	const [menuOpen, setMenuOpen] = useState(false);
 	const isWide = useMedia('(min-width: 40em)');
 
