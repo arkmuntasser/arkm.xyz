@@ -10,6 +10,7 @@ import Meta from '../../../src/components/Meta';
 import Chips from '../../../src/components/Chips';
 import ImageBox from '../../../src/components/ImageBox';
 import Embed from '../../../src/components/Embed';
+import Content from '../../../src/components/Content';
 
 function Code({ children, title, ...props }) {
   return (
@@ -43,8 +44,11 @@ const mdxComponents = {
   Embed,
 };
 
-export default async function Page({ params }) {
-  const post = await getMdxNode('post', { slug: params.slug }, { components: mdxComponents });
+export default async function Page(props) {
+  const params = await props.params;
+	if (!params || !params.slug) return null;
+	console.log('Loading post:', params.slug);
+  const post = await getMdxNode('post', params.slug, { components: mdxComponents });
   if (!post) return null;
   const [year, month, day] = post.frontMatter.date.split('-');
   const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
@@ -61,7 +65,8 @@ export default async function Page({ params }) {
           </div>
           <h1>{post.frontMatter.title}</h1>
         </header>
-        {post.content}
+        {/* <div dangerouslySetInnerHTML={{__html: post.content}} /> */}
+				<Content post={post} />
         {post.relationships?.category ? (
           <footer>
             <Chips items={post.relationships.category} />
@@ -74,5 +79,8 @@ export default async function Page({ params }) {
 
 export async function generateStaticParams() {
   const paths = await getMdxPaths('post');
-  return paths.map((p) => ({ slug: p.slug }));
+	const rtn = paths.map((p) => {
+		return { slug: p.params.slug[0] }
+	});
+  return rtn;
 }

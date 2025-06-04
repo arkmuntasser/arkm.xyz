@@ -3,13 +3,14 @@ import Layout from '../../../../src/components/Layout';
 import Meta from '../../../../src/components/Meta';
 import PostGroup from '../../../../src/components/PostGroup';
 
-export default async function Page({ params }) {
+export default async function Page(props) {
+  const params = await props.params;
   let posts = await getAllNodes('post');
   posts = posts.sort((a, b) => {
     const aDate = new Date(a.frontMatter.date);
     const bDate = new Date(b.frontMatter.date);
     return bDate.valueOf() - aDate.valueOf();
-  }).filter(post => post.frontMatter.category === params.slug);
+  }).filter(post => post.frontMatter?.category?.includes(params.slug));
 
   return (
     <Layout>
