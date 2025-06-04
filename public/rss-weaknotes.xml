@@ -4,18 +4,12 @@
         <description><![CDATA[Amir R Muntasser's Weaknotes]]></description>
         <link>https://arkm.xyz/weaknotes</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 07 Nov 2022 22:09:24 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 04 Jun 2025 04:19:51 GMT</lastBuildDate>
         <item>
-            <title><![CDATA[Week 1]]></title>
-            <link>https://arkm.xyz/posts/week-1</link>
-            <guid isPermaLink="false">/posts/week-1</guid>
-            <pubDate>Fri, 16 Apr 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Week 10]]></title>
-            <link>https://arkm.xyz/posts/week-10</link>
-            <guid isPermaLink="false">/posts/week-10</guid>
-            <pubDate>Fri, 18 Jun 2021 00:00:00 GMT</pubDate>
+            <title><![CDATA[Week 12]]></title>
+            <link>https://arkm.xyz/posts/week-12</link>
+            <guid isPermaLink="false">/posts/week-12</guid>
+            <pubDate>Fri, 30 Jul 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Week 11]]></title>
@@ -24,46 +18,16 @@
             <pubDate>Fri, 25 Jun 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Week 12]]></title>
-            <link>https://arkm.xyz/posts/week-12</link>
-            <guid isPermaLink="false">/posts/week-12</guid>
-            <pubDate>Fri, 30 Jul 2021 00:00:00 GMT</pubDate>
+            <title><![CDATA[Week 10]]></title>
+            <link>https://arkm.xyz/posts/week-10</link>
+            <guid isPermaLink="false">/posts/week-10</guid>
+            <pubDate>Fri, 18 Jun 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Week 2]]></title>
-            <link>https://arkm.xyz/posts/week-2</link>
-            <guid isPermaLink="false">/posts/week-2</guid>
-            <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Week 3]]></title>
-            <link>https://arkm.xyz/posts/week-3</link>
-            <guid isPermaLink="false">/posts/week-3</guid>
-            <pubDate>Fri, 30 Apr 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Week 4]]></title>
-            <link>https://arkm.xyz/posts/week-4</link>
-            <guid isPermaLink="false">/posts/week-4</guid>
-            <pubDate>Fri, 07 May 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Week 5]]></title>
-            <link>https://arkm.xyz/posts/week-5</link>
-            <guid isPermaLink="false">/posts/week-5</guid>
-            <pubDate>Fri, 14 May 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Week 6]]></title>
-            <link>https://arkm.xyz/posts/week-6</link>
-            <guid isPermaLink="false">/posts/week-6</guid>
-            <pubDate>Fri, 21 May 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Week 7]]></title>
-            <link>https://arkm.xyz/posts/week-7</link>
-            <guid isPermaLink="false">/posts/week-7</guid>
-            <pubDate>Fri, 28 May 2021 00:00:00 GMT</pubDate>
+            <title><![CDATA[Week 9]]></title>
+            <link>https://arkm.xyz/posts/week-9</link>
+            <guid isPermaLink="false">/posts/week-9</guid>
+            <pubDate>Fri, 11 Jun 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Week 8]]></title>
@@ -72,10 +36,46 @@
             <pubDate>Fri, 04 Jun 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Week 9]]></title>
-            <link>https://arkm.xyz/posts/week-9</link>
-            <guid isPermaLink="false">/posts/week-9</guid>
-            <pubDate>Fri, 11 Jun 2021 00:00:00 GMT</pubDate>
+            <title><![CDATA[Week 7]]></title>
+            <link>https://arkm.xyz/posts/week-7</link>
+            <guid isPermaLink="false">/posts/week-7</guid>
+            <pubDate>Fri, 28 May 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 6]]></title>
+            <link>https://arkm.xyz/posts/week-6</link>
+            <guid isPermaLink="false">/posts/week-6</guid>
+            <pubDate>Fri, 21 May 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 5]]></title>
+            <link>https://arkm.xyz/posts/week-5</link>
+            <guid isPermaLink="false">/posts/week-5</guid>
+            <pubDate>Fri, 14 May 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 4]]></title>
+            <link>https://arkm.xyz/posts/week-4</link>
+            <guid isPermaLink="false">/posts/week-4</guid>
+            <pubDate>Fri, 07 May 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 3]]></title>
+            <link>https://arkm.xyz/posts/week-3</link>
+            <guid isPermaLink="false">/posts/week-3</guid>
+            <pubDate>Fri, 30 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 2]]></title>
+            <link>https://arkm.xyz/posts/week-2</link>
+            <guid isPermaLink="false">/posts/week-2</guid>
+            <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Week 1]]></title>
+            <link>https://arkm.xyz/posts/week-1</link>
+            <guid isPermaLink="false">/posts/week-1</guid>
+            <pubDate>Fri, 16 Apr 2021 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
